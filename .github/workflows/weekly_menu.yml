@@ -2,7 +2,7 @@ name: Weekly menu email
 
 on:
   schedule:
-    # Every Saturday at 07:00 UTC (8am UK time in summer, 7am in winter)
+    # Every Friday at 10:00
     - cron: "0 10 * * 5"
   workflow_dispatch:   # adds a "Run workflow" button for testing
 
