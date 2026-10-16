@@ -1,69 +1,20 @@
 {% extends 'base.html' %}
-{% block title %}A weekly recipes/shopping list creator{% endblock %}
-
-{% block styling%}
-{{ super() }}
-{% endblock %}
+{% from '_macros.html' import recipe_item %}
+{% block title %}Recipe saved{% endblock %}
 
 {% block content %}
-  <div class="jumbotron text-center">
-      <div class="container">
-          <h1 class="display-4">A weekly recipes/shopping list creator</h1>
-          <p class="lead">You have successfully saved a new recipe in json file! Recipe details as below:</p>
-
-          <!-- Recipe Card in a Separate Row -->
-          <div class="row justify-content-center">
-            <div class="col-10 mt-3">
-              <div class="card border-secondary">
-                <div class="card-header">{{ recipe.name }}</div>
-                  <div class="card-body text-secondary text-left">
-                    <h5 class="card-title">Cuisine: {{ recipe.genre }}</h5>
-                    <p class="card-text card-weight">Weight: {{ recipe.weight }}</p>
-                    <p class="card-text card-ingredients">
-                      <h4>Ingredients:</h4>
-                      <ul>
-                          {% for ingredient in recipe.ingredients %}
-                          <li>{{ ingredient.quantity }} {{ ingredient.name }}</li>
-                          {% endfor %}
-                      </ul></p>
-                    <p class="card-text card-instructions">
-                      <h4>Instructions:</h4>
-                      <ol>
-                          {% for instruction in recipe.instructions %}
-                          <li>{{ instruction }}</li>
-                          {% endfor %}
-                      </ol>
-                    </p>
-                    <p class="card-text card-link"><a href="{{ recipe.link }}" class="card-link" target="_blank">Full recipe here</a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-       </div>
-      <!-- Ensure This Content Stays Below the Card -->
-      <div class="container">
-        <div class="row mt-2 justify-content-center">
-          <div class="col text-center">
-            <hr class="my-2">
-            <p>Do you want to save another new recipe? or do you want to use the creator?</p>
-            <br>
-            <div class="row justify-content-center mt-3">
-              <div class="col-auto">
-                <a class="btn btn-warning btn-lg" href="{{ url_for('get_recipes')}}" role="button">
-                  Give me ideas!
-                </a>
-              </div>
-              <div class="col-auto">
-                <a class="btn btn-warning btn-lg" href="{{ url_for('add_recipes') }}" role="button">
-                  Adding new recipes!
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+<div class="container mt-5" style="max-width: 760px;">
+  <div class="alert alert-success text-center">
+    <strong>{{ recipe.name }}</strong> has been saved.
   </div>
 
+  <div class="recipe-list">
+    {{ recipe_item(recipe, open=true) }}
+  </div>
+
+  <div class="action-row">
+    <a class="btn btn-primary" href="{{ url_for('add_recipes') }}">Add another recipe</a>
+    <a class="btn" href="{{ url_for('get_recipes') }}">Get menu ideas</a>
+  </div>
+</div>
 {% endblock %}

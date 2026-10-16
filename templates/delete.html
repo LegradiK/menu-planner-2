@@ -1,73 +1,41 @@
 {% extends 'base.html' %}
+{% from '_macros.html' import recipe_item %}
+{% block title %}Delete a recipe{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center">Search and Delete Recipe</h2>
-    <form method="POST" action="/delete">
-      {{ form.hidden_tag() }}
-      <div class="form-group">
-          <label for="genre">Genre</label>
-          {{ form.genre(class="form-control") }}
-      </div>
-      <div class="form-group">
-          <label for="recipe_name">Recipe Name</label>
-          {{ form.recipe_name(class="form-control") }}
-      </div>
-      <div class="text-center">
-          <!-- Search button: triggers recipe search -->
-          <button type="submit" class="btn btn-primary" name="search" value="search">Search</button>
+<div class="container mt-5" style="max-width: 760px;">
+  <h2 class="text-center mb-4">Delete a recipe</h2>
 
-          <!-- Confirm Delete button: triggers deletion confirmation -->
-          <button type="submit" class="btn btn-danger" name="delete" value="yes">Confirm Delete</button>
+  <form method="POST" action="{{ url_for('delete') }}">
+    {{ form.hidden_tag() }}
 
-          <!-- Cancel button: redirects back to the home page without deleting -->
-          <a href="{{ url_for('home') }}" class="btn btn-secondary">Cancel</a>
+    <div class="form-group">
+      {{ form.genre.label(class="form-label") }}
+      {{ form.genre(class="form-select") }}
+    </div>
+
+    <div class="form-group">
+      {{ form.recipe_name.label(class="form-label") }}
+      {{ form.recipe_name(class="form-control", placeholder="Exact recipe name") }}
+    </div>
+
+    {% if recipe_to_delete %}
+      {# Recipe found: show it, then ask to confirm #}
+      <p class="text-muted text-center mt-4 mb-2">Is this the recipe you want to delete?</p>
+      <div class="recipe-list">
+        {{ recipe_item(recipe_to_delete, open=true) }}
       </div>
+
+      <div class="action-row">
+        <button type="submit" class="btn btn-danger" name="delete" value="yes">Delete this recipe</button>
+        <a href="{{ url_for('delete') }}" class="btn btn-secondary">Cancel</a>
+      </div>
+    {% else %}
+      <div class="action-row">
+        <button type="submit" class="btn btn-primary" name="search" value="search">Find recipe</button>
+        <a href="{{ url_for('home') }}" class="btn btn-secondary">Cancel</a>
+      </div>
+    {% endif %}
   </form>
 </div>
-
-{% if recipe_to_delete %}
-<div class="container">
-    <div class="col-10 mx-auto mt-3">
-      <div class="card border-secondary">
-        <div class="card-header">{{ recipe_to_delete.name }}</div>
-          <div class="card-body text-secondary">
-            <h5 class="card-title">Cuisine: {{ recipe_to_delete.genre }}</h5>
-            <p class="card-text card-weight">Weight: {{ recipe_to_delete.weight }}</p>
-            <p class="card-text card-ingredients">
-              <h4>Ingredients:</h4>
-              <ul>
-                  {% for ingredient in recipe_to_delete.ingredients %}
-                  <li>{{ ingredient.quantity }} {{ ingredient.name }}</li>
-                  {% endfor %}
-              </ul></p>
-            <p class="card-text card-instructions">
-              <h4>Instructions:</h4>
-              <ol>
-                  {% for instruction in recipe_to_delete.instructions %}
-                  <li>{{ instruction }}</li>
-                  {% endfor %}
-              </ol>
-            </p>
-            <p class="card-text card-link"><a href="{{ recipe_to_delete.link }}" class="card-link" target="_blank">Full recipe here</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-{% endif %}
-<div class="row col-6 mx-auto mt-3">
-    <div class="col"></div>
-    <div class="button-container col">
-        <a class="btn btn-warning btn-lg centered-btn" href="{{ url_for('home') }}" role="button">
-            Home
-        </a>
-    </div>
-    <div class="button-container col">
-        <a class="btn btn-warning btn-lg centered-btn" href="{{ url_for('make_list') }}" target="_blank" role="button">
-          Shopping list
-        </a>
-    </div>
-    <div class="col"></div>
-  </div>
 {% endblock %}

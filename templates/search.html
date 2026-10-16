@@ -1,67 +1,58 @@
 {% extends 'base.html' %}
+{% from '_macros.html' import recipe_item %}
+{% block title %}Search recipes{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center">Recipe Form</h2>
-    <form method="POST" action="/search" novalidate>
-        {{ form.hidden_tag() }}
-        <div class="form-group">
-            <label for="genre">Genre</label>
-            {{ form.genre(class="form-control") }}
-        </div>
-        <div class="form-group">
-            <label for="name">Recipe Name</label>
-            {{ form.recipe_name(class="form-control")}}
-        </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary" href="{{ url_for('search_recipe') }}">Search Recipe</button>
-        </div>
-    </form>
-</div>
-
-{% if recipe %}
-<div class="container">
-    <div class="col-10 mx-auto mt-3">
-      <div class="card border-secondary">
-        <div class="card-header">{{ recipe.name }}</div>
-          <div class="card-body text-secondary">
-            <h5 class="card-title">Cuisine: {{ recipe.genre }}</h5>
-            <p class="card-text card-weight">Weight: {{ recipe.weight }}</p>
-            <p class="card-text card-ingredients">
-              <h4>Ingredients:</h4>
-              <ul>
-                  {% for ingredient in recipe.ingredients %}
-                  <li>{{ ingredient.quantity }} {{ ingredient.name }}</li>
-                  {% endfor %}
-              </ul></p>
-            <p class="card-text card-instructions">
-              <h4>Instructions:</h4>
-              <ol>
-                  {% for instruction in recipe.instructions %}
-                  <li>{{ instruction }}</li>
-                  {% endfor %}
-              </ol>
-            </p>
-            <p class="card-text card-link"><a href="{{ recipe.link }}" class="card-link" target="_blank">Full recipe here</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+{# Works with either version of the search route:
+   - `results` (a list of partial matches), or
+   - `recipe`  (a single exact match)                #}
+{% if results is defined %}
+  {% set found = results %}
+{% elif recipe %}
+  {% set found = [recipe] %}
+{% else %}
+  {% set found = [] %}
 {% endif %}
 
-<div class="row col-6 mx-auto mt-3">
-    <div class="col"></div>
-    <div class="button-container col">
-        <a class="btn btn-warning btn-lg centered-btn" href="{{ url_for('home') }}" role="button">
-            Home
-        </a>
+<div class="container mt-5" style="max-width: 760px;">
+  <h2 class="text-center mb-4">Search recipes</h2>
+
+  <form method="POST" action="{{ url_for('search_recipe') }}" novalidate>
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+      {{ form.genre.label(class="form-label") }}
+      {{ form.genre(class="form-select") }}
     </div>
-    <div class="button-container col">
-        <a class="btn btn-warning btn-lg centered-btn" href="{{ url_for('make_list') }}" target="_blank" role="button">
-          Shopping list
-        </a>
+
+    <div class="form-group">
+      {{ form.recipe_name.label(class="form-label") }}
+      {{ form.recipe_name(class="form-control", placeholder="e.g. lasagne") }}
+      {% for error in form.recipe_name.errors %}
+        <div class="text-danger small mt-2">{{ error }}</div>
+      {% endfor %}
     </div>
-    <div class="col"></div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+
+  {% if request.method == 'POST' and not form.errors %}
+  <div class="mt-4">
+    {% if found %}
+      <p class="text-muted text-center">
+        {{ found|length }} recipe{{ '' if found|length == 1 else 's' }} found
+      </p>
+      <div class="recipe-list">
+        {% for item in found %}
+          {{ recipe_item(item, open=(found|length == 1)) }}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center text-muted">No recipes found. Try a different name or genre.</p>
+    {% endif %}
   </div>
+  {% endif %}
+</div>
 {% endblock %}

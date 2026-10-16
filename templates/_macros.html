@@ -1,0 +1,41 @@
+{# Shared recipe row: a one-line name that opens to show the details.
+   Use in a page with:  {% from '_macros.html' import recipe_item %}  #}
+
+{% macro recipe_item(recipe, open=false) %}
+<details class="recipe-item" {% if open %}open{% endif %}>
+  <summary>
+    <span class="recipe-name">{{ recipe.name }}</span>
+    {% if recipe.cuisine or recipe.genre %}
+      <span class="recipe-genre">{{ recipe.cuisine or recipe.genre }}</span>
+    {% endif %}
+  </summary>
+
+  <div class="recipe-details">
+    {% if recipe.weight %}
+      <p class="text-muted mb-2">Weight: {{ recipe.weight }}</p>
+    {% endif %}
+
+    <h4>Ingredients</h4>
+    <ul>
+      {% for ingredient in recipe.ingredients %}
+        {% if ingredient is string %}
+          <li>{{ ingredient }}</li>
+        {% else %}
+          <li>{{ ingredient.quantity }} {{ ingredient.measurement or '' }} {{ ingredient.name }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <h4>Instructions</h4>
+    <ol>
+      {% for instruction in recipe.instructions %}
+        <li>{{ instruction }}</li>
+      {% endfor %}
+    </ol>
+
+    {% if recipe.link %}
+      <a href="{{ recipe.link }}" class="card-link" target="_blank" rel="noopener noreferrer">Full recipe</a>
+    {% endif %}
+  </div>
+</details>
+{% endmacro %}

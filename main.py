@@ -4,8 +4,9 @@ Where it all comes together
 """
 import json
 import os
+from dotenv import load_dotenv
+from datetime import datetime
 from flask import Flask, jsonify, render_template, request, redirect, url_for, flash, session
-from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField
 from wtforms.validators import DataRequired
@@ -13,11 +14,10 @@ from build_menu import build_main_menu, bread_suggestion
 from save_recipe import save_recipe
 from shopping_list import collect_ingredients, update_shopping_list, categorize_ingredients
 
-
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(BASE_DIR, "data.env"))
 
 app = Flask(__name__)
-Bootstrap(app)
 
 app.config['SECRET_KEY'] = os.getenv("FLASK_KEY")
 
@@ -30,12 +30,22 @@ sample_data = {
 
 global_menu = []
 
+RECIPE_FILES = {
+    "main": "main_recipes.json",
+    "dessert": "dessert_recipes.json",
+    "bread": "bread_recipes.json",
+}
+ 
+CATEGORY_LABELS = {"main": "Main dishes", "dessert": "Desserts", "bread": "Bread"}
+ 
+
+
 
 class SearchForm(FlaskForm):
     """
     FlaskForm for /search page, searches a particular recipe
     """
-    genre = SelectField('Genre', choices=[('main', 'Main'), ('dessert', 'Dessert')],
+    genre = SelectField('Genre', choices=[('all', 'All'), ('main', 'Main'), ('dessert', 'Dessert'), ('bread', 'Bread')],
                         validators=[DataRequired()])
     recipe_name = StringField('Recipe Name', validators=[DataRequired()])
     submit = SubmitField('Search')
@@ -89,6 +99,45 @@ def get_recipes():
     global_menu = build_main_menu()
     bread_suggestion_data = bread_suggestion()
     return render_template('recipes.html', menu=global_menu, bread=bread_suggestion_data)
+
+
+@app.context_processor
+def inject_year():
+    """Make {{ current_year }} available in every template (used in the footer)."""
+    return {"current_year": datetime.now().year}
+ 
+ 
+@app.route("/all-recipes")
+def all_recipes():
+    """
+    Route when visiting /all-recipes
+    Returns:
+        every recipe, grouped by category (main / dessert / bread)
+        and then by cuisine (Italian, Japanese, ...)
+    """
+    catalogue = {}
+ 
+    for key, filename in RECIPE_FILES.items():
+        file_path = os.path.join(app.root_path, "recipes", filename)
+        if not os.path.exists(file_path):
+            continue
+ 
+        # Read the file on every visit so newly added recipes show straight away
+        with open(file_path, "r", encoding="utf-8") as file:
+            recipes = json.load(file)["recipes"]
+ 
+        groups = defaultdict(list)
+        for recipe in recipes:
+            cuisine = (recipe.get("cuisine") or "Other").strip().title()
+            groups[cuisine].append(recipe)
+ 
+        catalogue[CATEGORY_LABELS[key]] = {
+            cuisine: sorted(items, key=lambda r: r["name"].lower())
+            for cuisine, items in sorted(groups.items())
+        }
+ 
+    return render_template("all_recipes.html", catalogue=catalogue)
+
 
 @app.route('/search', methods=["GET","POST"])
 def search_recipe():

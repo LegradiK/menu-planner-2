@@ -1,126 +1,851 @@
-/* This CSS file will need to be added to the styling of
-your web pages for the styles to be rendered. */
+/* =========================================================
+   Menu Planner stylesheet (no Bootstrap needed)
 
-html, body {
-  background-color: #333;
-  color: white;
-  margin: 0;
-  overflow-y: auto; /* Allow scrolling */
+   1. Palette            7. Cards
+   2. Base / reset       8. Forms
+   3. Layout & grid      9. Alerts (flash messages)
+   4. Utilities         10. Recipe list (collapsible)
+   5. Header & footer   11. All-recipes categories
+   6. Buttons           12. Shopping list & print
+   ========================================================= */
+
+/* ---------- 1. Palette: change these to re-theme the site ---------- */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #f7f8f6;
+  --text: #2d2a26;
+  --text-muted: #6b665e;
+  --border: #e4e7e3;
+  --primary: #3f7d58;        /* herb green */
+  --primary-dark: #2f6145;
+  --primary-light: #e6f1ea;
+  --accent: #d9693a;         /* tomato orange */
+  --danger: #c0392b;
+  --danger-light: #fbeae8;
+  --warning-light: #fdf3e1;
+  --info-light: #e8f1f8;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --pill: 999px;
+  --shadow: 0 2px 10px rgba(45, 42, 38, 0.08);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-.card {
-  margin: 20px auto;
-  max-width: 1200px;
-  min-height: 350px; /* Set a minimum height */
+
+/* ---------- 2. Base / reset (what Bootstrap's "Reboot" used to do) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
 }
-.card {
-  border: 2px solid #ddd;  /* Thinner border */
-  border-radius: 8px;
-  margin-bottom: 40px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Slightly stronger shadow for depth */
-  padding: 20px;  /* Add padding inside the card */
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
-.card h2 {
-  background-color: #007bff;
-  color: #333;  /* Change font color to dark gray */
-  padding: 15px;
-  border-radius: 8px 8px 0 0;
-  margin: 0;
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
 }
-.card .genre {
-  font-size: 16px;
-  color: #777;
-  margin: 10px 15px;
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 1rem; }
+
+p {
+  margin: 0 0 1rem;
 }
-.ingredients, .instructions {
-  padding: 0 15px 15px;
+
+ul, ol {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
 }
-.ingredients ul, .instructions ol {
-  margin-bottom: 15px;
-}
-.card-header {
-  color: #333;
-}
-.card-link {
-  margin: 15px;
-  font-size: 16px;
-  color: #007bff;
-  text-decoration: none;
-}
-.card-link:hover {
-  text-decoration: underline;
-}
-.container {
-  margin-bottom: 2rem;
+
+li + li {
+  margin-top: 0.25rem;
 }
 
 a {
-    color: #ffc107;
+  color: var(--primary);
 }
 
-.jumbotron {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  min-height: 80vh;
-  color: white;
-  background-color: #333;
-  margin-bottom: 0;
-  padding-bottom: 0;
+a:hover {
+  color: var(--primary-dark);
 }
 
-.space-above {
-    margin-top: 20px;
-    padding-top: 20px;
+hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--border);
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 pre {
-  background-color: #f4f4f4;
+  background-color: var(--surface-alt);
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   overflow: auto;
 }
+
+:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+/* ---------- 3. Layout & grid ---------- */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.col {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+}
+
+.col-6  { flex: 0 0 auto; width: 50%; }
+.col-10 { flex: 0 0 auto; width: 83.333%; }
+
+.justify-content-center { justify-content: center; }
+
+/* On phones, grid columns stack */
+@media (max-width: 600px) {
+  .col-6,
+  .col-10 {
+    width: 100%;
+  }
+}
+
+/* ---------- 4. Utilities (replacing Bootstrap's) ---------- */
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+
+.my-2 { margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; }
+.my-4 { margin-top: 1.5rem !important; margin-bottom: 1.5rem !important; }
+
+.w-25 { width: 25% !important; }
+.w-50 { width: 50% !important; }
+
+@media (max-width: 600px) {
+  .w-25,
+  .w-50 {
+    width: 100% !important;
+  }
+}
+
+.text-center { text-align: center !important; }
+.text-left   { text-align: left !important; }
+
+.text-muted,
+.text-secondary { color: var(--text-muted) !important; }
+
+.text-danger { color: var(--danger) !important; }
+
+.small { font-size: 0.875rem; }
+
+.lead {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.display-4,
+.display-5 {
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.display-4 { font-size: clamp(2rem, 6vw, 3.25rem); }
+.display-5 { font-size: clamp(1.8rem, 5vw, 2.75rem); }
+
+/* ---------- 5. Header & footer ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--primary-dark);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li + li {
+  margin-top: 0;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.footer a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Home page hero: fills the space between header and footer */
+.jumbotron {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.jumbotron .container {
+  max-width: 720px;
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  color: var(--primary);
+}
+
+/* ---------- 6. Buttons ---------- */
+.btn,
+.nav-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  color: var(--primary);
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  border-radius: var(--pill);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.btn:hover,
+.btn:focus-visible,
+.nav-btn:hover,
+.nav-btn:focus-visible {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* Filled: main actions and the current page in the nav */
+.btn-primary,
+.btn-warning,
+.nav-btn.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible,
+.btn-warning:hover,
+.btn-warning:focus-visible {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: var(--surface-alt);
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+/* Destructive: red outline, filled red on hover */
+.btn-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-danger:hover,
+.btn-danger:focus-visible {
+  background-color: var(--danger);
+  border-color: var(--danger);
+  color: #ffffff;
+}
+
+.btn-lg {
+  padding: 10px 24px;
+  font-size: 1.1rem;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Rows of buttons */
+.action-row,
 .button-container {
   display: flex;
-  margin-bottom: 2rem;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 400px;
-  gap: 10px;
-  padding-bottom: 100px; /* Adds space at the bottom of the body */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0 8px;
 }
+
 .centered-btn {
-  display: block;       /* Make the button a block element */
-  margin: 1.5rem auto;  /* Center the button horizontally and add space above */
-  text-align: center;   /* Align the button's text to the center if needed */
-  margin-right: 10px;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* ---------- 7. Cards ---------- */
+.card {
+  margin: 24px auto;
+  max-width: 1000px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* A card used directly (new templates) gets its own padding */
+.card:not(:has(.card-body)) {
+  padding: 20px;
+}
+
+.card h2 {
+  color: var(--primary);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-header {
+  padding: 14px 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--surface-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.card-header h1,
+.card-header h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.card-text {
+  margin-bottom: 0.75rem;
+}
+
+.card-link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.card .genre {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.border-secondary {
+  border-color: var(--border);
+}
+
+.ingredients,
+.instructions {
+  padding-bottom: 15px;
+}
+
+.category-header {
+  color: var(--accent);
+}
+
+/* Old shopping-list template wraps the whole list in .category-header:
+   keep headings orange but items in normal text colour */
+.category-header h3 {
+  margin-top: 1.25rem;
+  color: var(--accent);
+}
+
+.categories.category-header li,
+.categories.category-header p {
+  color: var(--text);
+}
+
+/* ---------- 8. Forms ---------- */
+.form-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label,
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.form-control,
+.form-select,
+.input-container input,
+.input-container select {
+  display: block;
   width: 100%;
+  padding: 8px 12px;
+  font: inherit;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
-.input-container {
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Custom arrow for dropdowns */
+select.form-control,
+.form-select {
+  appearance: none;
+  padding-right: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%233f7d58' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.form-control:focus,
+.form-select:focus,
+.input-container input:focus,
+.input-container select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.form-control::placeholder {
+  color: #a7a29a;
+}
+
+/* Ingredient rows on the "add recipe" page */
+.input-container,
+.ingredient-group {
   display: flex;
-  width: 100%; /* Ensure container takes full width */
+  width: 100%;
+  gap: 8px;
+  margin-bottom: 8px;
 }
-.input-container input {
-  padding: 5px;
-  display: flex;
-  width: 100%
-}
-.ingredient-quantity {
-  flex: 1; /* This gives 1/4 of the space */
-}
+
+.ingredient-quantity    { flex: 1; }
+.ingredient-measurement { flex: 2; }
+.ingredient-name        { flex: 6; }
+
+.ingredient-quantity,
+.ingredient-measurement,
 .ingredient-name {
-  flex: 8; /* This gives 3/4 of the space */
+  min-width: 0;
 }
+
+@media (max-width: 600px) {
+  .ingredient-quantity    { flex: 2; }
+  .ingredient-measurement { flex: 3; }
+  .ingredient-name        { flex: 5; }
+}
+
 #ingredients-section {
-  display: 400px;
+  max-height: 400px;
   overflow-y: auto;
 }
-*{
-  box-sizing: border-box;
+
+/* ---------- 9. Alerts (flash messages) ---------- */
+.alert {
+  padding: 12px 16px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-alt);
 }
-.category-header {
-  color: #b4c0f7; /* Replace with your desired color */
+
+.alert-success {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-dark);
 }
+
+.alert-error,
+.alert-danger {
+  background-color: var(--danger-light);
+  border-color: var(--danger);
+  color: #8e2a1f;
+}
+
+.alert-warning {
+  background-color: var(--warning-light);
+  border-color: var(--accent);
+  color: #8a4a1f;
+}
+
+.alert-info {
+  background-color: var(--info-light);
+  border-color: #3a7bb0;
+  color: #24557d;
+}
+
+/* ---------- Bootstrap list-group replacement ---------- */
+.list-group {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.list-group-item {
+  margin: 0;
+  padding: 10px 16px;
+  background-color: var(--surface);
+}
+
+.list-group-item + .list-group-item {
+  margin-top: 0;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- 10. Recipe list (collapsible <details>) ---------- */
+.recipe-list {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.recipe-item + .recipe-item {
+  border-top: 1px solid var(--border);
+}
+
+.recipe-item summary,
+.category-block > summary,
+.subcategory > summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.recipe-item summary::-webkit-details-marker,
+.category-block > summary::-webkit-details-marker,
+.subcategory > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Arrow: points right when closed, down when open */
+.recipe-item summary::before,
+.category-block > summary::before,
+.subcategory > summary::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-right: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  transform: rotate(-45deg);
+  transition: transform 0.2s;
+}
+
+.recipe-item[open] summary::before,
+.category-block[open] > summary::before,
+.subcategory[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+.recipe-item summary {
+  padding: 14px 18px;
+  background-color: var(--surface);
+  transition: background-color 0.15s;
+}
+
+.recipe-item summary:hover,
+.category-block > summary:hover,
+.subcategory > summary:hover {
+  background-color: var(--primary-light);
+}
+
+.recipe-name {
+  font-weight: 600;
+}
+
+.recipe-genre {
+  margin-left: auto;
+  padding: 2px 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background-color: var(--surface-alt);
+  border-radius: var(--pill);
+  white-space: nowrap;
+}
+
+.recipe-details {
+  padding: 4px 18px 18px 38px;
+  background-color: var(--surface);
+}
+
+.recipe-details h4 {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+/* ---------- 11. All-recipes categories ---------- */
+.category-block {
+  margin-bottom: 14px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.category-block > summary {
+  padding: 16px 18px;
+}
+
+.category-title {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.category-groups {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.count {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  border-radius: var(--pill);
+}
+
+.category-body {
+  padding: 8px 12px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.subcategory > summary {
+  padding: 10px 8px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.subcategory .recipe-list {
+  margin: 4px 0 10px 20px;
+  box-shadow: none;
+}
+
+/* ---------- 12. Shopping list & print ---------- */
+.shop-category {
+  margin-bottom: 20px;
+}
+
+.shop-category h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.shop-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.shop-list li {
+  margin: 0;
+}
+
+.shop-list li + li {
+  border-top: 1px solid var(--border);
+}
+
+.shop-list label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 10px 16px;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: var(--surface);
+}
+
+.shop-list label:hover {
+  background-color: var(--primary-light);
+}
+
+.shop-list input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+}
+
+.shop-list input:checked + span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+@media print {
+  .site-header,
+  .footer,
+  .no-print,
+  .action-row,
+  .button-container {
+    display: none !important;
+  }
+
+  .card,
+  .recipe-list,
+  .category-block {
+    box-shadow: none;
+  }
+}
+
+/* Debug helper: uncomment to outline every element
+* { outline: 1px solid red; }
+*/

@@ -1,84 +1,25 @@
-
 {% extends 'base.html' %}
-{% block title %}A weekly recipes/shopping list creator{% endblock %}
-
-{% block styling%}
-  {{ super() }}
-{% endblock %}
+{% from '_macros.html' import recipe_item %}
+{% block title %}This week's menu{% endblock %}
 
 {% block content %}
+<div class="container mt-4" style="max-width: 760px;">
+  <h2 class="mb-1">This week's menu</h2>
+  <p class="text-muted mb-4">Tap a recipe to see its ingredients and steps.</p>
 
-  {% for recipe in menu %}
-  <div class="container">
-    <div class="col-10 mx-auto mt-3">
-      <div class="card border-secondary">
-        <div class="card-header">{{ recipe.name }}</div>
-          <div class="card-body text-secondary">
-            <h5 class="card-title">Cuisine: {{ recipe.genre }}</h5>
-            <p class="card-text card-weight">Weight: {{ recipe.weight }}</p>
-            <p class="card-text card-ingredients">
-              <h4>Ingredients:</h4>
-              <ul>
-                  {% for ingredient in recipe.ingredients %}
-                  <li>{{ ingredient.quantity }} {{ ingredient.measurement }} {{ ingredient.name }}</li>
-                  {% endfor %}
-              </ul></p>
-            <p class="card-text card-instructions">
-              <h4>Instructions:</h4>
-              <ol>
-                  {% for instruction in recipe.instructions %}
-                  <li>{{ instruction }}</li>
-                  {% endfor %}
-              </ol>
-            </p>
-            <p class="card-text card-link"><a href="{{ recipe.link }}" class="card-link" target="_blank">Full recipe here</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-  <div class="container">
-    <div class="col-10 mx-auto mt-3">
-      <div class="card border-secondary">
-        <div class="card-header">{{ bread.name }}</div>
-          <div class="card-body text-secondary">
-            <h5 class="card-title">Cuisine: {{ bread.genre }}</h5>
-            <p class="card-text card-weight">Weight: {{ bread.weight }}</p>
-            <p class="card-text card-ingredients">
-              <h4>Ingredients:</h4>
-              <ul>
-                  {% for ingredient in bread.ingredients %}
-                  <li>{{ ingredient.quantity }} {{ ingredient.name }}</li>
-                  {% endfor %}
-              </ul></p>
-            <p class="card-text card-instructions">
-              <h4>Instructions:</h4>
-              <ol>
-                  {% for instruction in bread.instructions %}
-                  <li>{{ instruction }}</li>
-                  {% endfor %}
-              </ol>
-            </p>
-            <p class="card-text card-link"><a href="{{ bread.link }}" class="card-link" target="_blank">Full recipe here</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row col-6 mx-auto mt-3">
-    <div class="col"></div>
-    <div class="button-container col">
-        <a class="btn btn-warning btn-lg centered-btn" href="{{ url_for('home') }}" role="button">
-            Home
-        </a>
-    </div>
-    <div class="button-container col">
-        <a class="btn btn-warning btn-lg centered-btn" href="{{ url_for('make_list') }}" target="_blank" role="button">
-          Shopping list
-        </a>
-    </div>
-    <div class="col"></div>
+  <div class="recipe-list">
+    {% for recipe in menu %}
+      {{ recipe_item(recipe) }}
+    {% endfor %}
+
+    {% if bread %}
+      {{ recipe_item(bread) }}
+    {% endif %}
   </div>
 
+  <div class="action-row">
+    <a class="btn btn-primary" href="{{ url_for('make_list') }}">Make shopping list</a>
+    <a class="btn" href="{{ url_for('get_recipes') }}">Shuffle menu</a>
+  </div>
+</div>
 {% endblock %}

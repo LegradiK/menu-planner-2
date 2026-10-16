@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import recipe_item %}
+{% block title %}All recipes{% endblock %}
+
+{% block content %}
+<div class="container mt-4" style="max-width: 760px;">
+  <h2 class="mb-1">All recipes</h2>
+  <p class="text-muted mb-4">Open a category, then a cuisine, to see its recipes.</p>
+
+  {% for category, groups in catalogue.items() %}
+  <details class="category-block">
+    <summary>
+      <span class="category-title">{{ category }}</span>
+      <span class="category-groups">{{ groups.keys()|join(', ') }}</span>
+      <span class="count">{{ groups.values()|map('length')|sum }}</span>
+    </summary>
+
+    <div class="category-body">
+      {% for cuisine, recipes in groups.items() %}
+      <details class="subcategory">
+        <summary>
+          <span>{{ cuisine }}</span>
+          <span class="count">{{ recipes|length }}</span>
+        </summary>
+        <div class="recipe-list">
+          {% for recipe in recipes %}
+            {{ recipe_item(recipe) }}
+          {% endfor %}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </details>
+  {% else %}
+    <p class="text-muted">No recipes yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}
