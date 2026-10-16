@@ -84,7 +84,8 @@ def build_html(menu, bread, shopping, site_url):
         name = escape(recipe["name"])
         link = recipe.get("link")
         if link:
-            name = f'<a href="{escape(link)}" style="color:{GREEN};text-decoration:none;">{name}</a>'
+            name = (f'<a href="{escape(link)}" '
+                    f'style="color:{GREEN};text-decoration:none;">{name}</a>')
         label = escape("Bread" if recipe is bread else recipe_label(recipe))
         recipe_rows += f"""
         <tr>
@@ -158,6 +159,7 @@ def send_email(subject, text, html):
 
 
 def main():
+    """Build the menu and shopping list, then send or preview the email."""
     parser = argparse.ArgumentParser(description="Email a random weekly menu and shopping list.")
     parser.add_argument("--dry-run", action="store_true",
                         help="write menu_email_preview.html instead of sending")
@@ -192,3 +194,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
