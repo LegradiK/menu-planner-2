@@ -10,10 +10,6 @@ jobs:
   send-menu:
     runs-on: ubuntu-latest
 
-    defaults:
-        run:
-          working-directory: menu-planner
-
     steps:
       - name: Check out the code
         uses: actions/checkout@v4
