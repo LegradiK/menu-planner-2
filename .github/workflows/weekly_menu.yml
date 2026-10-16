@@ -1,0 +1,32 @@
+name: Weekly menu email
+
+on:
+  schedule:
+    # Every Saturday at 07:00 UTC (8am UK time in summer, 7am in winter)
+    - cron: "0 10 * * 5"
+  workflow_dispatch:   # adds a "Run workflow" button for testing
+
+jobs:
+  send-menu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build and send the menu email
+        env:
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: python send_menu_email.py
