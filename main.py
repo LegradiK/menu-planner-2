@@ -390,6 +390,18 @@ def successful():
 
     return render_template('successful.html', recipe=recipe)
 
+@app.route("/get-inspired")
+def get_inspired():
+    """
+    Route when visiting /get-inspired
+    Returns:
+        recipe websites grouped by category
+    """
+    file_path = os.path.join(app.root_path, "recipes", "inspiration.json")
+    with open(file_path, "r", encoding="utf-8") as file:
+        categories = json.load(file)["categories"]
+    return render_template("get_inspired.html", categories=categories)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

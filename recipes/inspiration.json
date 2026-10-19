@@ -1,0 +1,119 @@
+{
+    "categories": [
+        {
+            "title": "Everyday & British",
+            "icon": "🥧",
+            "sites": [
+                {
+                    "name": "BBC Food",
+                    "url": "https://www.bbc.co.uk/food",
+                    "description": "Thousands of reliable recipes from BBC chefs and programmes, with good budget and family sections."
+                },
+                {
+                    "name": "BBC Good Food",
+                    "url": "https://www.bbcgoodfood.com",
+                    "description": "Tested recipes with ratings, handy collections and clear nutrition info."
+                },
+                {
+                    "name": "Tesco Real Food",
+                    "url": "https://realfood.tesco.com",
+                    "description": "Simple weeknight dinners using ingredients that are easy to find in UK supermarkets."
+                },
+                {
+                    "name": "Don't Go Bacon My Heart",
+                    "url": "https://www.dontgobaconmyheart.co.uk",
+                    "description": "Hearty, no-fuss UK comfort food: pasta bakes, pies and proper gravy."
+                }
+            ]
+        },
+        {
+            "title": "Japanese & Asian",
+            "icon": "🍱",
+            "sites": [
+                {
+                    "name": "Just One Cookbook",
+                    "url": "https://www.justonecookbook.com",
+                    "description": "The go-to for authentic Japanese home cooking, from donburi to bento, with step-by-step photos."
+                },
+                {
+                    "name": "My Korean Kitchen",
+                    "url": "https://mykoreankitchen.com",
+                    "description": "Approachable Korean recipes, from BBQ marinades to everyday banchan."
+                },
+                {
+                    "name": "Cook Eat World",
+                    "url": "https://www.cookeatworld.com",
+                    "description": "Takeaway favourites and dishes from around Asia, recreated at home."
+                },
+                {
+                    "name": "Knife and Soul",
+                    "url": "https://knifeandsoul.com",
+                    "description": "Easy Japanese and Asian-inspired recipes with a fresh, modern feel."
+                }
+            ]
+        },
+        {
+            "title": "Around the World",
+            "icon": "🌍",
+            "sites": [
+                {
+                    "name": "RecipeTin Eats",
+                    "url": "https://www.recipetineats.com",
+                    "description": "Nagi's foolproof recipes from every cuisine, with videos and plenty of substitution notes."
+                },
+                {
+                    "name": "The Mediterranean Dish",
+                    "url": "https://www.themediterraneandish.com",
+                    "description": "Bright, healthy Mediterranean and Middle Eastern cooking."
+                },
+                {
+                    "name": "Tasty",
+                    "url": "https://tasty.co",
+                    "description": "Quick, fun recipes with short videos for almost every dish."
+                },
+                {
+                    "name": "Jo Cooks",
+                    "url": "https://www.jocooks.com",
+                    "description": "Easy comfort food and one-pot dinners for busy weeknights."
+                }
+            ]
+        },
+        {
+            "title": "Pressure Cooker & Slow Cooking",
+            "icon": "⏲️",
+            "sites": [
+                {
+                    "name": "Pressure Cook Recipes (Amy + Jacky)",
+                    "url": "https://www.pressurecookrecipes.com",
+                    "description": "Carefully tested Instant Pot recipes with clear timings and troubleshooting tips."
+                },
+                {
+                    "name": "Pressure Cooking Today",
+                    "url": "https://www.pressurecookingtoday.com",
+                    "description": "Hundreds of pressure cooker recipes, from pulled pork to cheesecake."
+                }
+            ]
+        },
+        {
+            "title": "Sides, Baking & Desserts",
+            "icon": "🍰",
+            "sites": [
+                {
+                    "name": "Sugar Salt Magic",
+                    "url": "https://www.sugarsaltmagic.com",
+                    "description": "Comforting bakes, desserts and crowd-pleasing side dishes."
+                },
+                {
+                    "name": "All the Healthy Things",
+                    "url": "https://allthehealthythings.com",
+                    "description": "Lighter takes on favourites, with lots of gluten-free options."
+                },
+                {
+                    "name": "Scrambled Chefs",
+                    "url": "https://www.scrambledchefs.com",
+                    "description": "Colourful salads, snacks and simple sweet treats."
+                }
+            ]
+        }
+    ]
+}

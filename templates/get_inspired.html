@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Get inspired{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/get_inspired.css') }}">
+<div class="container inspire-page mt-5 mb-5">
+  <h2 class="text-center mb-2">Get inspired</h2>
+  <p class="text-center text-muted mb-4">
+    Favourite recipe websites for when you need fresh ideas for the menu.
+  </p>
+
+  {% if categories %}
+  <div class="accordion" id="inspirationAccordion">
+    {% for category in categories %}
+    {% set cid = 'cat' ~ loop.index %}
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="heading-{{ cid }}">
+        <button class="accordion-button {% if not loop.first %}collapsed{% endif %}"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse-{{ cid }}"
+                aria-expanded="{{ 'true' if loop.first else 'false' }}"
+                aria-controls="collapse-{{ cid }}">
+          <span class="me-2" aria-hidden="true">{{ category.icon }}</span>
+          {{ category.title }} -  
+          <span class="badge bg-secondary ms-2">{{ category.sites|length }} websites</span>
+        </button>
+      </h3>
+      <div id="collapse-{{ cid }}"
+           class="accordion-collapse collapse {% if loop.first %}show{% endif %}"
+           aria-labelledby="heading-{{ cid }}"
+           data-bs-parent="#inspirationAccordion">
+        <div class="accordion-body">
+          <ul class="list-group list-group-flush">
+            {% for site in category.sites %}
+            <li class="list-group-item px-0">
+              <a href="{{ site.url }}" target="_blank" rel="noopener noreferrer"
+                 class="fw-semibold text-decoration-none">
+                {{ site.name }} <span aria-hidden="true">↗</span>
+              </a>
+              <div class="small text-muted">{{ site.description }}</div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-center text-muted">No inspiration links yet.</p>
+  {% endif %}
+
+  <p class="text-center mt-4">
+    Found something you like?
+    <a href="{{ url_for('add_recipes') }}">Add it to your recipes</a>.
+  </p>
+</div>
+{% endblock %}

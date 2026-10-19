@@ -33,6 +33,9 @@
             <a class="nav-btn {% if request.endpoint == 'add_recipes' %}active{% endif %}"
                href="{{ url_for('add_recipes') }}">Add a recipe</a>
           </li>
+          <li>
+            <a class="nav-btn" href="{{ url_for('get_inspired') }}">Get inspired</a>
+          </li>
         </ul>
       </nav>
     </div>

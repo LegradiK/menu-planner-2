@@ -849,3 +849,115 @@ select.form-control,
 /* Debug helper: uncomment to outline every element
 * { outline: 1px solid red; }
 */
+
+/* ===== Get inspired page =====
+   Everything is scoped to .inspire-page so it won't affect other pages. */
+
+.inspire-page {
+    --inspire-accent: #c8553d;        /* warm terracotta */
+    --inspire-accent-soft: #fbeee9;
+    --inspire-text: #2d2a26;
+    --inspire-muted: #6f6a64;
+    --inspire-border: #ece6e0;
+    --inspire-card: #ffffff;
+
+    max-width: 860px;
+    color: var(--inspire-text);
+}
+
+/* Heading */
+.inspire-page h2 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.inspire-page h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 4px;
+    margin: 0.6rem auto 0;
+    border-radius: 2px;
+    background: var(--inspire-accent);
+}
+
+/* Accordion sections as rounded cards */
+.inspire-page .accordion {
+    --bs-accordion-border-color: transparent;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(200, 85, 61, 0.25);
+    --bs-accordion-active-bg: var(--inspire-accent-soft);
+    --bs-accordion-active-color: var(--inspire-text);
+}
+
+.inspire-page .accordion-item {
+    margin-bottom: 0.9rem;
+    border: 1px solid var(--inspire-border);
+    border-radius: 14px !important;
+    overflow: hidden;
+    background: var(--inspire-card);
+    box-shadow: 0 2px 8px rgba(45, 42, 38, 0.05);
+}
+
+.inspire-page .accordion-button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    color: var(--inspire-text);
+}
+
+.inspire-page .accordion-button .badge {
+    font-weight: 500;
+}
+
+/* Site links */
+.inspire-page .list-group-item {
+    padding: 0.85rem 0.75rem !important;
+    border-color: var(--inspire-border);
+    border-radius: 10px;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.inspire-page .list-group-item:hover {
+    background: var(--inspire-accent-soft);
+    transform: translateX(4px);
+}
+
+.inspire-page .list-group-item a {
+    color: var(--inspire-accent);
+    font-size: 1.02rem;
+}
+
+.inspire-page .list-group-item a:hover,
+.inspire-page .list-group-item a:focus {
+    text-decoration: underline !important;
+}
+
+.inspire-page .list-group-item .text-muted {
+    color: var(--inspire-muted) !important;
+    margin-top: 0.15rem;
+}
+
+/* Footer prompt */
+.inspire-page > p:last-child a {
+    color: var(--inspire-accent);
+    font-weight: 600;
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+    .inspire-page .accordion-button {
+        font-size: 1rem;
+        padding: 0.85rem 1rem;
+    }
+
+    .inspire-page .list-group-item:hover {
+        transform: none;
+    }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    .inspire-page .list-group-item {
+        transition: none;
+    }
+}
