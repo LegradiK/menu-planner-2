@@ -40,8 +40,6 @@ RECIPE_FILES = {
 CATEGORY_LABELS = {"main": "Main dishes", "dessert": "Desserts", "bread": "Bread"}
  
 
-
-
 class SearchForm(FlaskForm):
     """
     FlaskForm for /search page, searches a particular recipe
@@ -70,6 +68,8 @@ def home():
     """
     return render_template('index.html')
 
+### API json response ###
+
 @app.route('/sample', methods=['GET'])
 def get_data():
     """
@@ -88,6 +88,8 @@ def get_menu():
     """
     built_menu = build_main_menu()
     return jsonify(built_menu)
+
+### Web App version ###
 
 @app.route('/recipes', methods=['GET'])
 def get_recipes():
@@ -139,8 +141,17 @@ def all_recipes():
  
     return render_template("all_recipes.html", catalogue=catalogue)
 
+def load_recipes(genre: str) -> list:
+    """Return recipes for one genre, or all genres if genre == 'all'."""
+    genres = RECIPE_FILES.keys() if genre == "all" else [genre]
+    recipes = []
+    for g in genres:
+        file_path = os.path.join(app.root_path, "recipes", RECIPE_FILES[g])
+        with open(file_path, "r", encoding="utf-8") as file:
+            recipes.extend(json.load(file)["recipes"])
+    return recipes
 
-@app.route('/search', methods=["GET","POST"])
+@app.route('/search', methods=["GET", "POST"])
 def search_recipe():
     """
     Route when visiting /search
@@ -148,30 +159,12 @@ def search_recipe():
         a search result
     """
     form = SearchForm()
-    search_item = None
 
     if form.validate_on_submit():
-        name = form.recipe_name.data
-        genre = form.genre.data
-        file_path = None
-
-        if genre == "main":
-            file_path = 'recipes/main_recipes.json'
-        elif genre == "dessert":
-            file_path = 'recipes/dessert_recipes.json'
-        elif genre == "bread":
-            file_path = 'recipes/bread_recipes.json'
-
-        with open(file_path, 'r', encoding='utf-8') as file:
-            data = json.load(file)
-            recipes = data["recipes"]
-
-        for i in recipes:
-            if name.lower() == i["name"].lower():
-                search_item = i
-                break
-
-        return render_template('search.html', form=form, recipe=search_item)
+        name = form.recipe_name.data.lower().strip()
+        recipes = load_recipes(form.genre.data)
+        results = [r for r in recipes if name in r["name"].lower()]
+        return render_template('search.html', form=form, results=results)
 
     return render_template('search.html', form=form)
 
@@ -189,16 +182,10 @@ def delete():
         name = form.recipe_name.data
         genre = form.genre.data
     # check if the recipe is in main_recipes.json or dessert_recipes.json
-        file_path = None
-        if genre == "main":
-            file_path = 'recipes/main_recipes.json'
-        elif genre == "dessert":
-            file_path = 'recipes/dessert_recipes.json'
-        elif genre == "bread":
-            file_path = 'recipes/bread_recipes.json'
-        #check if file_path is correctly assigned
-        if not file_path:
+        if genre not in RECIPE_FILES:
             return redirect(url_for('home'))
+        
+        file_path = os.path.join(app.root_path, "recipes", RECIPE_FILES[genre])
 
         # open the file according to the path with read mode
         with open(file_path, 'r', encoding='utf-8') as file:
