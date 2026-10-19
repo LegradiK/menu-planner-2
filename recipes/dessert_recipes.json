@@ -71,6 +71,339 @@
                 "Bake for 30 to 35 minutes, or until a toothpick inserted into the center comes out clean.",
                 "Cool in the pans for 10 minutes, then remove to a wire rack to cool completely."
             ]
+        },
+        {
+            "name": "Belgian Waffles",
+            "ingredients": [
+            {
+                "quantity": "220",
+                "measurement": "g",
+                "name": "plain flour"
+            },
+            {
+                "quantity": "3",
+                "measurement": "tsp",
+                "name": "baking powder"
+            },
+            {
+                "quantity": "0.5",
+                "measurement": "tsp",
+                "name": "salt"
+            },
+            {
+                "quantity": "2",
+                "measurement": "",
+                "name": "large eggs, separated"
+            },
+            {
+                "quantity": "415",
+                "measurement": "ml",
+                "name": "milk (or dairy-free milk)"
+            },
+            {
+                "quantity": "120",
+                "measurement": "ml",
+                "name": "vegetable oil (or melted coconut oil)"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "toppings: maple syrup, icing sugar, berries, banana, Nutella or whipped cream"
+            }
+            ],
+            "cuisine": "Belgian",
+            "weight": 2,
+            "link": "https://tastesbetterfromscratch.com/belgian-waffles/",
+            "instructions": [
+            "Preheat and grease your waffle iron.",
+            "Sift the flour, baking powder and salt into a large bowl.",
+            "Separate the eggs, making sure no yolk gets into the whites. Whisk the whites with a hand mixer to stiff peaks.",
+            "Mix the milk and oil into the yolks, then stir this into the dry ingredients.",
+            "Gently fold in the whisked egg whites, without overmixing.",
+            "Spoon the batter onto the hot waffle iron and cook according to its instructions until golden.",
+            "Serve straight away with your favourite toppings."
+            ]
+        },
+        {
+            "name": "Tiramisu (Original Italian Recipe)",
+            "ingredients": [
+            {
+                "quantity": "300",
+                "measurement": "g",
+                "name": "Savoiardi ladyfingers (about 30)"
+            },
+            {
+                "quantity": "500",
+                "measurement": "g",
+                "name": "mascarpone, cold"
+            },
+            {
+                "quantity": "4",
+                "measurement": "",
+                "name": "medium eggs, separated"
+            },
+            {
+                "quantity": "100",
+                "measurement": "g",
+                "name": "caster sugar"
+            },
+            {
+                "quantity": "300",
+                "measurement": "ml",
+                "name": "strong espresso, cooled"
+            },
+            {
+                "quantity": "2",
+                "measurement": "tbsp",
+                "name": "Marsala wine (optional)"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "unsweetened cocoa powder, for dusting"
+            }
+            ],
+            "cuisine": "Italian",
+            "weight": 2,
+            "link": "https://www.recipesfromitaly.com/tiramisu-original-italian-recipe/",
+            "instructions": [
+            "Brew the espresso and let it cool, then stir in the Marsala if using.",
+            "Whisk the egg whites to stiff peaks, making sure no yolk gets in.",
+            "In another bowl, whisk the yolks with the sugar for 3-5 minutes until pale and slightly thick.",
+            "Beat in the cold mascarpone until smooth.",
+            "Gently fold in the egg whites, lifting from the bottom to keep the cream airy.",
+            "Dip each ladyfinger in the coffee for just 1-2 seconds and lay a single layer in your dish.",
+            "Spread over half the cream, add a second layer of dipped ladyfingers, then cover with the rest of the cream and smooth the top.",
+            "Dust generously with cocoa powder and chill for at least 3 hours, ideally overnight."
+            ]
+        },
+        {
+            "name": "Classic British Scones",
+            "ingredients": [
+            {
+                "quantity": "250",
+                "measurement": "g",
+                "name": "self-raising flour"
+            },
+            {
+                "quantity": "1",
+                "measurement": "pinch",
+                "name": "salt"
+            },
+            {
+                "quantity": "50",
+                "measurement": "g",
+                "name": "caster sugar"
+            },
+            {
+                "quantity": "50",
+                "measurement": "g",
+                "name": "unsalted butter, chilled and diced"
+            },
+            {
+                "quantity": "1",
+                "measurement": "",
+                "name": "medium egg"
+            },
+            {
+                "quantity": "100",
+                "measurement": "ml",
+                "name": "buttermilk, plus extra if needed"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "clotted cream and jam, to serve"
+            }
+            ],
+            "cuisine": "British",
+            "weight": 1,
+            "link": "https://thegreatbritishbakeoff.co.uk/recipes/all/scones/",
+            "instructions": [
+            "Heat the oven to 220C (200C fan, Gas 7) and line a baking sheet with baking paper.",
+            "Sift the flour, salt and sugar into a bowl. Rub in the butter with your fingertips, lifting your hands to add air, until it looks like fine crumbs.",
+            "Beat the egg with the buttermilk and stir it in with a round-bladed knife to make a soft, slightly rough dough. Add a little more buttermilk a teaspoon at a time if it's dry.",
+            "Tip onto a floured surface, knead very briefly and press out to about 3cm thick.",
+            "Stamp out rounds with a floured 6cm cutter, then press the scraps together and cut more.",
+            "Space them on the baking sheet, dust lightly with flour and bake for about 12 minutes until deep golden.",
+            "Cool slightly on a wire rack and serve warm."
+            ]
+        },
+        {
+            "name": "Crispy Waffle Cookies",
+            "ingredients": [
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "butter, softened"
+                },
+                {
+                    "quantity": "80",
+                    "measurement": "g",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg, room temperature"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "vanilla extract, a few drops"
+                },
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tsp",
+                    "name": "baking powder (optional)"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 1,
+            "link": "https://cookpad.com/jp/recipes/18080903",
+            "instructions": [
+                "Bring the butter and egg to room temperature. You can soften the butter briefly in the microwave, but don't let it melt.",
+                "Beat the butter with the sugar until light.",
+                "Beat in the egg thoroughly, then add the vanilla.",
+                "Sift in the flour and baking powder and fold in with a spatula using a cutting motion, then press it together into a dough.",
+                "Heat your waffle maker. Roll small portions of dough into balls and bake them in the waffle maker until golden (about 8-10 per batch on a two-plate machine). Bake longer for crispier cookies.",
+                "Leave to cool; they crisp up as they cool.",
+                "Variations: add 2 tbsp instant coffee dissolved in 1 tbsp milk before the flour, or \u00bd tsp cinnamon with the flour, or swap 30g of the flour for ground almonds. Leave out the vanilla for these."
+            ]
+        },
+        {
+            "name": "Japanese-Style Belgian Waffles (Yeasted, with Pearl Sugar)",
+            "ingredients": [
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "strong bread flour"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "5",
+                    "measurement": "g",
+                    "name": "instant dried yeast"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "butter"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "milk (enough to make the egg and milk 130g together)"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "pearl sugar, plus extra for sprinkling"
+                }
+            ],
+            "cuisine": "Belgian",
+            "weight": 3,
+            "link": "https://cookpad.com/jp/recipes/17466034",
+            "instructions": [
+                "Crack the egg into a jug and top up with milk to 130g in total.",
+                "Put everything except the pearl sugar into a bread machine and run the dough cycle.",
+                "When the first rise has finished, add the 30g pearl sugar and restart the dough cycle for about 2 minutes, just until it's evenly mixed in. Stop the machine.",
+                "Without flouring the surface, divide the sticky dough into 8 pieces, shape loosely into balls and leave to rest.",
+                "Meanwhile, preheat the waffle maker (about 5 minutes).",
+                "Sprinkle each ball with a little extra pearl sugar if you like, place it in the centre of the waffle plate and bake for about 4-5 minutes. Watch later batches, as they can burn more easily.",
+                "Reheat leftovers on a low setting in the toaster to crisp them up again."
+            ]
+        },
+        {
+            "name": "Blueberry Baked Cheesecake",
+            "ingredients": [
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "cream cheese, room temperature"
+                },
+                {
+                    "quantity": "80",
+                    "measurement": "g",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg, room temperature, beaten"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "200",
+                    "measurement": "ml",
+                    "name": "double cream"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "lemon juice"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "frozen blueberries"
+                },
+                {
+                    "quantity": "80",
+                    "measurement": "g",
+                    "name": "digestive biscuits"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "unsalted butter"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 2,
+            "link": "https://macaro-ni.jp/51650",
+            "instructions": [
+                "Line a 15-18cm round tin with baking paper and heat the oven to 170C. Make sure the cream cheese and egg are at room temperature.",
+                "Crush the biscuits in a sturdy bag with a rolling pin. Melt the butter (30-40 seconds in the microwave) and work it into the crumbs.",
+                "Press the crumbs firmly into the base of the tin, cover and chill until firm.",
+                "Whisk the cream cheese until smooth (warm it briefly if it's still firm), then mix in the sugar.",
+                "Gradually whisk in the egg, then the cream. Sift in the flour and mix until there are no dry streaks.",
+                "Stir in the lemon juice, then fold in two-thirds of the frozen blueberries (no need to thaw).",
+                "Pour over the base, scatter the rest of the blueberries on top and tap the tin to knock out air bubbles.",
+                "Bake for 45-50 minutes until golden on top. A skewer should come out with moist crumbs but no wet batter.",
+                "Cool, then chill for several hours (ideally half a day) before slicing."
+            ]
         }
+
+
+
     ]
 }

@@ -30,7 +30,7 @@
                     "name": "salt"
                 }
             ],
-            "cuisine": "Bagel",
+            "cuisine": "Salty",
             "weight": 8,
             "link": "https://www.sophisticatedgourmet.com/2009/10/new-york-style-bagel-recipe/#mv-creation-54-jtr",
             "instructions": [
@@ -48,6 +48,422 @@
                 "Bake for 20 - 25 minutes, or until golden brown (I usually err on the side of 20 minutes).",
                 "Cool on a wire rack (Or, if you are impatient like I am, slice one of these babies open and spread on some of your favorite cream cheese or softened butter. Take a bite Oh babyyy!)"
             ]
+        },
+        {
+            "name": "No-Knead Brioche",
+            "ingredients": [
+            {
+                "quantity": "425",
+                "measurement": "g",
+                "name": "plain flour"
+            },
+            {
+                "quantity": "1.5",
+                "measurement": "tsp",
+                "name": "instant yeast"
+            },
+            {
+                "quantity": "1.5",
+                "measurement": "tsp",
+                "name": "salt"
+            },
+            {
+                "quantity": "142",
+                "measurement": "g",
+                "name": "butter, melted"
+            },
+            {
+                "quantity": "3",
+                "measurement": "",
+                "name": "large eggs, room temperature"
+            },
+            {
+                "quantity": "120",
+                "measurement": "ml",
+                "name": "whole milk, lukewarm"
+            },
+            {
+                "quantity": "71",
+                "measurement": "g",
+                "name": "honey"
+            },
+            {
+                "quantity": "1",
+                "measurement": "",
+                "name": "egg, beaten (for egg wash)"
+            }
+            ],
+            "cuisine": "Sweet",
+            "weight": 3,
+            "link": "https://www.biggerbolderbaking.com/brioche-dough/",
+            "instructions": [
+            "Stir the flour, yeast and salt together in a large bowl.",
+            "In a jug, whisk the melted butter, eggs, milk and honey together.",
+            "Stir the wet ingredients into the dry with a wooden spoon for about 30 seconds until smooth, with no big lumps. Cover with cling film.",
+            "Leave at room temperature for 2 hours.",
+            "Press the dough down to knock out the air, cover and refrigerate for at least 12 hours, ideally overnight (up to 48 hours).",
+            "Grease a 23 x 13cm loaf tin.",
+            "Divide the cold dough in half and roll each piece into a 35cm rope. Pinch the tops together, twist into a braid, tuck the ends under and place in the tin.",
+            "Cover and leave to rise for 2-3 hours until doubled in size.",
+            "Heat the oven to 190C (170C fan). Gently brush the loaf with egg wash.",
+            "Bake for 25-30 minutes until deep golden brown, then cool before slicing."
+            ]
+        },
+        {
+            "name": "Japanese Sausage Bread (Wiener Pan)",
+            "ingredients": [
+            {
+                "quantity": "200",
+                "measurement": "g",
+                "name": "strong bread flour"
+            },
+            {
+                "quantity": "3",
+                "measurement": "g",
+                "name": "salt"
+            },
+            {
+                "quantity": "20",
+                "measurement": "g",
+                "name": "sugar"
+            },
+            {
+                "quantity": "3",
+                "measurement": "g",
+                "name": "instant dried yeast"
+            },
+            {
+                "quantity": "20",
+                "measurement": "g",
+                "name": "unsalted butter"
+            },
+            {
+                "quantity": "130",
+                "measurement": "ml",
+                "name": "milk"
+            },
+            {
+                "quantity": "6",
+                "measurement": "",
+                "name": "long frankfurter-style sausages"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "ketchup"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "dried parsley (optional)"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "wholegrain mustard (optional)"
+            }
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "https://cookpad.com/jp/recipes/24107281",
+            "instructions": [
+            "Put all the dough ingredients into a bread machine and run the dough cycle.",
+            "Divide the dough into 6 pieces and rest them for 15 minutes, loosely covered with cling film so they don't dry out.",
+            "On a lightly floured surface, flatten each piece into an oval. Spread a thin layer of mustard in the middle if using, and lay a sausage on top.",
+            "Make cuts in the dough with a dough scraper, then wrap it snugly around the sausage and pinch the seam firmly so it doesn't open in the oven.",
+            "Leave to rise until doubled in size: at room temperature in summer, or about 30 minutes on the oven's proving setting in winter.",
+            "Heat the oven to 200C. Squeeze over ketchup and sprinkle with parsley, then bake for about 15 minutes until golden."
+            ]
+        },
+        {
+            "name": "Butter French Bread Rolls",
+            "ingredients": [
+            {
+                "quantity": "150",
+                "measurement": "g",
+                "name": "bread flour (French-style, or strong white)"
+            },
+            {
+                "quantity": "50",
+                "measurement": "ml",
+                "name": "water"
+            },
+            {
+                "quantity": "50",
+                "measurement": "ml",
+                "name": "milk"
+            },
+            {
+                "quantity": "10",
+                "measurement": "g",
+                "name": "unsalted butter (for the dough)"
+            },
+            {
+                "quantity": "7",
+                "measurement": "g",
+                "name": "sugar"
+            },
+            {
+                "quantity": "2",
+                "measurement": "g",
+                "name": "salt"
+            },
+            {
+                "quantity": "2",
+                "measurement": "g",
+                "name": "instant dried yeast"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "butter, for topping"
+            }
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "https://cookpad.com/jp/recipes/18774010",
+            "instructions": [
+            "Bread machine: add everything except the butter and start the dough cycle. Add the butter after 7-8 minutes of mixing, let the cycle finish, then skip to step 5.",
+            "By hand: make a well in the flour, put the sugar and yeast in the centre and the salt at the edge. Pour in the water and milk warmed to about 35C and mix into a dough.",
+            "Knead for 5-10 minutes, then knead in the butter until smooth and shape into a ball.",
+            "Cover with a damp cloth and leave to rise. It's ready when a floured fingertip pressed into it leaves a hole that doesn't spring back.",
+            "Knock back the dough, divide into 6 pieces, shape loosely and rest for 15 minutes, then shape into rolls.",
+            "Leave to prove until nearly doubled, keeping the surface from drying out. Meanwhile heat the oven and a baking sheet to 250C.",
+            "Dust with flour, slash the tops and lay a sliver of butter in each cut. Mist with water.",
+            "Put in the oven, turn down to 220C and bake for 10 minutes, then lower to 200C for about 5 minutes until golden. Adjust for your oven.",
+            "Cool slightly before eating. For a sweeter dough, use 100ml milk and no water, 15g butter and 15g sugar."
+            ]
+        },
+        {
+            "name": "Fluffy Butter Rolls",
+            "ingredients": [
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "strong bread flour"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "g",
+                    "name": "instant dried yeast"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "ml",
+                    "name": "lukewarm water"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "unsalted butter"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "beaten egg (for the dough)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "beaten egg thinned with a little water (for glazing)"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "https://cookpad.com/jp/recipes/19127481",
+            "instructions": [
+                "Combine all the dough ingredients in a bowl and knead until smooth.",
+                "Cover and leave to rise in the oven on a 35C proving setting for 30 minutes.",
+                "Gently knock back, divide into 8 pieces and roll into balls. Cover with a damp cloth and rest for 10 minutes.",
+                "Flip each ball, flatten lightly, roll into a log, then roll one end under your palm to make a teardrop shape.",
+                "With the thin end towards you, roll the dough away from you with a rolling pin to about 20cm long.",
+                "Roll it back up from the wide end, tuck the end underneath and press lightly. Place on a lined baking sheet.",
+                "Prove at 35C for about 28 minutes, until 1.5 times bigger.",
+                "Heat the oven to 180C. Brush the rolls with the thinned egg (so they don't burn) and bake for 13 minutes until golden."
+            ]
+        },
+        {
+            "name": "Basic Baguette",
+            "ingredients": [
+                {
+                    "quantity": "300",
+                    "measurement": "g",
+                    "name": "French T65 flour (or half strong, half plain flour)"
+                },
+                {
+                    "quantity": "210",
+                    "measurement": "ml",
+                    "name": "water, lukewarm"
+                },
+                {
+                    "quantity": "5.4",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "2.1",
+                    "measurement": "g",
+                    "name": "instant dried yeast"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "strong flour, for dusting (optional)"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "https://utidepropanblog.com/kihonnnobagettoreshipi/",
+            "instructions": [
+                "Mix the water and yeast in a bowl.",
+                "Add the flour and salt and mix, then knead on the worktop for about 10 minutes until smooth (it doesn't need to be glossy).",
+                "Leave to rise somewhere warm (28-30C) for 60 minutes. Knock it back gently, then leave for another 30 minutes. It's ready when a floured fingertip leaves a dent that doesn't spring back.",
+                "Divide into two 300g pieces, cover and rest for 15-20 minutes.",
+                "Shape each piece into a long baguette.",
+                "Prove on a floured cloth (couche), seam side up, at 28-30C for 50-60 minutes.",
+                "Heat the oven to 240C.",
+                "Roll the loaves onto a baking sheet and dust with strong flour if you like.",
+                "Make 3-4 long diagonal slashes along the top of each loaf.",
+                "Bake for 15-20 minutes until deep golden brown. Cool on a rack."
+            ]
+        },
+        {
+            "name": "Twisted Sugar Doughnuts (Twist Sugar Pan)",
+            "ingredients": [
+                {
+                    "quantity": "240",
+                    "measurement": "g",
+                    "name": "strong bread flour"
+                },
+                {
+                    "quantity": "60",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "sugar (for the dough)"
+                },
+                {
+                    "quantity": "6",
+                    "measurement": "g",
+                    "name": "instant dried yeast"
+                },
+                {
+                    "quantity": "0.5",
+                    "measurement": "tsp",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "0.5",
+                    "measurement": "",
+                    "name": "egg, beaten"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "unsalted butter, softened"
+                },
+                {
+                    "quantity": "160",
+                    "measurement": "ml",
+                    "name": "lukewarm water"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "vegetable oil, for deep frying"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "caster sugar, for coating"
+                }
+            ],
+            "cuisine": "Sweet",
+            "weight": 3,
+            "link": "https://delishkitchen.tv/recipes/153392961042776563",
+            "instructions": [
+                "Put all the dough ingredients in a bowl and mix well.",
+                "Knead until smooth. Warm a frying pan over a medium heat for 30 seconds, turn off the heat, then put the dough (in its bowl or covered) in the pan and leave for about 30 minutes until clearly puffed up.",
+                "Divide the dough into 6 equal pieces and roll each into a smooth ball.",
+                "Stretch each piece into a thin rope, fold and twist it. Leave at room temperature for about 20 minutes until slightly risen.",
+                "Heat the oil to 160C and fry the twists, turning, until golden brown all over. Drain briefly.",
+                "Toss in sugar while still warm."
+            ]
+        },
+        {
+            "name": "Honey Milk Nama Shokupan",
+            "ingredients": [
+                {
+                    "quantity": "270",
+                    "measurement": "g",
+                    "name": "strong bread flour"
+                },
+                {
+                    "quantity": "4.5",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "40",
+                    "measurement": "g",
+                    "name": "honey (acacia or other mild honey)"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "double cream"
+                },
+                {
+                    "quantity": "145",
+                    "measurement": "g",
+                    "name": "water"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "g",
+                    "name": "instant dried yeast"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "spray oil, for the tin"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 4,
+            "link": "https://tomiz.com/recipe/pro/detail/20231212150551",
+            "instructions": [
+                "Warm the cream to about 30C (and the water too, in winter). Stir the honey into the water until dissolved.",
+                "Mix the flour, salt and yeast in a bowl. Add the honey water and cream and fold with a spatula into a shaggy dough.",
+                "Turn out and knead until the dough stretches into a thin, see-through film without tearing.",
+                "Shape into a ball, cover and leave to rise at 30C for about 1 hour, until a little more than doubled. A floured finger poked in should leave a hole that doesn't spring back.",
+                "Divide into 2 or 3 pieces, roll into balls, cover and rest for 15 minutes.",
+                "Roll each piece into an oval, fold the sides into the middle, then roll it up and pinch the seam lightly.",
+                "Place seam side down in an oiled 1-loaf (about 900g) tin, ideally a lidded Pullman tin.",
+                "Prove at 30C in a humid spot for 45-50 minutes, until the dough domes just above the rim.",
+                "Heat the oven to 190C and bake for 27-30 minutes, adjusting for your oven.",
+                "Turn out and cool on a rack before slicing."
+            ]
         }
+
+
+
+
+
+
+
     ]
 }

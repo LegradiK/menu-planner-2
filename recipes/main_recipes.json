@@ -4030,6 +4030,420 @@
             "Scatter over the spring onion and cover for another minute.",
             "Spoon the rice into bowls, drizzle with some sauce, top with the beef and onion, and finish with pickled ginger."
             ]
+        },
+        {
+            "name": "Authentic Bolognese Sauce (Ragu alla Bolognese)",
+            "ingredients": [
+            {
+                "quantity": "0.5",
+                "measurement": "tbsp",
+                "name": "olive oil"
+            },
+            {
+                "quantity": "300",
+                "measurement": "g",
+                "name": "beef mince"
+            },
+            {
+                "quantity": "150",
+                "measurement": "g",
+                "name": "pancetta, finely chopped"
+            },
+            {
+                "quantity": "50",
+                "measurement": "g",
+                "name": "carrot, finely chopped"
+            },
+            {
+                "quantity": "50",
+                "measurement": "g",
+                "name": "celery, finely chopped"
+            },
+            {
+                "quantity": "50",
+                "measurement": "g",
+                "name": "onion, finely chopped"
+            },
+            {
+                "quantity": "120",
+                "measurement": "ml",
+                "name": "low-sodium chicken stock"
+            },
+            {
+                "quantity": "120",
+                "measurement": "ml",
+                "name": "dry white wine"
+            },
+            {
+                "quantity": "300",
+                "measurement": "g",
+                "name": "passata"
+            },
+            {
+                "quantity": "240",
+                "measurement": "ml",
+                "name": "whole milk"
+            },
+            {
+                "quantity": "500",
+                "measurement": "g",
+                "name": "tagliatelle"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "salt and black pepper"
+            }
+            ],
+            "cuisine": "Italian",
+            "weight": 4,
+            "link": "https://www.insidetherustickitchen.com/authentic-bolognese-sauce/",
+            "instructions": [
+            "Finely chop the carrot, celery, onion and pancetta.",
+            "Warm the oil in a large pot and gently cook the vegetables and pancetta for 5-10 minutes until soft but not browned.",
+            "Add the mince and brown it, then pour in the wine and let it reduce by half.",
+            "Stir in the passata and stock, cover and simmer very gently for 2 hours.",
+            "Uncover, stir in the milk and simmer for another hour. Season with salt and pepper.",
+            "Cook the tagliatelle, toss it through the ragu until coated, and serve."
+            ]
+        },
+        {
+            "name": "Instant Pot BBQ Pulled Pork",
+            "ingredients": [
+            {
+                "quantity": "3",
+                "measurement": "tbsp",
+                "name": "brown sugar"
+            },
+            {
+                "quantity": "4",
+                "measurement": "tsp",
+                "name": "kosher salt"
+            },
+            {
+                "quantity": "1",
+                "measurement": "tbsp",
+                "name": "paprika"
+            },
+            {
+                "quantity": "2",
+                "measurement": "tsp",
+                "name": "chilli powder"
+            },
+            {
+                "quantity": "1",
+                "measurement": "tsp",
+                "name": "dried oregano"
+            },
+            {
+                "quantity": "1",
+                "measurement": "tsp",
+                "name": "garlic powder"
+            },
+            {
+                "quantity": "1",
+                "measurement": "tsp",
+                "name": "mustard powder"
+            },
+            {
+                "quantity": "0.5",
+                "measurement": "tsp",
+                "name": "cayenne pepper"
+            },
+            {
+                "quantity": "0.5",
+                "measurement": "tsp",
+                "name": "ground cumin"
+            },
+            {
+                "quantity": "0.5",
+                "measurement": "tsp",
+                "name": "black pepper"
+            },
+            {
+                "quantity": "1.8",
+                "measurement": "kg",
+                "name": "pork shoulder, trimmed and cut into 7-8cm chunks"
+            },
+            {
+                "quantity": "1",
+                "measurement": "tbsp",
+                "name": "vegetable oil"
+            },
+            {
+                "quantity": "240",
+                "measurement": "ml",
+                "name": "chicken stock"
+            },
+            {
+                "quantity": "6",
+                "measurement": "tbsp",
+                "name": "apple cider vinegar, divided"
+            },
+            {
+                "quantity": "510",
+                "measurement": "g",
+                "name": "BBQ sauce (1 bottle)"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "brioche buns or rolls, to serve"
+            }
+            ],
+            "cuisine": "American",
+            "weight": 3,
+            "link": "https://damndelicious.net/2020/08/08/instant-pot-bbq-pulled-pork/",
+            "instructions": [
+            "Set the Instant Pot to the high saute setting.",
+            "Mix the brown sugar, salt and all the spices, then rub the mixture all over the pork.",
+            "Add the oil and brown the pork in two batches, 3-4 minutes per batch.",
+            "Pour in the stock and 4 tbsp of the vinegar, scraping up the browned bits from the bottom.",
+            "Seal and cook on high pressure for 40 minutes, then quick-release the pressure.",
+            "Lift out the pork and shred it with two forks. Stir in the remaining 2 tbsp vinegar and season to taste.",
+            "Serve straight away with the BBQ sauce, in buns if you like."
+            ]
+        },
+        {
+            "name": "Mediterranean Roast Leg of Lamb with Potatoes",
+            "ingredients": [
+            {
+                "quantity": "2",
+                "measurement": "kg",
+                "name": "bone-in leg of lamb, fat trimmed"
+            },
+            {
+                "quantity": "5",
+                "measurement": "",
+                "name": "garlic cloves, sliced (for studding the lamb)"
+            },
+            {
+                "quantity": "480",
+                "measurement": "ml",
+                "name": "water"
+            },
+            {
+                "quantity": "8",
+                "measurement": "",
+                "name": "medium potatoes, peeled and cut into wedges"
+            },
+            {
+                "quantity": "1",
+                "measurement": "",
+                "name": "onion, cut into wedges"
+            },
+            {
+                "quantity": "1",
+                "measurement": "tsp",
+                "name": "paprika (for the potatoes)"
+            },
+            {
+                "quantity": "1",
+                "measurement": "tsp",
+                "name": "garlic powder"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "salt and black pepper"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "extra virgin olive oil"
+            },
+            {
+                "quantity": "15",
+                "measurement": "",
+                "name": "garlic cloves, peeled (for the rub)"
+            },
+            {
+                "quantity": "2",
+                "measurement": "tbsp",
+                "name": "dried oregano"
+            },
+            {
+                "quantity": "2",
+                "measurement": "tbsp",
+                "name": "dried mint"
+            },
+            {
+                "quantity": "1",
+                "measurement": "tbsp",
+                "name": "paprika (for the rub)"
+            },
+            {
+                "quantity": "0.5",
+                "measurement": "tbsp",
+                "name": "ground nutmeg"
+            },
+            {
+                "quantity": "120",
+                "measurement": "ml",
+                "name": "extra virgin olive oil (for the rub)"
+            },
+            {
+                "quantity": "2",
+                "measurement": "",
+                "name": "lemons, juiced"
+            },
+            {
+                "quantity": "",
+                "measurement": "",
+                "name": "fresh parsley, to garnish (optional)"
+            }
+            ],
+            "cuisine": "Mediterranean",
+            "weight": 4,
+            "link": "https://www.themediterraneandish.com/mediterranean-style-leg-of-lamb-recipe-with-potatoes/",
+            "instructions": [
+            "Take the lamb out of the fridge about 1 hour before cooking.",
+            "Blend the 15 garlic cloves, oregano, mint, paprika, nutmeg, 120ml olive oil and lemon juice in a food processor until smooth.",
+            "Pat the lamb dry, cut a few slits on both sides and season with salt and pepper.",
+            "Sear the lamb on a rack under a hot grill for 5-7 minutes per side until browned. Then set the oven to 160C (140C fan).",
+            "Once it's cool enough to handle, push the sliced garlic into the slits and coat the whole leg with the rub. Set it on a rack in a roasting tin and pour the water into the tin.",
+            "Toss the potato and onion wedges with the paprika, garlic powder, a little salt and a drizzle of oil, and arrange them around the lamb.",
+            "Cover loosely with foil and roast for 1 hour, then uncover and roast for 15-20 minutes more until the lamb reaches 52C inside (medium).",
+            "Rest the lamb for 15-20 minutes, then carve and serve with the potatoes, garnished with parsley.",
+            "For fall-apart lamb instead: roast covered for 4-4.5 hours, add the potatoes for the last 1-1.5 hours, then uncover for 15-20 minutes."
+            ]
+        },
+        {
+            "name": "Waterless Onion Curry (Mizu Nashi Curry)",
+            "ingredients": [
+                {
+                    "quantity": "250",
+                    "measurement": "g",
+                    "name": "chicken thigh, cut into 4cm pieces"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "",
+                    "name": "new-season (sweet) onions, thinly sliced"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "new potatoes, unpeeled, cut into chunks"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "tomato, roughly chopped"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "carrot (about half), cut into chunks"
+                },
+                {
+                    "quantity": "90",
+                    "measurement": "g",
+                    "name": "Japanese curry roux (half a box)"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "vegetable oil"
+                },
+                {
+                    "quantity": "600",
+                    "measurement": "g",
+                    "name": "cooked Japanese short-grain rice"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 2,
+            "link": "https://macaro-ni.jp/120099",
+            "instructions": [
+                "Trim the excess skin and fat from the chicken and cut it into 4cm pieces. Cut the unpeeled potatoes and the carrot into chunks, and roughly chop the tomato.",
+                "Slice the onions thinly across the grain.",
+                "Heat the oil in a pot and cook the chicken with half the onions until the onions are lightly golden.",
+                "Add the rest of the onions, the carrot, potatoes and tomato. Cover and cook over a low-medium heat for 15 minutes. Don't add any water; the vegetables release their own juices.",
+                "Stir well, turn off the heat and stir in the curry roux until fully dissolved.",
+                "Warm through over a low heat for about 5 minutes, then serve with rice."
+            ]
+        },
+        {
+            "name": "Rich Thai Green Curry (Delish Kitchen-Japanese recipe ver)",
+            "ingredients": [
+                {
+                    "quantity": "250",
+                    "measurement": "g",
+                    "name": "chicken thigh, bite-sized pieces"
+                },
+                {
+                    "quantity": "160",
+                    "measurement": "g",
+                    "name": "aubergine (2 small)"
+                },
+                {
+                    "quantity": "75",
+                    "measurement": "g",
+                    "name": "red pepper (half), cut into 1cm strips"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "bamboo shoots (tinned), drained"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "vegetable oil"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "Thai green curry paste"
+                },
+                {
+                    "quantity": "400",
+                    "measurement": "ml",
+                    "name": "coconut milk"
+                },
+                {
+                    "quantity": "300",
+                    "measurement": "ml",
+                    "name": "water"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "fish sauce"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "Thai basil, to garnish"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "jasmine rice, to serve"
+                }
+            ],
+            "cuisine": "Thai",
+            "weight": 2,
+            "link": "https://delishkitchen.tv/recipes/511727955714507175",
+            "instructions": [
+                "Cut the aubergine into bite-sized chunks, the pepper into 1cm strips and the bamboo shoots into pieces. Cut the chicken into bite-sized pieces.",
+                "Heat 1 tbsp oil over a medium heat and cook the chicken until it turns white. Add the vegetables and bamboo shoots and stir-fry for 3-4 minutes, then tip everything out of the pan.",
+                "Add the remaining oil, turn the heat to low and fry the curry paste for 2-3 minutes until fragrant.",
+                "Pour in the water and coconut milk and simmer over a medium heat for about 5 minutes, stirring now and then.",
+                "Return the chicken and vegetables. Once it boils, cover and simmer on low for about 5 minutes until cooked through.",
+                "Stir in the sugar and fish sauce, then serve topped with basil, with jasmine rice."
+            ]
         }
+
+
+
+
+
     ]
 }
