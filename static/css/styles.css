@@ -685,6 +685,9 @@ select.form-control,
   padding: 14px 18px;
   background-color: var(--surface);
   transition: background-color 0.15s;
+  display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .recipe-item summary:hover,

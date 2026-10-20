@@ -18,6 +18,14 @@
       <nav>
         <ul class="nav-links">
           <li>
+            <a class="nav-btn" href="{{ url_for('my_week') }}">
+              My week
+              	{% if plan|length > 0 %}
+                  <span class="badge bg-primary">{{ plan|length }}</span>
+                {% endif %}
+            </a>
+          </li>
+          <li>
             <a class="nav-btn {% if request.endpoint == 'all_recipes' %}active{% endif %}"
                href="{{ url_for('all_recipes') }}">All recipes</a>
           </li>

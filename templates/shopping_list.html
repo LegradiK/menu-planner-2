@@ -1,50 +1,79 @@
 {% extends 'base.html' %}
-{% block title %}A weekly recipes/shopping list creator{% endblock %}
+{% block title %}Shopping list{% endblock %}
 
-{% block styling%}
-{{ super() }}
+{% block styling %}
+	{{ super() }}
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="col-10 mx-auto mt-3">
-        <div class="card border-secondary">
-            <div class="card-header">Shopping list</div>
-            <div class="card-body text-secondary">
-                <h1>Shopping List</h1>
-                <br>
-                <div class="categories category-header">
-                    {% for category, items in categorized_ingredients.items() %}
-                        <h3>{{ category }}</h3>
-                        {% if items %}
-                            <ol class="list-group">
-                                {% for item in items %}
-                                    <li class="list-group-item">{{ item['quantity'] }} {{ item['measurement'] }} {{ item['name'] }}</li>
-                                {% endfor %}
-                            </ol>
-                        {% else %}
-                            <p>No items in this category.</p>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                </ol>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="row col-6 mx-auto mt-3">
-        <div class="col"></div>
-        <div class="button-container col">
-            <a class="btn btn-warning btn-lg centered-btn" href="{{ url_for('home') }}" role="button">
-                Home
-            </a>
-        </div>
-        <div class="button-container col">
-            <a class="btn btn-warning btn-lg centered-btn" href="{{ url_for('get_recipes') }}" role="button">
-                New recipes
-            </a>
-        </div>
-        <div class="col"></div>
-    </div>
+<div class="container mt-5 mb-5" style="max-width: 760px;">
+	<h2 class="text-center mb-2">Shopping list</h2>
+
+	{% set total = categorized_ingredients.values()|map('length')|sum %}
+	<p class="text-center text-muted mb-4">
+		{{ total }} item{{ '' if total == 1 else 's' }} for this week
+	</p>
+
+    	{% if editable %}
+		<form method="POST" action="{{ url_for('shopping_add') }}" class="row g-2 mb-4 d-print-none">
+			{{ csrf_token() if csrf_token is defined }}
+			<div class="col-3 col-sm-2">
+				<input name="quantity" class="form-control" placeholder="Qty">
+			</div>
+			<div class="col-3 col-sm-2">
+				<input name="measurement" class="form-control" placeholder="Unit">
+			</div>
+			<div class="col-6 col-sm-6">
+				<input name="name" class="form-control" placeholder="e.g. kitchen roll" required>
+			</div>
+			<div class="col-12 col-sm-2 d-grid">
+				<button class="btn btn-primary">Add</button>
+			</div>
+		</form>
+	{% endif %}
+
+	{% if total %}
+		{% for category, items in categorized_ingredients.items() if items %}
+			<div class="card border-secondary mb-3">
+				<div class="card-header fw-semibold">
+					{{ category }}
+					<span class="badge bg-secondary ms-1">{{ items|length }}</span>
+				</div>
+				<ul class="list-group list-group-flush">
+					{% for item in items %}
+						<li class="list-group-item">
+							<label class="d-flex align-items-center gap-2 mb-0">
+								<input class="form-check-input mt-0" type="checkbox">
+								<span>
+									{% if item['quantity'] %}<strong>{{ item['quantity'] }} {{ item['measurement'] }}</strong>{% endif %}
+									{{ item['name'] }}
+								</span>
+							</label>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endfor %}
+	{% else %}
+		<p class="text-center text-muted">
+			Your shopping list is empty.
+			<a href="{{ url_for('all_recipes') }}">Pick some recipes</a> for your week first.
+		</p>
+	{% endif %}
+
+	<div class="d-flex justify-content-center flex-wrap gap-2 mt-4 d-print-none">
+		<a class="btn btn-outline-secondary" href="{{ url_for('my_week') }}">← Back to my week</a>
+		<button type="button" class="btn btn-outline-secondary" onclick="window.print()">Print</button>
+		<a class="btn btn-warning" href="{{ url_for('get_recipes') }}">New recipes</a>
+		<a class="btn btn-warning" href="{{ url_for('home') }}">Home</a>
+	</div>
+</div>
+
+<style>
+	/* Strike through items as they're ticked off */
+	.list-group-item input:checked + span {
+		text-decoration: line-through;
+		color: var(--bs-secondary-color, #6c757d);
+	}
+</style>
 {% endblock %}

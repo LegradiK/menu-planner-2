@@ -7,57 +7,57 @@
                 {
                     "quantity": 2,
                     "measurement": "cups",
-                    "name":"cups flour"
+                    "name": "cups flour"
                 },
                 {
                     "quantity": 2,
                     "measurement": "cups",
-                     "name":"sugar"
+                    "name": "sugar"
                 },
                 {
                     "quantity": 2,
                     "measurement": "teaspoons",
-                    "name":"baking powder"
+                    "name": "baking powder"
                 },
                 {
                     "quantity": 0.75,
                     "measurement": "cups",
-                    "name":"cocoa powder"
+                    "name": "cocoa powder"
                 },
                 {
                     "quantity": 1.5,
                     "measurement": "teaspoons",
-                    "name":"baking soda"
+                    "name": "baking soda"
                 },
                 {
                     "quantity": 1,
                     "measurement": "teaspoon",
-                    "name":"salt"
+                    "name": "salt"
                 },
                 {
                     "quantity": 1,
                     "measurement": "cup",
-                    "name":"milk"
+                    "name": "milk"
                 },
                 {
                     "quantity": 0.5,
                     "measurement": "cup",
-                    "name":"vegetable oil"
+                    "name": "vegetable oil"
                 },
                 {
                     "quantity": 2,
                     "measurement": "pieces",
-                    "name":"eggs"
+                    "name": "eggs"
                 },
                 {
                     "quantity": 2,
                     "measurement": "teaspoons",
-                    "name":"vanilla extract"
+                    "name": "vanilla extract"
                 },
                 {
                     "quantity": 1,
                     "measurement": "cup",
-                    "name":"boiling water"
+                    "name": "boiling water"
                 }
             ],
             "cuisine": "chocolate",
@@ -75,158 +75,158 @@
         {
             "name": "Belgian Waffles",
             "ingredients": [
-            {
-                "quantity": "220",
-                "measurement": "g",
-                "name": "plain flour"
-            },
-            {
-                "quantity": "3",
-                "measurement": "tsp",
-                "name": "baking powder"
-            },
-            {
-                "quantity": "0.5",
-                "measurement": "tsp",
-                "name": "salt"
-            },
-            {
-                "quantity": "2",
-                "measurement": "",
-                "name": "large eggs, separated"
-            },
-            {
-                "quantity": "415",
-                "measurement": "ml",
-                "name": "milk (or dairy-free milk)"
-            },
-            {
-                "quantity": "120",
-                "measurement": "ml",
-                "name": "vegetable oil (or melted coconut oil)"
-            },
-            {
-                "quantity": "",
-                "measurement": "",
-                "name": "toppings: maple syrup, icing sugar, berries, banana, Nutella or whipped cream"
-            }
+                {
+                    "quantity": "220",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tsp",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "0.5",
+                    "measurement": "tsp",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "large eggs, separated"
+                },
+                {
+                    "quantity": "415",
+                    "measurement": "ml",
+                    "name": "milk (or dairy-free milk)"
+                },
+                {
+                    "quantity": "120",
+                    "measurement": "ml",
+                    "name": "vegetable oil (or melted coconut oil)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "toppings: maple syrup, icing sugar, berries, banana, Nutella or whipped cream"
+                }
             ],
             "cuisine": "Belgian",
             "weight": 2,
             "link": "https://tastesbetterfromscratch.com/belgian-waffles/",
             "instructions": [
-            "Preheat and grease your waffle iron.",
-            "Sift the flour, baking powder and salt into a large bowl.",
-            "Separate the eggs, making sure no yolk gets into the whites. Whisk the whites with a hand mixer to stiff peaks.",
-            "Mix the milk and oil into the yolks, then stir this into the dry ingredients.",
-            "Gently fold in the whisked egg whites, without overmixing.",
-            "Spoon the batter onto the hot waffle iron and cook according to its instructions until golden.",
-            "Serve straight away with your favourite toppings."
+                "Preheat and grease your waffle iron.",
+                "Sift the flour, baking powder and salt into a large bowl.",
+                "Separate the eggs, making sure no yolk gets into the whites. Whisk the whites with a hand mixer to stiff peaks.",
+                "Mix the milk and oil into the yolks, then stir this into the dry ingredients.",
+                "Gently fold in the whisked egg whites, without overmixing.",
+                "Spoon the batter onto the hot waffle iron and cook according to its instructions until golden.",
+                "Serve straight away with your favourite toppings."
             ]
         },
         {
             "name": "Tiramisu (Original Italian Recipe)",
             "ingredients": [
-            {
-                "quantity": "300",
-                "measurement": "g",
-                "name": "Savoiardi ladyfingers (about 30)"
-            },
-            {
-                "quantity": "500",
-                "measurement": "g",
-                "name": "mascarpone, cold"
-            },
-            {
-                "quantity": "4",
-                "measurement": "",
-                "name": "medium eggs, separated"
-            },
-            {
-                "quantity": "100",
-                "measurement": "g",
-                "name": "caster sugar"
-            },
-            {
-                "quantity": "300",
-                "measurement": "ml",
-                "name": "strong espresso, cooled"
-            },
-            {
-                "quantity": "2",
-                "measurement": "tbsp",
-                "name": "Marsala wine (optional)"
-            },
-            {
-                "quantity": "",
-                "measurement": "",
-                "name": "unsweetened cocoa powder, for dusting"
-            }
+                {
+                    "quantity": "300",
+                    "measurement": "g",
+                    "name": "Savoiardi ladyfingers (about 30)"
+                },
+                {
+                    "quantity": "500",
+                    "measurement": "g",
+                    "name": "mascarpone, cold"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "",
+                    "name": "medium eggs, separated"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "300",
+                    "measurement": "ml",
+                    "name": "strong espresso, cooled"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "Marsala wine (optional)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "unsweetened cocoa powder, for dusting"
+                }
             ],
             "cuisine": "Italian",
             "weight": 2,
             "link": "https://www.recipesfromitaly.com/tiramisu-original-italian-recipe/",
             "instructions": [
-            "Brew the espresso and let it cool, then stir in the Marsala if using.",
-            "Whisk the egg whites to stiff peaks, making sure no yolk gets in.",
-            "In another bowl, whisk the yolks with the sugar for 3-5 minutes until pale and slightly thick.",
-            "Beat in the cold mascarpone until smooth.",
-            "Gently fold in the egg whites, lifting from the bottom to keep the cream airy.",
-            "Dip each ladyfinger in the coffee for just 1-2 seconds and lay a single layer in your dish.",
-            "Spread over half the cream, add a second layer of dipped ladyfingers, then cover with the rest of the cream and smooth the top.",
-            "Dust generously with cocoa powder and chill for at least 3 hours, ideally overnight."
+                "Brew the espresso and let it cool, then stir in the Marsala if using.",
+                "Whisk the egg whites to stiff peaks, making sure no yolk gets in.",
+                "In another bowl, whisk the yolks with the sugar for 3-5 minutes until pale and slightly thick.",
+                "Beat in the cold mascarpone until smooth.",
+                "Gently fold in the egg whites, lifting from the bottom to keep the cream airy.",
+                "Dip each ladyfinger in the coffee for just 1-2 seconds and lay a single layer in your dish.",
+                "Spread over half the cream, add a second layer of dipped ladyfingers, then cover with the rest of the cream and smooth the top.",
+                "Dust generously with cocoa powder and chill for at least 3 hours, ideally overnight."
             ]
         },
         {
             "name": "Classic British Scones",
             "ingredients": [
-            {
-                "quantity": "250",
-                "measurement": "g",
-                "name": "self-raising flour"
-            },
-            {
-                "quantity": "1",
-                "measurement": "pinch",
-                "name": "salt"
-            },
-            {
-                "quantity": "50",
-                "measurement": "g",
-                "name": "caster sugar"
-            },
-            {
-                "quantity": "50",
-                "measurement": "g",
-                "name": "unsalted butter, chilled and diced"
-            },
-            {
-                "quantity": "1",
-                "measurement": "",
-                "name": "medium egg"
-            },
-            {
-                "quantity": "100",
-                "measurement": "ml",
-                "name": "buttermilk, plus extra if needed"
-            },
-            {
-                "quantity": "",
-                "measurement": "",
-                "name": "clotted cream and jam, to serve"
-            }
+                {
+                    "quantity": "250",
+                    "measurement": "g",
+                    "name": "self-raising flour"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "unsalted butter, chilled and diced"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "medium egg"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "ml",
+                    "name": "buttermilk, plus extra if needed"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "clotted cream and jam, to serve"
+                }
             ],
             "cuisine": "British",
             "weight": 1,
             "link": "https://thegreatbritishbakeoff.co.uk/recipes/all/scones/",
             "instructions": [
-            "Heat the oven to 220C (200C fan, Gas 7) and line a baking sheet with baking paper.",
-            "Sift the flour, salt and sugar into a bowl. Rub in the butter with your fingertips, lifting your hands to add air, until it looks like fine crumbs.",
-            "Beat the egg with the buttermilk and stir it in with a round-bladed knife to make a soft, slightly rough dough. Add a little more buttermilk a teaspoon at a time if it's dry.",
-            "Tip onto a floured surface, knead very briefly and press out to about 3cm thick.",
-            "Stamp out rounds with a floured 6cm cutter, then press the scraps together and cut more.",
-            "Space them on the baking sheet, dust lightly with flour and bake for about 12 minutes until deep golden.",
-            "Cool slightly on a wire rack and serve warm."
+                "Heat the oven to 220C (200C fan, Gas 7) and line a baking sheet with baking paper.",
+                "Sift the flour, salt and sugar into a bowl. Rub in the butter with your fingertips, lifting your hands to add air, until it looks like fine crumbs.",
+                "Beat the egg with the buttermilk and stir it in with a round-bladed knife to make a soft, slightly rough dough. Add a little more buttermilk a teaspoon at a time if it's dry.",
+                "Tip onto a floured surface, knead very briefly and press out to about 3cm thick.",
+                "Stamp out rounds with a floured 6cm cutter, then press the scraps together and cut more.",
+                "Space them on the baking sheet, dust lightly with flour and bake for about 12 minutes until deep golden.",
+                "Cool slightly on a wire rack and serve warm."
             ]
         },
         {
@@ -273,7 +273,7 @@
                 "Sift in the flour and baking powder and fold in with a spatula using a cutting motion, then press it together into a dough.",
                 "Heat your waffle maker. Roll small portions of dough into balls and bake them in the waffle maker until golden (about 8-10 per batch on a two-plate machine). Bake longer for crispier cookies.",
                 "Leave to cool; they crisp up as they cool.",
-                "Variations: add 2 tbsp instant coffee dissolved in 1 tbsp milk before the flour, or \u00bd tsp cinnamon with the flour, or swap 30g of the flour for ground almonds. Leave out the vanilla for these."
+                "Variations: add 2 tbsp instant coffee dissolved in 1 tbsp milk before the flour, or ½ tsp cinnamon with the flour, or swap 30g of the flour for ground almonds. Leave out the vanilla for these."
             ]
         },
         {
@@ -401,9 +401,316 @@
                 "Bake for 45-50 minutes until golden on top. A skewer should come out with moist crumbs but no wet batter.",
                 "Cool, then chill for several hours (ideally half a day) before slicing."
             ]
+        },
+        {
+            "name": "Taiyaki (Fish-Shaped Red Bean Cakes)",
+            "ingredients": [
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "25",
+                    "measurement": "g",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "130",
+                    "measurement": "ml",
+                    "name": "milk"
+                },
+                {
+                    "quantity": "140",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "g",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "g",
+                    "name": "bicarbonate of soda"
+                },
+                {
+                    "quantity": "10",
+                    "measurement": "g",
+                    "name": "rice bran oil (or vegetable oil)"
+                },
+                {
+                    "quantity": "300",
+                    "measurement": "g",
+                    "name": "sweet red bean paste (tsubuan)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "oil, for greasing the pan"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 2,
+            "link": "https://michill.jp/recipe/210207",
+            "instructions": [
+                "Divide the red bean paste into six 50g portions and shape each into a thin log.",
+                "Whisk the egg, sugar and salt together, then whisk in the milk.",
+                "Sift in the flour, baking powder and bicarbonate of soda and mix.",
+                "Add the oil and fold with a spatula until the batter is smooth.",
+                "Heat a taiyaki pan over a medium heat on a gas hob (or use an electric taiyaki maker) and lightly oil both sides.",
+                "Pour about 2 tbsp batter into each mould and spread it out. When small bubbles appear, lay a bean paste log on top and cover with another spoonful of batter.",
+                "Close the pan, press, flip straight away and cook on a low-medium heat for about 3 minutes.",
+                "Flip again and cook for 2-3 minutes more until golden brown, keeping the heat low so they don't burn.",
+                "Trim any thin edges with scissors if you like (or leave them as crispy 'wings') and serve warm."
+            ]
+        },
+        {
+            "name": "Fluffy Japanese Hotcakes",
+            "ingredients": [
+                {
+                    "quantity": "150",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "5",
+                    "measurement": "g",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "ml",
+                    "name": "milk"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "vegetable oil"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "butter and maple syrup, to serve"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 1,
+            "link": "https://oceans-nadia.com/user/206995/recipe/480375",
+            "instructions": [
+                "Sift the flour and baking powder together.",
+                "Beat the egg in a bowl, whisk in the milk, then stir in the sugar, salt and oil.",
+                "Add the flour and fold in gently, stopping as soon as it comes together (a few lumps are fine).",
+                "Heat a non-stick frying pan, then rest it briefly on a damp cloth to even out the heat. Return to a very low heat and pour in a ladleful of batter.",
+                "Cook for about 3 minutes until small bubbles appear on top, then flip and cook for 2-3 minutes more. A skewer pushed into the middle should come out clean.",
+                "Repeat to make 3 hotcakes and serve with butter and maple syrup."
+            ]
+        },
+        {
+            "name": "Easy Anko from Tinned Aduki Beans (UK-Style)",
+            "ingredients": [
+                {
+                    "quantity": "230",
+                    "measurement": "g",
+                    "name": "tinned aduki beans (1 tin, drained weight), with their liquid"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "150",
+                    "measurement": "ml",
+                    "name": "water (enough to just cover the beans)"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "salt (optional)"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 1,
+            "link": "https://cookpad.com/jp/recipes/18733158",
+            "instructions": [
+                "Tip the beans and all their liquid from the tin into a saucepan.",
+                "Add just enough water to cover the beans (about 150ml) and stir in the sugar.",
+                "Bring to the boil, then turn the heat down low and keep cooking, mashing and stirring, as the liquid reduces.",
+                "When it has thickened and most of the liquid has gone, take it off the heat and add a pinch of salt to taste. It firms up more as it cools."
+            ]
+        },
+        {
+            "name": "Rich Chocolate Brownies",
+            "ingredients": [
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "milk or dark chocolate, broken into pieces"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "butter"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "eggs"
+                },
+                {
+                    "quantity": "40",
+                    "measurement": "g",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "70",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "nuts or dried fruit, to taste (optional)"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 1,
+            "link": "https://cookpad.com/jp/recipes/18715357",
+            "instructions": [
+                "Heat the oven to 180C and grease (or line) an 18-20cm square tin.",
+                "Put the chocolate and butter in a heatproof bowl, cover loosely and microwave for about 1.5 minutes (or melt over a pan of simmering water). Stir until smooth.",
+                "Whisk in the eggs and sugar until smooth.",
+                "Sift in the flour and fold gently with a spatula, then fold in any nuts or dried fruit. Don't overmix or the brownies will be heavy.",
+                "Spread evenly in the tin and bake for 20-25 minutes, adjusting for your oven.",
+                "Cool slightly, lift out of the tin, cool completely, then cut into squares."
+            ]
+        },
+        {
+            "name": "Basic Mushipan (Japanese Steamed Cakes)",
+            "ingredients": [
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "ml",
+                    "name": "milk"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "vegetable oil"
+                },
+                {
+                    "quantity": "0.5",
+                    "measurement": "tbsp",
+                    "name": "baking powder"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 1,
+            "link": "https://www.kurashiru.com/recipes/94d18aa4-7a82-4ce7-93a4-de25044a84ce",
+            "instructions": [
+                "Line 5 small heatproof ramekins (about 7cm wide) with paper cases. Bring the water in your steamer to the boil and wrap a tea towel around the lid to catch drips.",
+                "Whisk the egg and sugar together until thick and creamy.",
+                "Stir in the milk and oil.",
+                "Sift in the flour and baking powder, mix until smooth, then pour into the ramekins.",
+                "Once the steam is rising, put the ramekins in the steamer and steam over a medium heat for 20 minutes.",
+                "A skewer pushed into the middle should come out clean. Serve warm."
+            ]
+        },
+        {
+            "name": "Chewy Mochi-Mochi Crepes",
+            "ingredients": [
+                {
+                    "quantity": "40",
+                    "measurement": "g",
+                    "name": "strong bread flour"
+                },
+                {
+                    "quantity": "40",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "eggs"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "175",
+                    "measurement": "ml",
+                    "name": "milk (150-200ml)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "vanilla extract, a few drops"
+                },
+                {
+                    "quantity": "5",
+                    "measurement": "g",
+                    "name": "rice bran oil or melted butter"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "fillings: whipped cream, fruit, chocolate or jam"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 2,
+            "link": "https://ouchicrepepekoko.com/mochi-mochi-crepe-recipe/",
+            "instructions": [
+                "Whisk the eggs and sugar together in a bowl.",
+                "Add 150ml of the milk in two goes, mixing well after each.",
+                "Sift in both flours and whisk until smooth with no lumps. If the batter is too thick to pass through a sieve, add more milk a little at a time (up to 200ml in total).",
+                "Stir in the vanilla and the oil or melted butter.",
+                "Cover and chill overnight to rest.",
+                "Heat a large crepe pan or frying pan over a medium heat for 1 minute, then take it off the heat for 1 minute.",
+                "Pour in a ladleful of batter, spread it thin and round, and cook over a medium heat for about 30 seconds.",
+                "Slide onto a wire rack to cool slightly. Repeat to make 5-6 crepes.",
+                "Fill with whipped cream, fruit or your favourite fillings, roll up and serve."
+            ]
         }
-
-
-
     ]
 }

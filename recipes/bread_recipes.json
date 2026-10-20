@@ -6,27 +6,27 @@
             "ingredients": [
                 {
                     "quantity": "6",
-                    "measurement":"grams",
+                    "measurement": "grams",
                     "name": "active dry yeast"
                 },
                 {
                     "quantity": "19",
-                    "measurement":"grams",
+                    "measurement": "grams",
                     "name": "granulated sugar"
                 },
                 {
                     "quantity": "300",
-                    "measurement":"ml",
+                    "measurement": "ml",
                     "name": "warm water"
                 },
                 {
                     "quantity": "440",
-                    "measurement":"grams",
+                    "measurement": "grams",
                     "name": "bread flour or high gluten flour (you may need up to 1/2 cup / 60g for kneading)"
                 },
                 {
                     "quantity": "6",
-                    "measurement":"grams",
+                    "measurement": "grams",
                     "name": "salt"
                 }
             ],
@@ -36,13 +36,13 @@
             "instructions": [
                 "In 120ml of the warm water, pour in the sugar and yeast. Do not stir. Let it sit for five minutes, and then stir the yeast and sugar mixture until it all dissolves in the water.",
                 "Mix the flour and salt in a large bowl. Make a well in the middle and pour in the yeast and sugar mixture.",
-                "Pour 1/3 cup / 80ml of warm water into the well. Mix and stir in the rest of the water (the scant 1/2 cup / 100ml that is remaining), as needed. Depending on where you live, you may need to add an additional couple tablespoons to about \u00bc cup/60ml of water. You want a moist and firm dough after you have mixed it.",
+                "Pour 1/3 cup / 80ml of warm water into the well. Mix and stir in the rest of the water (the scant 1/2 cup / 100ml that is remaining), as needed. Depending on where you live, you may need to add an additional couple tablespoons to about ¼ cup/60ml of water. You want a moist and firm dough after you have mixed it.",
                 "On a floured countertop, knead the dough for about 10 minutes until it is smooth and elastic. Try working in as much flour as possible to form a firm and stiff dough.",
                 "Lightly brush a large bowl with oil and turn the dough to coat. Cover the bowl with a damp dish towel. Let rise in a warm place for 1 hour, until the dough has doubled in size. Punch the dough down, and let it rest for another 10 minutes.",
-                "Carefully divide the dough into 8 pieces (I used a scale to be extra precise, but it\u2019s not necessary). Shape each piece into a round. Now, take a dough ball, and press it gently against the countertop (or whatever work surface you\u2019re using) moving your hand and the ball in a circular motion pulling the dough into itself while reducing the pressure on top of the dough slightly until a perfect dough ball forms (as pictured). Repeat with 7 other dough rounds.",
-                "Coat a finger in flour, and gently press your finger into the center of each dough ball to form a ring. Stretch the ring to about \u2153 the diameter of the bagel and place on a lightly oiled cookie sheet. Repeat the same step with the remaining dough.",
+                "Carefully divide the dough into 8 pieces (I used a scale to be extra precise, but it’s not necessary). Shape each piece into a round. Now, take a dough ball, and press it gently against the countertop (or whatever work surface you’re using) moving your hand and the ball in a circular motion pulling the dough into itself while reducing the pressure on top of the dough slightly until a perfect dough ball forms (as pictured). Repeat with 7 other dough rounds.",
+                "Coat a finger in flour, and gently press your finger into the center of each dough ball to form a ring. Stretch the ring to about ⅓ the diameter of the bagel and place on a lightly oiled cookie sheet. Repeat the same step with the remaining dough.",
                 "After shaping the bagels and placing them on the cookie sheet, cover with a damp kitchen towel and allow to rest for 10 minutes. Meanwhile, preheat your oven to 425F / 220C / Gas Mark 7.",
-                "Bring a large pot of water to a boil. Reduce the heat. Use a slotted spoon or skimmer to lower the bagels into the water. Boil as many as you are comfortable with boiling. Once the bagels are in, it shouldnt take too long for them to float to the top (a couple seconds). Let them sit there for 1 minute, and then flip them over to boil for another minute. Extend the boiling times to 2 minutes each, if you\u2019d prefer a chewier bagel (results will give you a more New York-Style bagel with this option).",
+                "Bring a large pot of water to a boil. Reduce the heat. Use a slotted spoon or skimmer to lower the bagels into the water. Boil as many as you are comfortable with boiling. Once the bagels are in, it shouldnt take too long for them to float to the top (a couple seconds). Let them sit there for 1 minute, and then flip them over to boil for another minute. Extend the boiling times to 2 minutes each, if you’d prefer a chewier bagel (results will give you a more New York-Style bagel with this option).",
                 "If you want to add toppings to your bagels, do so as you take them out of the water. Alternatively, you can use an egg wash to get the toppings to stick before baking the bagels. You may want to use the Optional Toppings listed above to top the bagels. Use just one topping, or a combination to make your own Everything Bagel Seasoning.",
                 "Once all the bagels have boiled (and have been topped with your choice of toppings), transfer them to an oiled or parchment-lined baking sheet.",
                 "Bake for 20 - 25 minutes, or until golden brown (I usually err on the side of 20 minutes).",
@@ -52,186 +52,186 @@
         {
             "name": "No-Knead Brioche",
             "ingredients": [
-            {
-                "quantity": "425",
-                "measurement": "g",
-                "name": "plain flour"
-            },
-            {
-                "quantity": "1.5",
-                "measurement": "tsp",
-                "name": "instant yeast"
-            },
-            {
-                "quantity": "1.5",
-                "measurement": "tsp",
-                "name": "salt"
-            },
-            {
-                "quantity": "142",
-                "measurement": "g",
-                "name": "butter, melted"
-            },
-            {
-                "quantity": "3",
-                "measurement": "",
-                "name": "large eggs, room temperature"
-            },
-            {
-                "quantity": "120",
-                "measurement": "ml",
-                "name": "whole milk, lukewarm"
-            },
-            {
-                "quantity": "71",
-                "measurement": "g",
-                "name": "honey"
-            },
-            {
-                "quantity": "1",
-                "measurement": "",
-                "name": "egg, beaten (for egg wash)"
-            }
+                {
+                    "quantity": "425",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "1.5",
+                    "measurement": "tsp",
+                    "name": "instant yeast"
+                },
+                {
+                    "quantity": "1.5",
+                    "measurement": "tsp",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "142",
+                    "measurement": "g",
+                    "name": "butter, melted"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "",
+                    "name": "large eggs, room temperature"
+                },
+                {
+                    "quantity": "120",
+                    "measurement": "ml",
+                    "name": "whole milk, lukewarm"
+                },
+                {
+                    "quantity": "71",
+                    "measurement": "g",
+                    "name": "honey"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg, beaten (for egg wash)"
+                }
             ],
             "cuisine": "Sweet",
             "weight": 3,
             "link": "https://www.biggerbolderbaking.com/brioche-dough/",
             "instructions": [
-            "Stir the flour, yeast and salt together in a large bowl.",
-            "In a jug, whisk the melted butter, eggs, milk and honey together.",
-            "Stir the wet ingredients into the dry with a wooden spoon for about 30 seconds until smooth, with no big lumps. Cover with cling film.",
-            "Leave at room temperature for 2 hours.",
-            "Press the dough down to knock out the air, cover and refrigerate for at least 12 hours, ideally overnight (up to 48 hours).",
-            "Grease a 23 x 13cm loaf tin.",
-            "Divide the cold dough in half and roll each piece into a 35cm rope. Pinch the tops together, twist into a braid, tuck the ends under and place in the tin.",
-            "Cover and leave to rise for 2-3 hours until doubled in size.",
-            "Heat the oven to 190C (170C fan). Gently brush the loaf with egg wash.",
-            "Bake for 25-30 minutes until deep golden brown, then cool before slicing."
+                "Stir the flour, yeast and salt together in a large bowl.",
+                "In a jug, whisk the melted butter, eggs, milk and honey together.",
+                "Stir the wet ingredients into the dry with a wooden spoon for about 30 seconds until smooth, with no big lumps. Cover with cling film.",
+                "Leave at room temperature for 2 hours.",
+                "Press the dough down to knock out the air, cover and refrigerate for at least 12 hours, ideally overnight (up to 48 hours).",
+                "Grease a 23 x 13cm loaf tin.",
+                "Divide the cold dough in half and roll each piece into a 35cm rope. Pinch the tops together, twist into a braid, tuck the ends under and place in the tin.",
+                "Cover and leave to rise for 2-3 hours until doubled in size.",
+                "Heat the oven to 190C (170C fan). Gently brush the loaf with egg wash.",
+                "Bake for 25-30 minutes until deep golden brown, then cool before slicing."
             ]
         },
         {
             "name": "Japanese Sausage Bread (Wiener Pan)",
             "ingredients": [
-            {
-                "quantity": "200",
-                "measurement": "g",
-                "name": "strong bread flour"
-            },
-            {
-                "quantity": "3",
-                "measurement": "g",
-                "name": "salt"
-            },
-            {
-                "quantity": "20",
-                "measurement": "g",
-                "name": "sugar"
-            },
-            {
-                "quantity": "3",
-                "measurement": "g",
-                "name": "instant dried yeast"
-            },
-            {
-                "quantity": "20",
-                "measurement": "g",
-                "name": "unsalted butter"
-            },
-            {
-                "quantity": "130",
-                "measurement": "ml",
-                "name": "milk"
-            },
-            {
-                "quantity": "6",
-                "measurement": "",
-                "name": "long frankfurter-style sausages"
-            },
-            {
-                "quantity": "",
-                "measurement": "",
-                "name": "ketchup"
-            },
-            {
-                "quantity": "",
-                "measurement": "",
-                "name": "dried parsley (optional)"
-            },
-            {
-                "quantity": "",
-                "measurement": "",
-                "name": "wholegrain mustard (optional)"
-            }
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "strong bread flour"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "g",
+                    "name": "instant dried yeast"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "unsalted butter"
+                },
+                {
+                    "quantity": "130",
+                    "measurement": "ml",
+                    "name": "milk"
+                },
+                {
+                    "quantity": "6",
+                    "measurement": "",
+                    "name": "long frankfurter-style sausages"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "ketchup"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "dried parsley (optional)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "wholegrain mustard (optional)"
+                }
             ],
             "cuisine": "Salty",
             "weight": 3,
             "link": "https://cookpad.com/jp/recipes/24107281",
             "instructions": [
-            "Put all the dough ingredients into a bread machine and run the dough cycle.",
-            "Divide the dough into 6 pieces and rest them for 15 minutes, loosely covered with cling film so they don't dry out.",
-            "On a lightly floured surface, flatten each piece into an oval. Spread a thin layer of mustard in the middle if using, and lay a sausage on top.",
-            "Make cuts in the dough with a dough scraper, then wrap it snugly around the sausage and pinch the seam firmly so it doesn't open in the oven.",
-            "Leave to rise until doubled in size: at room temperature in summer, or about 30 minutes on the oven's proving setting in winter.",
-            "Heat the oven to 200C. Squeeze over ketchup and sprinkle with parsley, then bake for about 15 minutes until golden."
+                "Put all the dough ingredients into a bread machine and run the dough cycle.",
+                "Divide the dough into 6 pieces and rest them for 15 minutes, loosely covered with cling film so they don't dry out.",
+                "On a lightly floured surface, flatten each piece into an oval. Spread a thin layer of mustard in the middle if using, and lay a sausage on top.",
+                "Make cuts in the dough with a dough scraper, then wrap it snugly around the sausage and pinch the seam firmly so it doesn't open in the oven.",
+                "Leave to rise until doubled in size: at room temperature in summer, or about 30 minutes on the oven's proving setting in winter.",
+                "Heat the oven to 200C. Squeeze over ketchup and sprinkle with parsley, then bake for about 15 minutes until golden."
             ]
         },
         {
             "name": "Butter French Bread Rolls",
             "ingredients": [
-            {
-                "quantity": "150",
-                "measurement": "g",
-                "name": "bread flour (French-style, or strong white)"
-            },
-            {
-                "quantity": "50",
-                "measurement": "ml",
-                "name": "water"
-            },
-            {
-                "quantity": "50",
-                "measurement": "ml",
-                "name": "milk"
-            },
-            {
-                "quantity": "10",
-                "measurement": "g",
-                "name": "unsalted butter (for the dough)"
-            },
-            {
-                "quantity": "7",
-                "measurement": "g",
-                "name": "sugar"
-            },
-            {
-                "quantity": "2",
-                "measurement": "g",
-                "name": "salt"
-            },
-            {
-                "quantity": "2",
-                "measurement": "g",
-                "name": "instant dried yeast"
-            },
-            {
-                "quantity": "",
-                "measurement": "",
-                "name": "butter, for topping"
-            }
+                {
+                    "quantity": "150",
+                    "measurement": "g",
+                    "name": "bread flour (French-style, or strong white)"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "ml",
+                    "name": "water"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "ml",
+                    "name": "milk"
+                },
+                {
+                    "quantity": "10",
+                    "measurement": "g",
+                    "name": "unsalted butter (for the dough)"
+                },
+                {
+                    "quantity": "7",
+                    "measurement": "g",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "g",
+                    "name": "instant dried yeast"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "butter, for topping"
+                }
             ],
             "cuisine": "Salty",
             "weight": 3,
             "link": "https://cookpad.com/jp/recipes/18774010",
             "instructions": [
-            "Bread machine: add everything except the butter and start the dough cycle. Add the butter after 7-8 minutes of mixing, let the cycle finish, then skip to step 5.",
-            "By hand: make a well in the flour, put the sugar and yeast in the centre and the salt at the edge. Pour in the water and milk warmed to about 35C and mix into a dough.",
-            "Knead for 5-10 minutes, then knead in the butter until smooth and shape into a ball.",
-            "Cover with a damp cloth and leave to rise. It's ready when a floured fingertip pressed into it leaves a hole that doesn't spring back.",
-            "Knock back the dough, divide into 6 pieces, shape loosely and rest for 15 minutes, then shape into rolls.",
-            "Leave to prove until nearly doubled, keeping the surface from drying out. Meanwhile heat the oven and a baking sheet to 250C.",
-            "Dust with flour, slash the tops and lay a sliver of butter in each cut. Mist with water.",
-            "Put in the oven, turn down to 220C and bake for 10 minutes, then lower to 200C for about 5 minutes until golden. Adjust for your oven.",
-            "Cool slightly before eating. For a sweeter dough, use 100ml milk and no water, 15g butter and 15g sugar."
+                "Bread machine: add everything except the butter and start the dough cycle. Add the butter after 7-8 minutes of mixing, let the cycle finish, then skip to step 5.",
+                "By hand: make a well in the flour, put the sugar and yeast in the centre and the salt at the edge. Pour in the water and milk warmed to about 35C and mix into a dough.",
+                "Knead for 5-10 minutes, then knead in the butter until smooth and shape into a ball.",
+                "Cover with a damp cloth and leave to rise. It's ready when a floured fingertip pressed into it leaves a hole that doesn't spring back.",
+                "Knock back the dough, divide into 6 pieces, shape loosely and rest for 15 minutes, then shape into rolls.",
+                "Leave to prove until nearly doubled, keeping the surface from drying out. Meanwhile heat the oven and a baking sheet to 250C.",
+                "Dust with flour, slash the tops and lay a sliver of butter in each cut. Mist with water.",
+                "Put in the oven, turn down to 220C and bake for 10 minutes, then lower to 200C for about 5 minutes until golden. Adjust for your oven.",
+                "Cool slightly before eating. For a sweeter dough, use 100ml milk and no water, 15g butter and 15g sugar."
             ]
         },
         {
@@ -457,13 +457,170 @@
                 "Heat the oven to 190C and bake for 27-30 minutes, adjusting for your oven.",
                 "Turn out and cool on a rack before slicing."
             ]
+        },
+        {
+            "name": "Honey Stick Bread",
+            "ingredients": [
+                {
+                    "quantity": "300",
+                    "measurement": "g",
+                    "name": "strong bread flour"
+                },
+                {
+                    "quantity": "170",
+                    "measurement": "ml",
+                    "name": "milk"
+                },
+                {
+                    "quantity": "60",
+                    "measurement": "g",
+                    "name": "honey"
+                },
+                {
+                    "quantity": "35",
+                    "measurement": "g",
+                    "name": "unsalted butter"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "instant dried yeast"
+                }
+            ],
+            "cuisine": "Sweet",
+            "weight": 2,
+            "link": "https://cookpad.com/jp/recipes/18107196",
+            "instructions": [
+                "Put all the ingredients into a bread machine and run the dough cycle.",
+                "Rest the dough for 10 minutes, then roll it out into a rectangle.",
+                "Cut into 12 long strips (halve them for shorter sticks) and lay them on a lined baking sheet.",
+                "Prove at 40C for 30 minutes (the oven's proving setting works well).",
+                "Heat the oven to 170C and bake for 16 minutes until lightly golden. Don't mist with water before baking, so they stay soft and fluffy."
+            ]
+        },
+        {
+            "name": "Fluffy Nikuman Dough (Steamed Bun Wrappers)",
+            "ingredients": [
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "strong bread flour"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "vegetable oil"
+                },
+                {
+                    "quantity": "140",
+                    "measurement": "ml",
+                    "name": "water"
+                },
+                {
+                    "quantity": "16",
+                    "measurement": "g",
+                    "name": "skimmed milk powder (or use 60ml water + 80ml milk instead of the water and powder)"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "instant dried yeast"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "filling of your choice (e.g. seasoned pork mince)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "soy sauce with vinegar, or mustard, to serve"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "https://cookpad.com/jp/recipes/19709174",
+            "instructions": [
+                "Put all the dough ingredients into a bread machine and run the dough cycle (or knead by hand until smooth and leave to rise).",
+                "Turn the dough onto a floured surface, divide into 8 equal pieces and roll into balls.",
+                "Roll each ball into a flat round and put a spoonful of filling in the middle.",
+                "Gather the edges up around the filling, pleating as you go, and pinch firmly at the top to seal.",
+                "Place each bun on a square of baking paper and steam over boiling water for 12-15 minutes.",
+                "Serve hot, plain or with vinegar-soy sauce or mustard."
+            ]
+        },
+        {
+            "name": "Loaf",
+            "ingredients": [
+                {
+                    "quantity": "500",
+                    "measurement": "g",
+                    "name": "bread flour"
+                },
+                {
+                    "quantity": "325",
+                    "measurement": "ml",
+                    "name": "lukewarm water"
+                },
+                {
+                    "quantity": "25",
+                    "measurement": "g",
+                    "name": "sugar (25-30g)"
+                },
+                {
+                    "quantity": "8",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "7",
+                    "measurement": "g",
+                    "name": "yeast"
+                },
+                {
+                    "quantity": "25",
+                    "measurement": "g",
+                    "name": "butter, cut into 3-5 pieces"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "oil, for the tin"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Put the flour, water, sugar, salt and yeast into the stand mixer and mix.",
+                "Once the dough has come together, add the butter in 3-5 pieces. Mix for another 10 minutes, or until the dough is nicely elastic.",
+                "Turn the dough out onto the work surface, shape it into a smooth ball and leave to prove until doubled in size.",
+                "Divide into 3 equal pieces. Press out the gas, stretch each piece, fold it into 3, then roll it up into a shape that fits the tin.",
+                "Place all 3 pieces side by side in an oiled loaf tin.",
+                "Leave to prove again until 1.5 times bigger. When it has risen about 1.2 times, start heating the oven to 180C fan (start earlier if your oven is slow to heat).",
+                "Bake at 180C fan for 32 minutes.",
+                "Take it out of the tin and leave on a wire rack until completely cool."
+            ]
         }
-
-
-
-
-
-
-
     ]
 }
