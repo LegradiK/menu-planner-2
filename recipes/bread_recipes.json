@@ -693,6 +693,81 @@
                 "Bake at 200C/180C fan for 11 minutes.",
                 "Take it out of the tin and leave on a wire rack"
             ]
+        },
+        {
+            "genre": "bread",
+            "name": "Kalacs - Hungarian sweet marble bread",
+            "ingredients": [
+                {
+                    "quantity": "250",
+                    "measurement": "g",
+                    "name": "bread flour - for white part"
+                },
+                {
+                    "quantity": "250",
+                    "measurement": "g",
+                    "name": "bread flour - for cacao part"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "g",
+                    "name": "yeast - for white part"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "g",
+                    "name": "yeast - for cacao part"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg yalk - for white part"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg yalk - for cacao part"
+                },
+                {
+                    "quantity": "230",
+                    "measurement": "ml",
+                    "name": "milk - for white part"
+                },
+                {
+                    "quantity": "270",
+                    "measurement": "ml",
+                    "name": "milk - for cacao part"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "cacao powder"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "",
+                    "name": "sweetners"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "raisins - as many as you like"
+                }
+            ],
+            "cuisine": "Sweet",
+            "weight": 5,
+            "link": "",
+            "instructions": [
+                "Separate all dry ingredients for white and cacao parts.",
+                "Warm milk up, put all the sweetners and melt them thoroughly.",
+                "Pour 230ml of milk into white-dry ingredients, let the stand mixer mix them for 10 minutes or until it gets elastic.",
+                "Pour 270ml of milk into cacao-dry ingredients, let the stand mixer mix them for 10 minutes or until it gets elastic. (cacao powder can go all over the place. Start from the slowest setting)",
+                "Once both doughs are ready, prove them until double the size.",
+                "Place white one on the work surface, roll it out. Them place cacao one on top.",
+                "Place raisins where you want them to be.",
+                "Make braids out of the combined dough.",
+                "Bake at 180C for 32 minutes or longer if needed."
+            ]
         }
     ]
 }
