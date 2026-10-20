@@ -1,13 +1,17 @@
 /* =========================================================
    Menu Planner stylesheet (no Bootstrap needed)
 
-   1. Palette            7. Cards
-   2. Base / reset       8. Forms
-   3. Layout & grid      9. Alerts (flash messages)
-   4. Utilities         10. Recipe list (collapsible)
-   5. Header & footer   11. All-recipes categories
-   6. Buttons           12. Shopping list & print
+    1. Palette                  10. Forms
+    2. Base / reset             11. Alerts (flash messages)
+    3. Layout & page            12. Recipe list (collapsible)
+    4. Utilities                13. All-recipes categories
+    5. Header & footer          14. My week
+    6. Home page hero           15. Shopping list
+    7. Buttons                  16. Get inspired page
+    8. Badges                   17. Print
+    9. Cards & list groups      18. Accessibility & debug
    ========================================================= */
+
 
 /* ---------- 1. Palette: change these to re-theme the site ---------- */
 :root {
@@ -17,13 +21,16 @@
   --text: #2d2a26;
   --text-muted: #6b665e;
   --border: #e4e7e3;
+
   --primary: #3f7d58;        /* herb green */
   --primary-dark: #2f6145;
   --primary-light: #e6f1ea;
   --accent: #d9693a;         /* tomato orange */
+  --accent-light: #fbeee9;
   --danger: #c0392b;
   --danger-light: #fbeae8;
   --warning-light: #fdf3e1;
+  --info: #3a7bb0;
   --info-light: #e8f1f8;
 
   --radius: 12px;
@@ -32,6 +39,7 @@
   --shadow: 0 2px 10px rgba(45, 42, 38, 0.08);
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
 
 /* ---------- 2. Base / reset (what Bootstrap's "Reboot" used to do) ---------- */
 *,
@@ -115,12 +123,8 @@ pre {
   overflow: auto;
 }
 
-:focus-visible {
-  outline: 3px solid var(--primary-light);
-  outline-offset: 2px;
-}
 
-/* ---------- 3. Layout & grid ---------- */
+/* ---------- 3. Layout & page ---------- */
 .container {
   width: 100%;
   max-width: 1000px;
@@ -131,6 +135,46 @@ pre {
   padding-right: 16px;
 }
 
+/* Shared page wrapper for the newer templates */
+.page {
+  width: 100%;
+  max-width: 760px;
+  margin: 3rem auto;
+  padding: 0 16px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle,
+.page-empty {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Flash messages under the header */
+.flash-messages {
+  width: 100%;
+  max-width: 760px;
+  margin: 1rem auto 0;
+  padding: 0 16px;
+}
+
+/* Row of buttons at the bottom of a page */
+.page-actions,
+.action-row,
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0 8px;
+}
+
+/* Simple grid */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -149,15 +193,13 @@ pre {
 .col-6  { flex: 0 0 auto; width: 50%; }
 .col-10 { flex: 0 0 auto; width: 83.333%; }
 
-.justify-content-center { justify-content: center; }
-
-/* On phones, grid columns stack */
 @media (max-width: 600px) {
   .col-6,
   .col-10 {
     width: 100%;
   }
 }
+
 
 /* ---------- 4. Utilities (replacing Bootstrap's) ---------- */
 .mx-auto { margin-left: auto !important; margin-right: auto !important; }
@@ -185,6 +227,8 @@ pre {
   }
 }
 
+.justify-content-center { justify-content: center; }
+
 .text-center { text-align: center !important; }
 .text-left   { text-align: left !important; }
 
@@ -208,6 +252,7 @@ pre {
 
 .display-4 { font-size: clamp(2rem, 6vw, 3.25rem); }
 .display-5 { font-size: clamp(1.8rem, 5vw, 2.75rem); }
+
 
 /* ---------- 5. Header & footer ---------- */
 .site-header {
@@ -274,27 +319,35 @@ pre {
   text-decoration: underline;
 }
 
-/* Home page hero: fills the space between header and footer */
-.jumbotron {
+
+/* ---------- 6. Home page hero (fills the space between header and footer) ---------- */
+.hero {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
   padding: 48px 16px;
   text-align: center;
 }
 
-.jumbotron .container {
+.hero-inner {
   max-width: 720px;
-  margin-bottom: 0;
 }
 
-.jumbotron h1 {
+.hero-title {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.15;
   color: var(--primary);
 }
 
-/* ---------- 6. Buttons ---------- */
+.hero-lead {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+
+/* ---------- 7. Buttons ---------- */
+/* Default .btn is an outlined green pill */
 .btn,
 .nav-btn {
   display: inline-block;
@@ -322,9 +375,10 @@ pre {
   text-decoration: none;
 }
 
-/* Filled: main actions and the current page in the nav */
+/* Filled: main actions, "in my week", and the current page in the nav */
 .btn-primary,
 .btn-warning,
+.btn-success,
 .nav-btn.active {
   background-color: var(--primary);
   border-color: var(--primary);
@@ -334,35 +388,57 @@ pre {
 .btn-primary:hover,
 .btn-primary:focus-visible,
 .btn-warning:hover,
-.btn-warning:focus-visible {
+.btn-warning:focus-visible,
+.btn-success:hover,
+.btn-success:focus-visible {
   background-color: var(--primary-dark);
   border-color: var(--primary-dark);
   color: #ffffff;
 }
 
-.btn-secondary {
+/* Outlined green (same as the default .btn) */
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Quiet grey */
+.btn-secondary,
+.btn-outline-secondary {
   border-color: var(--border);
   color: var(--text);
 }
 
 .btn-secondary:hover,
-.btn-secondary:focus-visible {
+.btn-secondary:focus-visible,
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus-visible {
   background-color: var(--surface-alt);
   border-color: var(--text-muted);
   color: var(--text);
 }
 
 /* Destructive: red outline, filled red on hover */
-.btn-danger {
+.btn-danger,
+.btn-outline-danger {
   border-color: var(--danger);
   color: var(--danger);
 }
 
 .btn-danger:hover,
-.btn-danger:focus-visible {
+.btn-danger:focus-visible,
+.btn-outline-danger:hover,
+.btn-outline-danger:focus-visible {
   background-color: var(--danger);
   border-color: var(--danger);
   color: #ffffff;
+}
+
+/* Sizes */
+.btn-sm {
+  padding: 3px 12px;
+  font-size: 0.85rem;
+  border-width: 1.5px;
 }
 
 .btn-lg {
@@ -375,22 +451,55 @@ pre {
   cursor: not-allowed;
 }
 
-/* Rows of buttons */
-.action-row,
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin: 24px 0 8px;
-}
-
 .centered-btn {
   display: block;
   margin: 1.5rem auto;
 }
 
-/* ---------- 7. Cards ---------- */
+
+/* ---------- 8. Badges ---------- */
+.badge {
+  display: inline-block;
+  padding: 2px 9px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  border-radius: var(--pill);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.badge.bg-primary,
+.badge.bg-success {
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+.badge.bg-secondary {
+  color: var(--text-muted);
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border);
+}
+
+.badge.bg-info {
+  color: #24557d;
+  background-color: var(--info-light);
+}
+
+/* Count pill in the nav ("My week 3") */
+.nav-btn .badge {
+  margin-left: 4px;
+}
+
+.nav-btn.active .badge {
+  color: var(--primary);
+  background-color: #ffffff;
+}
+
+
+/* ---------- 9. Cards & list groups ---------- */
 .card {
   margin: 24px auto;
   max-width: 1000px;
@@ -402,7 +511,7 @@ pre {
 }
 
 /* A card used directly (new templates) gets its own padding */
-.card:not(:has(.card-body)) {
+.card:not(:has(.card-body)):not(:has(.list-group)) {
   padding: 20px;
 }
 
@@ -466,23 +575,36 @@ pre {
   padding-bottom: 15px;
 }
 
-.category-header {
-  color: var(--accent);
+/* List groups */
+.list-group {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 
-/* Old shopping-list template wraps the whole list in .category-header:
-   keep headings orange but items in normal text colour */
-.category-header h3 {
-  margin-top: 1.25rem;
-  color: var(--accent);
+.list-group-item {
+  margin: 0;
+  padding: 10px 16px;
+  background-color: var(--surface);
 }
 
-.categories.category-header li,
-.categories.category-header p {
-  color: var(--text);
+.list-group-item + .list-group-item {
+  margin-top: 0;
+  border-top: 1px solid var(--border);
 }
 
-/* ---------- 8. Forms ---------- */
+/* Inside a card: no outer border, the card already has one */
+.list-group-flush {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+
+/* ---------- 10. Forms ---------- */
 .form-container {
   max-width: 720px;
   margin: 0 auto;
@@ -547,6 +669,47 @@ select.form-control,
   color: #a7a29a;
 }
 
+.form-error {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  color: var(--danger);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.ingredients-fieldset {
+  margin-inline: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ingredients-fieldset legend {
+  padding: 0;
+}
+
+.ingredients-fieldset #add-ingredient {
+  margin-top: 4px;
+}
+
+.search-results {
+  margin-top: 2rem;
+}
+
+/* Checkboxes */
+.form-check-input,
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
 /* Ingredient rows on the "add recipe" page */
 .input-container,
 .ingredient-group {
@@ -577,7 +740,8 @@ select.form-control,
   overflow-y: auto;
 }
 
-/* ---------- 9. Alerts (flash messages) ---------- */
+
+/* ---------- 11. Alerts (flash messages) ---------- */
 .alert {
   padding: 12px 16px;
   margin-bottom: 1rem;
@@ -606,34 +770,18 @@ select.form-control,
   color: #8a4a1f;
 }
 
+.alert-center {
+  text-align: center;
+}
+
 .alert-info {
   background-color: var(--info-light);
-  border-color: #3a7bb0;
+  border-color: var(--info);
   color: #24557d;
 }
 
-/* ---------- Bootstrap list-group replacement ---------- */
-.list-group {
-  list-style: none;
-  margin: 0 0 1rem;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
 
-.list-group-item {
-  margin: 0;
-  padding: 10px 16px;
-  background-color: var(--surface);
-}
-
-.list-group-item + .list-group-item {
-  margin-top: 0;
-  border-top: 1px solid var(--border);
-}
-
-/* ---------- 10. Recipe list (collapsible <details>) ---------- */
+/* ---------- 12. Recipe list (collapsible <details>) ---------- */
 .recipe-list {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -645,9 +793,11 @@ select.form-control,
   border-top: 1px solid var(--border);
 }
 
+/* Shared by every collapsible row on the site */
 .recipe-item summary,
 .category-block > summary,
-.subcategory > summary {
+.subcategory > summary,
+.inspire-category > summary {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -657,14 +807,16 @@ select.form-control,
 
 .recipe-item summary::-webkit-details-marker,
 .category-block > summary::-webkit-details-marker,
-.subcategory > summary::-webkit-details-marker {
+.subcategory > summary::-webkit-details-marker,
+.inspire-category > summary::-webkit-details-marker {
   display: none;
 }
 
 /* Arrow: points right when closed, down when open */
 .recipe-item summary::before,
 .category-block > summary::before,
-.subcategory > summary::before {
+.subcategory > summary::before,
+.inspire-category > summary::before {
   content: "";
   width: 8px;
   height: 8px;
@@ -677,17 +829,9 @@ select.form-control,
 
 .recipe-item[open] summary::before,
 .category-block[open] > summary::before,
-.subcategory[open] > summary::before {
+.subcategory[open] > summary::before,
+.inspire-category[open] > summary::before {
   transform: rotate(45deg);
-}
-
-.recipe-item summary {
-  padding: 14px 18px;
-  background-color: var(--surface);
-  transition: background-color 0.15s;
-  display: flex;
-	align-items: center;
-	gap: 0.5rem;
 }
 
 .recipe-item summary:hover,
@@ -696,12 +840,19 @@ select.form-control,
   background-color: var(--primary-light);
 }
 
+.recipe-item summary {
+  padding: 14px 18px;
+  background-color: var(--surface);
+  transition: background-color 0.15s;
+}
+
+/* Name takes the free space, pushing the cuisine tag and button right */
 .recipe-name {
+  margin-right: auto;
   font-weight: 600;
 }
 
 .recipe-genre {
-  margin-left: auto;
   padding: 2px 10px;
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -710,9 +861,19 @@ select.form-control,
   white-space: nowrap;
 }
 
+/* "+ My week" button in the summary row */
+.plan-btn {
+  flex-shrink: 0;
+}
+
 .recipe-details {
   padding: 4px 18px 18px 38px;
   background-color: var(--surface);
+}
+
+.recipe-weight {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
 }
 
 .recipe-details h4 {
@@ -721,7 +882,8 @@ select.form-control,
   color: var(--primary);
 }
 
-/* ---------- 11. All-recipes categories ---------- */
+
+/* ---------- 13. All-recipes categories ---------- */
 .category-block {
   margin-bottom: 14px;
   background-color: var(--surface);
@@ -779,7 +941,69 @@ select.form-control,
   box-shadow: none;
 }
 
-/* ---------- 12. Shopping list & print ---------- */
+
+/* ---------- 14. My week ---------- */
+/* Uses .page, .recipe-list and .page-actions; nothing extra needed yet */
+
+
+/* ---------- 15. Shopping list ---------- */
+/* Add-item form */
+.shopping-add {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr auto;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .shopping-add {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+
+  .shopping-add__btn {
+    grid-column: 1 / -1;
+  }
+}
+
+/* One card per aisle */
+.shopping-category {
+  margin: 0 0 1rem;
+}
+
+.shopping-category__header .badge {
+  margin-left: 4px;
+}
+
+/* Items */
+.shopping-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.shopping-item__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.shopping-item .badge {
+  margin-left: 4px;
+}
+
+/* Strike through items as they're ticked off */
+.shopping-item input:checked + span,
+.shop-list input:checked + span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* --- Legacy shopping-list styles (old template) ---
+   Safe to delete once no template uses .shop-list / .category-header */
 .shop-category {
   margin-bottom: 20px;
 }
@@ -821,22 +1045,133 @@ select.form-control,
   background-color: var(--primary-light);
 }
 
-.shop-list input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  accent-color: var(--primary);
+.category-header {
+  color: var(--accent);
 }
 
-.shop-list input:checked + span {
-  text-decoration: line-through;
+.category-header h3 {
+  margin-top: 1.25rem;
+  color: var(--accent);
+}
+
+.categories.category-header li,
+.categories.category-header p {
+  color: var(--text);
+}
+
+
+/* ---------- 16. Get inspired page ---------- */
+.inspire-page {
+  max-width: 860px;
+}
+
+.inspire-page .page-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+  background-color: var(--accent);
+}
+
+/* Each category is a collapsible card */
+.inspire-category {
+  margin-bottom: 14px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.inspire-category > summary {
+  padding: 16px 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.15s;
+}
+
+.inspire-category > summary:hover,
+.inspire-category[open] > summary {
+  background-color: var(--accent-light);
+}
+
+.inspire-category > summary::before {
+  border-color: var(--accent);
+}
+
+.inspire-category .count {
+  color: #ffffff;
+  background-color: var(--accent);
+}
+
+/* Site links */
+.inspire-sites {
+  list-style: none;
+  margin: 0;
+  padding: 6px 12px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.inspire-site {
+  margin: 0;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s, transform 0.15s;
+}
+
+.inspire-site + .inspire-site {
+  margin-top: 0;
+}
+
+.inspire-site:hover {
+  background-color: var(--accent-light);
+  transform: translateX(4px);
+}
+
+.inspire-site__link {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.inspire-site__link:hover,
+.inspire-site__link:focus-visible {
+  text-decoration: underline;
+}
+
+.inspire-site__desc {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
+.inspire-footer a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .inspire-category > summary {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+
+  .inspire-site:hover {
+    transform: none;
+  }
+}
+
+
+/* ---------- 17. Print ---------- */
 @media print {
   .site-header,
   .footer,
   .no-print,
+  .d-print-none,
+  .page-actions,
   .action-row,
   .button-container {
     display: none !important;
@@ -844,123 +1179,27 @@ select.form-control,
 
   .card,
   .recipe-list,
-  .category-block {
+  .category-block,
+  .inspire-category {
     box-shadow: none;
+  }
+}
+
+
+/* ---------- 18. Accessibility & debug ---------- */
+:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }
 
 /* Debug helper: uncomment to outline every element
 * { outline: 1px solid red; }
 */
-
-/* ===== Get inspired page =====
-   Everything is scoped to .inspire-page so it won't affect other pages. */
-
-.inspire-page {
-    --inspire-accent: #c8553d;        /* warm terracotta */
-    --inspire-accent-soft: #fbeee9;
-    --inspire-text: #2d2a26;
-    --inspire-muted: #6f6a64;
-    --inspire-border: #ece6e0;
-    --inspire-card: #ffffff;
-
-    max-width: 860px;
-    color: var(--inspire-text);
-}
-
-/* Heading */
-.inspire-page h2 {
-    font-weight: 700;
-    letter-spacing: -0.01em;
-}
-
-.inspire-page h2::after {
-    content: "";
-    display: block;
-    width: 56px;
-    height: 4px;
-    margin: 0.6rem auto 0;
-    border-radius: 2px;
-    background: var(--inspire-accent);
-}
-
-/* Accordion sections as rounded cards */
-.inspire-page .accordion {
-    --bs-accordion-border-color: transparent;
-    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(200, 85, 61, 0.25);
-    --bs-accordion-active-bg: var(--inspire-accent-soft);
-    --bs-accordion-active-color: var(--inspire-text);
-}
-
-.inspire-page .accordion-item {
-    margin-bottom: 0.9rem;
-    border: 1px solid var(--inspire-border);
-    border-radius: 14px !important;
-    overflow: hidden;
-    background: var(--inspire-card);
-    box-shadow: 0 2px 8px rgba(45, 42, 38, 0.05);
-}
-
-.inspire-page .accordion-button {
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 1rem 1.25rem;
-    color: var(--inspire-text);
-}
-
-.inspire-page .accordion-button .badge {
-    font-weight: 500;
-}
-
-/* Site links */
-.inspire-page .list-group-item {
-    padding: 0.85rem 0.75rem !important;
-    border-color: var(--inspire-border);
-    border-radius: 10px;
-    transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-.inspire-page .list-group-item:hover {
-    background: var(--inspire-accent-soft);
-    transform: translateX(4px);
-}
-
-.inspire-page .list-group-item a {
-    color: var(--inspire-accent);
-    font-size: 1.02rem;
-}
-
-.inspire-page .list-group-item a:hover,
-.inspire-page .list-group-item a:focus {
-    text-decoration: underline !important;
-}
-
-.inspire-page .list-group-item .text-muted {
-    color: var(--inspire-muted) !important;
-    margin-top: 0.15rem;
-}
-
-/* Footer prompt */
-.inspire-page > p:last-child a {
-    color: var(--inspire-accent);
-    font-weight: 600;
-}
-
-/* Small screens */
-@media (max-width: 576px) {
-    .inspire-page .accordion-button {
-        font-size: 1rem;
-        padding: 0.85rem 1rem;
-    }
-
-    .inspire-page .list-group-item:hover {
-        transform: none;
-    }
-}
-
-/* Respect reduced-motion settings */
-@media (prefers-reduced-motion: reduce) {
-    .inspire-page .list-group-item {
-        transition: none;
-    }
-}

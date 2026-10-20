@@ -5,56 +5,54 @@
 {% block content %}
 {# Works with either version of the search route:
    - `results` (a list of partial matches), or
-   - `recipe`  (a single exact match)                #}
+   - `recipe`  (a single exact match) #}
 {% if results is defined %}
-  {% set found = results %}
+	{% set found = results %}
 {% elif recipe %}
-  {% set found = [recipe] %}
+	{% set found = [recipe] %}
 {% else %}
-  {% set found = [] %}
+	{% set found = [] %}
 {% endif %}
 
-<div class="container mt-5" style="max-width: 760px;">
-  <h2 class="text-center mb-4">Search recipes</h2>
+<div class="page">
+	<h2 class="page-title">Search recipes</h2>
 
-  <form method="POST" action="{{ url_for('search_recipe') }}" novalidate>
-    {{ form.hidden_tag() }}
+	<form method="POST" action="{{ url_for('search_recipe') }}" class="search-form" novalidate>
+		{{ form.hidden_tag() }}
 
-    <div class="form-group">
-      {{ form.genre.label(class="form-label") }}
-      {{ form.genre(class="form-select") }}
-    </div>
+		<div class="form-group">
+			{{ form.genre.label(class="form-label") }}
+			{{ form.genre(class="form-select") }}
+		</div>
 
-    <div class="form-group">
-      {{ form.recipe_name.label(class="form-label") }}
-      {{ form.recipe_name(class="form-control", placeholder="e.g. lasagne") }}
-      {% for error in form.recipe_name.errors %}
-        <div class="text-danger small mt-2">{{ error }}</div>
-      {% endfor %}
-    </div>
+		<div class="form-group">
+			{{ form.recipe_name.label(class="form-label") }}
+			{{ form.recipe_name(class="form-control", placeholder="e.g. lasagne") }}
+			{% for error in form.recipe_name.errors %}
+				<p class="form-error">{{ error }}</p>
+			{% endfor %}
+		</div>
 
-    <div class="text-center">
-      <button type="submit" class="btn btn-primary">
-            Search
-      </button>
-    </div>
-  </form>
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Search</button>
+		</div>
+	</form>
 
-  {% if request.method == 'POST' and not form.errors %}
-  <div class="mt-4">
-    {% if found %}
-      <p class="text-muted text-center">
-        {{ found|length }} recipe{{ '' if found|length == 1 else 's' }} found
-      </p>
-      <div class="recipe-list">
-        {% for item in found %}
-          {{ recipe_item(item, open=(found|length == 1)) }}
-        {% endfor %}
-      </div>
-    {% else %}
-      <p class="text-center text-muted">No recipes found. Try a different name or genre.</p>
-    {% endif %}
-  </div>
-  {% endif %}
+	{% if request.method == 'POST' and not form.errors %}
+		<div class="search-results">
+			{% if found %}
+				<p class="page-subtitle">
+					{{ found|length }} recipe{{ '' if found|length == 1 else 's' }} found
+				</p>
+				<div class="recipe-list">
+					{% for item in found %}
+						{{ recipe_item(item, open=(found|length == 1)) }}
+					{% endfor %}
+				</div>
+			{% else %}
+				<p class="page-empty">No recipes found. Try a different name or genre.</p>
+			{% endif %}
+		</div>
+	{% endif %}
 </div>
 {% endblock %}

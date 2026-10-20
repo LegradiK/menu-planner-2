@@ -1,32 +1,19 @@
 {% extends 'base.html' %}
-{% block title %}A weekly recipes/shopping list creator{% endblock %}
-
-{% block styling%}
-{{ super() }}
-{% endblock %}
+{% block title %}Menu Planner{% endblock %}
 
 {% block content %}
+<section class="hero">
+	<div class="hero-inner">
+		<h1 class="hero-title">A weekly recipes & shopping list creator</h1>
+		<p class="hero-lead">Helper for deciding recipes and creating a shopping list</p>
+		<hr>
+		<p>You've found the right place! This helper will give you ideas for what to cook and what to buy for your whole family.</p>
 
-  <div class="jumbotron text-center">
-      <div class="container">
-          <h1 class="display-4">A weekly recipes/shopping list creator</h1>
-          <p class="lead">Helper for deciding recipes and creating a shopping list</p>
-          <hr class="my-4">
-          <p>You've found the right place! This helper will give you ideas what to cook and what to buy for your whole family!</p>
-          <br>
-          <div class="row justify-content-center mt-3">
-            <div class="col-auto">
-              <a class="btn btn-warning btn-lg" href="{{ url_for('get_recipes')}}" role="button">
-                Give me ideas!
-              </a>
-            </div>
-            <div class="col-auto">
-              <a class="btn btn-warning btn-lg" href="{{ url_for('add_recipes') }}" role="button">
-                Adding new recipes!
-              </a>
-            </div>
-          </div>   
-      </div>
-  </div>
-
+		<div class="page-actions">
+			<a class="btn btn-primary btn-lg" href="{{ url_for('get_recipes') }}">Give me ideas!</a>
+			<a class="btn btn-lg" href="{{ url_for('all_recipes') }}">Pick my own</a>
+			<a class="btn btn-lg" href="{{ url_for('add_recipes') }}">Add a recipe</a>
+		</div>
+	</div>
+</section>
 {% endblock %}

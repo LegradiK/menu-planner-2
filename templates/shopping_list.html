@@ -1,79 +1,71 @@
 {% extends 'base.html' %}
 {% block title %}Shopping list{% endblock %}
 
-{% block styling %}
-	{{ super() }}
-{% endblock %}
-
 {% block content %}
-<div class="container mt-5 mb-5" style="max-width: 760px;">
-	<h2 class="text-center mb-2">Shopping list</h2>
+<div class="page">
+	<h2 class="page-title">Shopping list</h2>
 
 	{% set total = categorized_ingredients.values()|map('length')|sum %}
-	<p class="text-center text-muted mb-4">
+	<p class="page-subtitle">
 		{{ total }} item{{ '' if total == 1 else 's' }} for this week
 	</p>
 
-    	{% if editable %}
-		<form method="POST" action="{{ url_for('shopping_add') }}" class="row g-2 mb-4 d-print-none">
+	{% if editable %}
+		<form method="POST" action="{{ url_for('shopping_add') }}" class="shopping-add d-print-none">
 			{{ csrf_token() if csrf_token is defined }}
-			<div class="col-3 col-sm-2">
-				<input name="quantity" class="form-control" placeholder="Qty">
-			</div>
-			<div class="col-3 col-sm-2">
-				<input name="measurement" class="form-control" placeholder="Unit">
-			</div>
-			<div class="col-6 col-sm-6">
-				<input name="name" class="form-control" placeholder="e.g. kitchen roll" required>
-			</div>
-			<div class="col-12 col-sm-2 d-grid">
-				<button class="btn btn-primary">Add</button>
-			</div>
+			<input name="quantity" class="form-control shopping-add__qty" placeholder="Qty">
+			<input name="measurement" class="form-control shopping-add__unit" placeholder="Unit">
+			<input name="name" class="form-control shopping-add__name" placeholder="e.g. kitchen roll" required>
+			<button class="btn btn-primary shopping-add__btn">Add</button>
 		</form>
 	{% endif %}
 
 	{% if total %}
 		{% for category, items in categorized_ingredients.items() if items %}
-			<div class="card border-secondary mb-3">
-				<div class="card-header fw-semibold">
+			<section class="card shopping-category">
+				<header class="card-header shopping-category__header">
 					{{ category }}
-					<span class="badge bg-secondary ms-1">{{ items|length }}</span>
-				</div>
+					<span class="badge bg-secondary">{{ items|length }}</span>
+				</header>
 				<ul class="list-group list-group-flush">
 					{% for item in items %}
-						<li class="list-group-item">
-							<label class="d-flex align-items-center gap-2 mb-0">
-								<input class="form-check-input mt-0" type="checkbox">
+						<li class="list-group-item shopping-item">
+							<label class="shopping-item__label">
+								<input class="form-check-input" type="checkbox">
 								<span>
 									{% if item['quantity'] %}<strong>{{ item['quantity'] }} {{ item['measurement'] }}</strong>{% endif %}
 									{{ item['name'] }}
+									{% if item['extra'] %}<span class="badge bg-info">added</span>{% endif %}
 								</span>
 							</label>
+							{% if editable %}
+								<form method="POST" action="{{ url_for('shopping_remove') }}" class="d-print-none">
+									{{ csrf_token() if csrf_token is defined }}
+									<input type="hidden" name="key" value="{{ (item['name']|string|trim|lower) ~ '|' ~ (item['measurement']|string|trim|lower) }}">
+									<button class="btn btn-sm btn-outline-danger" title="Remove">✕</button>
+								</form>
+							{% endif %}
 						</li>
 					{% endfor %}
 				</ul>
-			</div>
+			</section>
 		{% endfor %}
 	{% else %}
-		<p class="text-center text-muted">
+		<p class="page-empty">
 			Your shopping list is empty.
 			<a href="{{ url_for('all_recipes') }}">Pick some recipes</a> for your week first.
 		</p>
 	{% endif %}
 
-	<div class="d-flex justify-content-center flex-wrap gap-2 mt-4 d-print-none">
-		<a class="btn btn-outline-secondary" href="{{ url_for('my_week') }}">← Back to my week</a>
+	<div class="page-actions d-print-none">
+		{% if editable %}
+			<form method="POST" action="{{ url_for('shopping_reset') }}">
+				{{ csrf_token() if csrf_token is defined }}
+				<button class="btn btn-outline-danger">Reset list</button>
+			</form>
+		{% endif %}
 		<button type="button" class="btn btn-outline-secondary" onclick="window.print()">Print</button>
-		<a class="btn btn-warning" href="{{ url_for('get_recipes') }}">New recipes</a>
 		<a class="btn btn-warning" href="{{ url_for('home') }}">Home</a>
 	</div>
 </div>
-
-<style>
-	/* Strike through items as they're ticked off */
-	.list-group-item input:checked + span {
-		text-decoration: line-through;
-		color: var(--bs-secondary-color, #6c757d);
-	}
-</style>
 {% endblock %}

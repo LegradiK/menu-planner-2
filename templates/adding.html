@@ -1,194 +1,118 @@
 {% extends 'base.html' %}
-{% block title %}A weekly recipes/shopping list creator{% endblock %}
-
-{% block styling%}
-{{ super() }}
-{% endblock %}
+{% block title %}Add a recipe{% endblock %}
 
 {% block content %}
-    <div class="jumbotron">
-        <div class="container">
-            <div class="form-container mt-5">
-                <h2 class="form-heading text-center">Create a Recipe</h2>
-                <form method="POST" action="/adding">
-                    <!-- Genre (Main or Dessert) Dropdown -->
-                    <div class="form-group">
-                        <label for="genre">Genre:</label>
-                        <select class="form-control" id="genre" name="genre" required>
-                            <option value="main">Main</option>
-                            <option value="dessert">Dessert</option>
-                            <option value="bread">Bread</option>
-                        </select>
-                    </div>
-                    <!-- Recipe Name -->
-                    <div class="form-group">
-                        <label for="name">Recipe Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter the recipe name" required />
-                    </div>
-                    <!-- Weights -->
-                    <div class="form-group">
-                        <label for="weight" id="weight-label" aria-live="polite">Weight (How many days food can last):</label>
-                        <input type="number" class="form-control" id="weight" placeholder="Enter weight" name="weight" required />
-                    </div>
-                    <!-- Ingredients -->
-                    <div class="form-group" id="ingredients-section">
-                        <label for="ingredients">Ingredients:</label>
-                        <div class="ingredient-group input-container">
-                            <input type="number" step="any" id="quantity-0" class="form-control ingredient-quantity w-25" placeholder="Quantity" name="ingredients[0][quantity]" required />
-                            <input type="text" id="measurement-0" class="form-control ingredient-measurement w-25" placeholder="Measurement (e.g., tsp, tbsp)" name="ingredients[0][measurement]" required />
-                            <input type="text" id="name-0" class="form-control ingredient-name w-50" placeholder="Ingredient name" name="ingredients[0][name]" required />
-                        </div>
-                        <div class="ingredient-group input-container">
-                            <input type="number" step="any" id="quantity-1" class="form-control ingredient-quantity w-25" placeholder="Quantity" name="ingredients[1][quantity]" />
-                            <input type="text" id="measurement-1" class="form-control ingredient-measurement w-25" placeholder="Measurement (e.g., tsp, tbsp)" name="ingredients[1][measurement]" />
-                            <input type="text" id="name-1" class="form-control ingredient-name w-50" placeholder="Ingredient name" name="ingredients[1][name]" />
-                        </div>
-                        <div class="ingredient-group input-container">
-                            <input type="number" step="any" id="quantity-2" class="form-control ingredient-quantity w-25" placeholder="Quantity" name="ingredients[2][quantity]" />
-                            <input type="text" id="measurement-2" class="form-control ingredient-measurement w-25" placeholder="Measurement (e.g., tsp, tbsp)" name="ingredients[2][measurement]" />
-                            <input type="text" id="name-2" class="form-control ingredient-name w-50" placeholder="Ingredient name" name="ingredients[2][name]" />
-                        </div>
-                        <div class="ingredient-group input-container">
-                            <input type="number" step="any" id="quantity-3" class="form-control ingredient-quantity w-25" placeholder="Quantity" name="ingredients[3][quantity]" />
-                            <input type="text" id="measurement-3" class="form-control ingredient-measurement w-25" placeholder="Measurement (e.g., tsp, tbsp)" name="ingredients[3][measurement]" />
-                            <input type="text" id="name-3" class="form-control ingredient-name w-50" placeholder="Ingredient name" name="ingredients[3][name]" />
-                        </div>
-                        <div class="ingredient-group input-container">
-                            <input type="number" step="any" id="quantity-4" class="form-control ingredient-quantity w-25" placeholder="Quantity" name="ingredients[4][quantity]" />
-                            <input type="text" id="measurement-4" class="form-control ingredient-measurement w-25" placeholder="Measurement (e.g., tsp, tbsp)" name="ingredients[4][measurement]" />
-                            <input type="text" id="name-4" class="form-control ingredient-name w-50" placeholder="Ingredient name" name="ingredients[4][name]" />
-                        </div>
-                    </div>
-                    <button type="button" id="add-ingredient" class="btn btn-primary">Add another ingredient</button>
-                    <br><br>
-                    <!-- cuisine -->
-                    <div class="form-group">
-                        <label for="cuisine">Cuisine (e.g.Main: Japanese, Hungarian etc / Bread: loaf, sourdough etc):</label>
-                        <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Enter the cuisine" required>
-                    </div>
-                    <!-- Recipe Link -->
-                    <div class="form-group">
-                        <label for="link">Recipe Link (optional):</label>
-                        <input type="url" class="form-control" id="link" name="link" placeholder="e.g., http://recipe-link.com">
-                    </div>
-                    <!-- Instructions -->
-                    <div class="form-group">
-                        <label for="instructions">Instructions (add each step on a new line):</label>
-                        <textarea class="form-control" id="instructions" name="instructions" rows="7" placeholder="e.g., Boil water, Mix ingredients" required></textarea>
-                    </div>
-                    <!-- Submit Button -->
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-warning btn-lg centered-btn">Submit Recipe</button>
-                    </div>
-                    <br>
-                    <!-- Adding buttons leading to 'home' and 'add recipes' pages-->
-                    <div class="row justify-content-center mt-3">
-                        <div class="col-auto">
-                            <a class="btn btn-warning btn-lg" href="{{ url_for('home') }}" role="button">
-                            Home
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                        <a class="btn btn-warning btn-lg" href="{{ url_for('get_recipes')}}" role="button">
-                            Get a list of recipes
-                        </a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <script>
-        // JavaScript to add more ingredient fields dynamically
-        let ingredientIndex = 1;
+<div class="page">
+	<h2 class="page-title">Add a recipe</h2>
+	<p class="page-subtitle">Fill in the details below. Empty ingredient rows are ignored.</p>
 
-        document.getElementById('add-ingredient').addEventListener('click', function () {
-            // Create new fields for ingredient name and quantity
-            let newIngredientGroup = document.createElement('div');
-            newIngredientGroup.classList.add('ingredient-group', 'input-container');
+	<form method="POST" action="{{ url_for('add_recipes') }}" id="recipe-form">
+		{{ csrf_token() if csrf_token is defined }}
 
-            let newQuantityInput = document.createElement('input');
-            newQuantityInput.type = 'number';
-            newQuantityInput.classList.add('form-control');
-            newQuantityInput.classList.add('ingredient-quantity');
-            newQuantityInput.classList.add('w-25');
-            newQuantityInput.placeholder = 'Quantity';
-            newQuantityInput.name = `ingredients[${ingredientIndex + 4}][quantity]`;
-            newQuantityInput.id = `quantity-${ingredientIndex + 4}`;
-            newQuantityInput.required = true;
-            newQuantityInput.step = "any"; // Allow floating numbers
+		<div class="form-group">
+			<label class="form-label" for="genre">Genre</label>
+			<select class="form-select" id="genre" name="genre" required>
+				<option value="main">Main</option>
+				<option value="dessert">Dessert</option>
+				<option value="bread">Bread</option>
+			</select>
+		</div>
 
-            // Measurement input
-            let newMeasurementInput = document.createElement('input');
-            newMeasurementInput.type = 'text';
-            newMeasurementInput.classList.add('form-control', 'ingredient-measurement','w-25');
-            newMeasurementInput.placeholder = 'Measurement (e.g., tsp, tbsp)';
-            newMeasurementInput.name = `ingredients[${ingredientIndex + 4}][measurement]`;
-            newMeasurementInput.id = `measurement-${ingredientIndex + 4}`;
-            newMeasurementInput.required = true;
+		<div class="form-group">
+			<label class="form-label" for="name">Recipe name</label>
+			<input type="text" class="form-control" id="name" name="name" placeholder="Enter the recipe name" required>
+		</div>
 
-            let newNameInput = document.createElement('input');
-            newNameInput.type = 'text';
-            newNameInput.classList.add('form-control');
-            newNameInput.classList.add('ingredient-name');
-            newNameInput.classList.add('w-50');
-            newNameInput.placeholder = 'Ingredient name';
-            newNameInput.name = `ingredients[${ingredientIndex + 4}][name]`;
-            newNameInput.id = `name-${ingredientIndex + 4}`;
-            newNameInput.required = true;
+		<div class="form-group">
+			<label class="form-label" for="weight" id="weight-label" aria-live="polite">Weight (how many days the food lasts)</label>
+			<input type="number" class="form-control" id="weight" name="weight" min="1" placeholder="Enter weight" required>
+		</div>
 
-            // Append inputs to the new ingredient group
-            newIngredientGroup.appendChild(newQuantityInput);
-            newIngredientGroup.appendChild(newMeasurementInput);
-            newIngredientGroup.appendChild(newNameInput);
+		<fieldset class="form-group ingredients-fieldset">
+			<legend class="form-label">Ingredients</legend>
+			<div id="ingredients-section">
+				{% for n in range(5) %}
+					<div class="ingredient-group">
+						<input type="number" step="any" class="form-control ingredient-quantity" placeholder="Qty" name="ingredients[{{ n }}][quantity]" aria-label="Quantity" {% if loop.first %}required{% endif %}>
+						<input type="text" class="form-control ingredient-measurement" placeholder="Unit (g, tbsp)" name="ingredients[{{ n }}][measurement]" aria-label="Measurement">
+						<input type="text" class="form-control ingredient-name" placeholder="Ingredient" name="ingredients[{{ n }}][name]" aria-label="Ingredient name" {% if loop.first %}required{% endif %}>
+					</div>
+				{% endfor %}
+			</div>
+			<button type="button" id="add-ingredient" class="btn btn-sm">+ Add another ingredient</button>
+		</fieldset>
 
+		<div class="form-group">
+			<label class="form-label" for="cuisine">Cuisine</label>
+			<input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Main: Japanese, Italian… / Bread: Sweet, Salty" required>
+		</div>
 
-            // Add the new ingredient group to the form
-            document.getElementById('ingredients-section').appendChild(newIngredientGroup);
+		<div class="form-group">
+			<label class="form-label" for="link">Recipe link (optional)</label>
+			<input type="url" class="form-control" id="link" name="link" placeholder="https://…">
+		</div>
 
-            // Increment the ingredient index for the next one
-            ingredientIndex++;
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.querySelector('form');
+		<div class="form-group">
+			<label class="form-label" for="instructions">Instructions (one step per line)</label>
+			<textarea class="form-control" id="instructions" name="instructions" rows="7" placeholder="Boil the water&#10;Mix the ingredients" required></textarea>
+		</div>
 
-            form.addEventListener('submit', function (event) {
-                // Filter out empty ingredient fields before submitting
-                const ingredientGroups = document.querySelectorAll('.ingredient-group');
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary btn-lg">Save recipe</button>
+		</div>
+	</form>
+</div>
 
-                ingredientGroups.forEach(group => {
-                    const quantityInput = group.querySelector('.ingredient-quantity');
-                    const measurementInput = group.querySelector('.ingredient-measurement');
-                    const nameInput = group.querySelector('.ingredient-name');
+<script>
+	(function () {
+		const section = document.getElementById('ingredients-section');
+		const form = document.getElementById('recipe-form');
+		const genreSelect = document.getElementById('genre');
+		const weightLabel = document.getElementById('weight-label');
 
-                    // If both fields are empty, remove them to avoid submission errors
-                    if (!quantityInput.value && !nameInput.value) {
-                        quantityInput.removeAttribute('name');
-                        measurementInput.removeAttribute('name');
-                        nameInput.removeAttribute('name');
-                    }
-                });
-            });
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            const genreSelect = document.getElementById('genre');
-            const weightLabel = document.getElementById('weight-label');
+		// Add another empty ingredient row
+		document.getElementById('add-ingredient').addEventListener('click', function () {
+			const index = section.querySelectorAll('.ingredient-group').length;
+			const row = section.querySelector('.ingredient-group').cloneNode(true);
+			row.querySelectorAll('input').forEach(function (input) {
+				input.value = '';
+				input.required = false;
+				input.name = input.name.replace(/\[\d+\]/, '[' + index + ']');
+			});
+			section.appendChild(row);
+			row.querySelector('input').focus();
+		});
 
-            function updateWeightLabel() {
-                if (genreSelect.value === 'bread') {
-                    weightLabel.textContent = 'Weight (How many pieces of bread?):';
-                } else if (genreSelect.value === 'dessert') {
-                    weightLabel.textContent = 'Weight (servings or portions):';
-                } else {
-                    weightLabel.textContent = 'Weight (How many days food can last):';
-                }
-            }
+		// Leave out rows with no ingredient name, and renumber the rest
+		// (the Flask route stops reading at the first missing number)
+		form.addEventListener('submit', function () {
+			let next = 0;
+			section.querySelectorAll('.ingredient-group').forEach(function (row) {
+				const name = row.querySelector('.ingredient-name');
+				row.querySelectorAll('input').forEach(function (input) {
+					if (!name.value.trim()) {
+						input.removeAttribute('name');
+					} else {
+						input.name = input.name.replace(/\[\d+\]/, '[' + next + ']');
+					}
+				});
+				if (name.value.trim()) {
+					next++;
+				}
+			});
+		});
 
-            // Initial check on page load
-            updateWeightLabel();
-
-            // Update label when genre selection changes
-            genreSelect.addEventListener('change', updateWeightLabel);
-        });
-    </script>
+		// Change what "weight" means for each genre
+		const labels = {
+			bread: 'Weight (how many pieces of bread)',
+			dessert: 'Weight (servings or portions)',
+			main: 'Weight (how many days the food lasts)'
+		};
+		function updateWeightLabel() {
+			weightLabel.textContent = labels[genreSelect.value] || labels.main;
+		}
+		genreSelect.addEventListener('change', updateWeightLabel);
+		updateWeightLabel();
+	})();
+</script>
 {% endblock %}

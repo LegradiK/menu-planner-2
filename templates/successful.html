@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
-{% from '_macros.html' import recipe_item %}
+{% from '_macros.html' import recipe_item with context %}
 {% block title %}Recipe saved{% endblock %}
 
 {% block content %}
-<div class="container mt-5" style="max-width: 760px;">
-  <div class="alert alert-success text-center">
-    <strong>{{ recipe.name }}</strong> has been saved.
-  </div>
+<div class="page">
+	<div class="alert alert-success alert-center">
+		<strong>{{ recipe.name }}</strong> has been saved.
+	</div>
 
-  <div class="recipe-list">
-    {{ recipe_item(recipe, open=true) }}
-  </div>
+	<div class="recipe-list">
+		{{ recipe_item(recipe, open=true) }}
+	</div>
 
-  <div class="action-row">
-    <a class="btn btn-primary" href="{{ url_for('add_recipes') }}">Add another recipe</a>
-    <a class="btn" href="{{ url_for('get_recipes') }}">Get menu ideas</a>
-  </div>
+	<div class="page-actions">
+		<a class="btn btn-primary" href="{{ url_for('add_recipes') }}">Add another recipe</a>
+		<a class="btn" href="{{ url_for('all_recipes') }}">All recipes</a>
+		<a class="btn" href="{{ url_for('get_recipes') }}">Get menu ideas</a>
+	</div>
 </div>
 {% endblock %}

@@ -1,28 +1,34 @@
 {% extends 'base.html' %}
 {% from '_macros.html' import recipe_item with context %}
 {% block title %}My week{% endblock %}
-{% block content %}
-<div class="container mt-5" style="max-width: 760px;">
-  <h2 class="text-center mb-4">My week</h2>
 
-  {% if recipes %}
-    <div class="recipe-list">
-      {% for recipe in recipes %}{{ recipe_item(recipe) }}{% endfor %}
-    </div>
-    <div class="nav-links d-flex justify-content-center gap-2 mt-4">
-      <a href="{{ url_for('my_week_shopping_list') }}" class="btn btn-primary">
-        Create shopping list
-      </a>
-      <form method="POST" action="{{ url_for('plan_clear') }}">
-        {{ csrf_token() if csrf_token is defined }}
-        <button class="btn btn-outline-secondary">Clear week</button>
-      </form>
-    </div>
-  {% else %}
-    <p class="text-center text-muted">
-      Nothing picked yet. <a href="{{ url_for('all_recipes') }}">Browse recipes</a>
-      and press "Add to my week".
-    </p>
-  {% endif %}
+{% block content %}
+<div class="page">
+	<h2 class="page-title">My week</h2>
+
+	{% if recipes %}
+		<p class="page-subtitle">
+			{{ recipes|length }} recipe{{ '' if recipes|length == 1 else 's' }} picked
+		</p>
+
+		<div class="recipe-list">
+			{% for recipe in recipes %}
+				{{ recipe_item(recipe) }}
+			{% endfor %}
+		</div>
+
+		<div class="page-actions">
+			<a class="btn btn-primary" href="{{ url_for('my_week_shopping_list') }}">Create shopping list</a>
+			<form method="POST" action="{{ url_for('plan_clear') }}">
+				{{ csrf_token() if csrf_token is defined }}
+				<button class="btn btn-outline-danger">Clear week</button>
+			</form>
+		</div>
+	{% else %}
+		<p class="page-empty">
+			Nothing picked yet. <a href="{{ url_for('all_recipes') }}">Browse recipes</a>
+			and press "+ My week".
+		</p>
+	{% endif %}
 </div>
 {% endblock %}

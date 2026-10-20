@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
-{% from '_macros.html' import recipe_item %}
+{% from '_macros.html' import recipe_item with context %}
 {% block title %}This week's menu{% endblock %}
 
 {% block content %}
-<div class="container mt-4" style="max-width: 760px;">
-  <h2 class="mb-1">This week's menu</h2>
-  <p class="text-muted mb-4">Tap a recipe to see its ingredients and steps.</p>
+<div class="page">
+	<h2 class="page-title">This week's menu</h2>
+	<p class="page-subtitle">Tap a recipe to see its ingredients and steps.</p>
 
-  <div class="recipe-list">
-    {% for recipe in menu %}
-      {{ recipe_item(recipe) }}
-    {% endfor %}
+	<div class="recipe-list">
+		{% for recipe in menu %}
+			{{ recipe_item(recipe) }}
+		{% endfor %}
 
-    {% if bread %}
-      {{ recipe_item(bread) }}
-    {% endif %}
-  </div>
+		{% if bread %}
+			{{ recipe_item(bread) }}
+		{% endif %}
+	</div>
 
-  <div class="action-row">
-    <a class="btn btn-primary" href="{{ url_for('make_list') }}">Make shopping list</a>
-    <a class="btn" href="{{ url_for('get_recipes') }}">Shuffle menu</a>
-  </div>
+	<div class="page-actions">
+		<a class="btn btn-primary" href="{{ url_for('make_list') }}">Make shopping list</a>
+		<a class="btn" href="{{ url_for('get_recipes') }}">Shuffle menu</a>
+	</div>
 </div>
 {% endblock %}

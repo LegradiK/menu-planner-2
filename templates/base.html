@@ -1,77 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Menu Planner{% endblock %}</title>
 
-  {% block styles %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-  {% endblock %}
-
-  <title>{% block title %}Menu Planner{% endblock %}</title>
+	{% block styles %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	{% endblock %}
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="{{ url_for('home') }}">Menu Planner</a>
-      <nav>
-        <ul class="nav-links">
-          <li>
-            <a class="nav-btn" href="{{ url_for('my_week') }}">
-              My week
-              	{% if plan|length > 0 %}
-                  <span class="badge bg-primary">{{ plan|length }}</span>
-                {% endif %}
-            </a>
-          </li>
-          <li>
-            <a class="nav-btn {% if request.endpoint == 'all_recipes' %}active{% endif %}"
-               href="{{ url_for('all_recipes') }}">All recipes</a>
-          </li>
-          <li>
-            <a class="nav-btn {% if request.endpoint == 'get_recipes' %}active{% endif %}"
-               href="{{ url_for('get_recipes') }}">Get ideas</a>
-          </li>
-          <li>
-            <a class="nav-btn {% if request.endpoint == 'search_recipe' %}active{% endif %}"
-               href="{{ url_for('search_recipe') }}">Search</a>
-          </li>
-          <li>
-            <a class="nav-btn {% if request.endpoint == 'add_recipes' %}active{% endif %}"
-               href="{{ url_for('add_recipes') }}">Add a recipe</a>
-          </li>
-          <li>
-            <a class="nav-btn" href="{{ url_for('get_inspired') }}">Get inspired</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+	{% set nav = [
+		('my_week', 'My week'),
+		('all_recipes', 'All recipes'),
+		('get_recipes', 'Get ideas'),
+		('search_recipe', 'Search'),
+		('add_recipes', 'Add a recipe'),
+		('get_inspired', 'Get inspired'),
+	] %}
 
-  <!--Flash Message Block-->
-  {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-    <div class="container mt-3">
-      {% for category, message in messages %}
-      <div class="alert alert-{{ category }}" role="alert">
-        {{ message }}
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-  {% endwith %}
-  <!--End Flash Message Block-->
+	<header class="site-header">
+		<div class="header-inner">
+			<a class="brand" href="{{ url_for('home') }}">Menu Planner</a>
+			<nav>
+				<ul class="nav-links">
+					{% for endpoint, label in nav %}
+						<li>
+							<a class="nav-btn {% if request.endpoint == endpoint %}active{% endif %}" href="{{ url_for(endpoint) }}">
+								{{ label }}
+								{% if endpoint == 'my_week' and plan %}
+									<span class="badge">{{ plan|length }}</span>
+								{% endif %}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</header>
 
-  <main>
-    {% block content %}{% endblock %}
-  </main>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			<div class="flash-messages">
+				{% for category, message in messages %}
+					<div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	{% endwith %}
 
-  <footer class="footer">
-    Menu Planner &copy;{{ current_year }} by
-    <a href="https://github.com/LegradiK" target="_blank" rel="noopener noreferrer">LegradiK</a>
-    All rights reserved.
-  </footer>
+	<main>
+		{% block content %}{% endblock %}
+	</main>
+
+	<footer class="footer">
+		Menu Planner &copy;{{ current_year }} by
+		<a href="https://github.com/LegradiK" target="_blank" rel="noopener noreferrer">LegradiK</a>.
+		All rights reserved.
+	</footer>
 
 </body>
 </html>
