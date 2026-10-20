@@ -15,20 +15,20 @@
 
 /* ---------- 1. Palette: change these to re-theme the site ---------- */
 :root {
-  --bg: #ffffff;
+  --bg: #fffdfb;
   --surface: #ffffff;
-  --surface-alt: #f7f8f6;
+  --surface-alt: #fbf6f2;      /* warm off-white */
   --text: #2d2a26;
-  --text-muted: #6b665e;
-  --border: #e4e7e3;
+  --text-muted: #6f6a64;
+  --border: #ece6e0;
 
-  --primary: #3f7d58;        /* herb green */
-  --primary-dark: #2f6145;
-  --primary-light: #e6f1ea;
-  --accent: #d9693a;         /* tomato orange */
+  --primary: #da5c43;          /* terracotta (white text on it passes WCAG AA) */
+  --primary-dark: #963722;
+  --primary-light: #fbeee9;
+  --accent: #c8553d;           /* lighter terracotta for decorative touches */
   --accent-light: #fbeee9;
-  --danger: #c0392b;
-  --danger-light: #fbeae8;
+  --danger: #8c2a2a;           /* deep red, darker than the terracotta */
+  --danger-light: #f8e6e6;
   --warning-light: #fdf3e1;
   --info: #3a7bb0;
   --info-light: #e8f1f8;
@@ -651,7 +651,7 @@ select.form-control,
 .form-select {
   appearance: none;
   padding-right: 36px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%233f7d58' stroke-width='2'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23b9472f' stroke-width='2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
 }
@@ -761,7 +761,7 @@ input[type="checkbox"] {
 .alert-danger {
   background-color: var(--danger-light);
   border-color: var(--danger);
-  color: #8e2a1f;
+  color: var(--danger);
 }
 
 .alert-warning {
@@ -1103,7 +1103,7 @@ input[type="checkbox"] {
 
 .inspire-category .count {
   color: #ffffff;
-  background-color: var(--accent);
+  background-color: var(--primary);
 }
 
 /* Site links */

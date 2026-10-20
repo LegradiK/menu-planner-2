@@ -36,13 +36,13 @@
             "instructions": [
                 "In 120ml of the warm water, pour in the sugar and yeast. Do not stir. Let it sit for five minutes, and then stir the yeast and sugar mixture until it all dissolves in the water.",
                 "Mix the flour and salt in a large bowl. Make a well in the middle and pour in the yeast and sugar mixture.",
-                "Pour 1/3 cup / 80ml of warm water into the well. Mix and stir in the rest of the water (the scant 1/2 cup / 100ml that is remaining), as needed. Depending on where you live, you may need to add an additional couple tablespoons to about ¼ cup/60ml of water. You want a moist and firm dough after you have mixed it.",
+                "Pour 1/3 cup / 80ml of warm water into the well. Mix and stir in the rest of the water (the scant 1/2 cup / 100ml that is remaining), as needed. Depending on where you live, you may need to add an additional couple tablespoons to about \u00bc cup/60ml of water. You want a moist and firm dough after you have mixed it.",
                 "On a floured countertop, knead the dough for about 10 minutes until it is smooth and elastic. Try working in as much flour as possible to form a firm and stiff dough.",
                 "Lightly brush a large bowl with oil and turn the dough to coat. Cover the bowl with a damp dish towel. Let rise in a warm place for 1 hour, until the dough has doubled in size. Punch the dough down, and let it rest for another 10 minutes.",
-                "Carefully divide the dough into 8 pieces (I used a scale to be extra precise, but it’s not necessary). Shape each piece into a round. Now, take a dough ball, and press it gently against the countertop (or whatever work surface you’re using) moving your hand and the ball in a circular motion pulling the dough into itself while reducing the pressure on top of the dough slightly until a perfect dough ball forms (as pictured). Repeat with 7 other dough rounds.",
-                "Coat a finger in flour, and gently press your finger into the center of each dough ball to form a ring. Stretch the ring to about ⅓ the diameter of the bagel and place on a lightly oiled cookie sheet. Repeat the same step with the remaining dough.",
+                "Carefully divide the dough into 8 pieces (I used a scale to be extra precise, but it\u2019s not necessary). Shape each piece into a round. Now, take a dough ball, and press it gently against the countertop (or whatever work surface you\u2019re using) moving your hand and the ball in a circular motion pulling the dough into itself while reducing the pressure on top of the dough slightly until a perfect dough ball forms (as pictured). Repeat with 7 other dough rounds.",
+                "Coat a finger in flour, and gently press your finger into the center of each dough ball to form a ring. Stretch the ring to about \u2153 the diameter of the bagel and place on a lightly oiled cookie sheet. Repeat the same step with the remaining dough.",
                 "After shaping the bagels and placing them on the cookie sheet, cover with a damp kitchen towel and allow to rest for 10 minutes. Meanwhile, preheat your oven to 425F / 220C / Gas Mark 7.",
-                "Bring a large pot of water to a boil. Reduce the heat. Use a slotted spoon or skimmer to lower the bagels into the water. Boil as many as you are comfortable with boiling. Once the bagels are in, it shouldnt take too long for them to float to the top (a couple seconds). Let them sit there for 1 minute, and then flip them over to boil for another minute. Extend the boiling times to 2 minutes each, if you’d prefer a chewier bagel (results will give you a more New York-Style bagel with this option).",
+                "Bring a large pot of water to a boil. Reduce the heat. Use a slotted spoon or skimmer to lower the bagels into the water. Boil as many as you are comfortable with boiling. Once the bagels are in, it shouldnt take too long for them to float to the top (a couple seconds). Let them sit there for 1 minute, and then flip them over to boil for another minute. Extend the boiling times to 2 minutes each, if you\u2019d prefer a chewier bagel (results will give you a more New York-Style bagel with this option).",
                 "If you want to add toppings to your bagels, do so as you take them out of the water. Alternatively, you can use an egg wash to get the toppings to stick before baking the bagels. You may want to use the Optional Toppings listed above to top the bagels. Use just one topping, or a combination to make your own Everything Bagel Seasoning.",
                 "Once all the bagels have boiled (and have been topped with your choice of toppings), transfer them to an oiled or parchment-lined baking sheet.",
                 "Bake for 20 - 25 minutes, or until golden brown (I usually err on the side of 20 minutes).",
@@ -620,6 +620,78 @@
                 "Leave to prove again until 1.5 times bigger. When it has risen about 1.2 times, start heating the oven to 180C fan (start earlier if your oven is slow to heat).",
                 "Bake at 180C fan for 32 minutes.",
                 "Take it out of the tin and leave on a wire rack until completely cool."
+            ]
+        },
+        {
+            "genre": "bread",
+            "name": "Shio butter pan - Salt and butter bread",
+            "ingredients": [
+                {
+                    "quantity": "500",
+                    "measurement": "g",
+                    "name": "bread flour"
+                },
+                {
+                    "quantity": "6",
+                    "measurement": "g",
+                    "name": "dry yeast"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "granulated sugar"
+                },
+                {
+                    "quantity": "6",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "360",
+                    "measurement": "ml",
+                    "name": "warm milk"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "unsalted butter"
+                },
+                {
+                    "quantity": "112",
+                    "measurement": "g",
+                    "name": "butter - for placing inside when rolling"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt - for topping"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg - for egg wash: can be milk or oil"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "coarse sea salt"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 12,
+            "link": "",
+            "instructions": [
+                "Put the flour, water, sugar, salt and yeast into the stand mixer and mix.",
+                "Once the dough has come together, add the butter in 3-5 pieces. Mix for another 10 minutes, or until the dough is nicely elastic.",
+                "Turn the dough out onto the work surface, shape it into a smooth ball and leave to prove until doubled in size.",
+                "Divide into 12 equal pieces.",
+                "Press out the gas, stretch each piece, create isosceles triangle shape.",
+                "Place butter piece at the bottom of the triangle, roll towards the tip of the triangle - should look like croissant.",
+                "Place them on the baking tray.",
+                "Leave to prove again until 1.5 times bigger. When it has risen about 1.2 times, start heating the oven to 180C fan (start earlier if your oven is slow to heat).",
+                "Egg wash on each pieces, then sprinkle sea salts",
+                "Bake at 200C/180C fan for 11 minutes.",
+                "Take it out of the tin and leave on a wire rack"
             ]
         }
     ]
