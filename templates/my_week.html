@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="page-actions">
-			<a class="btn btn-primary" href="{{ url_for('my_week_shopping_list') }}">Create shopping list</a>
+			<a class="btn btn-primary" href="{{ url_for('my_week_shopping_list') }}" target="_blank" rel="noopener noreferrer">Create shopping list</a>
 			<form method="POST" action="{{ url_for('plan_clear') }}">
 				{{ csrf_token() if csrf_token is defined }}
 				<button class="btn btn-outline-danger">Clear week</button>
