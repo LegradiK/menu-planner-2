@@ -4,14 +4,16 @@ Where it all comes together
 """
 import json
 import os
-from dotenv import load_dotenv
 from datetime import datetime
+from collections import defaultdict
+
+from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template, request, redirect, url_for, flash, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField
 from wtforms.validators import DataRequired
+
 from build_menu import build_main_menu, bread_suggestion
-from collections import defaultdict
 from save_recipe import save_recipe
 from shopping_list import collect_ingredients, update_shopping_list, categorize_ingredients
 
