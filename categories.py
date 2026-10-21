@@ -66,7 +66,7 @@ spices = [
     "lemon zest", "lime zest", "annatto", "chili flake", "kala jeera",
     "turmeric root", "paprika", "szechuan peppercorn", "bay leaf",
     "smoked paprika", "oregano", "black pepper", "red pepper", "cilantro",
-    "lemongrass"
+    "lemongrass", "white pepper"
 ]
 
 aisle_products = [
@@ -84,7 +84,8 @@ aisle_products = [
     "popcorn", "fruit snack", "soft drink", "juice", "energy drink", "coffee",
     "tea", "hot chocolate", "squash", "sparkling water", "canned drink", "water",
     "smoothie", "ice lolly", "cocoa powder", "apple cider vinegar", "vinegar",
-    "water", "sugar", "passata", "extra virgin olive oil"
+    "water", "sugar", "passata", "extra virgin olive oil", "neutral oil", "soy sauce",
+    "sesami oil", "sake", "dashi", "mirin", "togarashi", "curry roux cubes"
 ]
 
 fridge_freezer = [
