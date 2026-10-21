@@ -38,16 +38,20 @@ RECIPE_FILES = {
     "dessert": "dessert_recipes.json",
     "bread": "bread_recipes.json",
 }
- 
+
 CATEGORY_LABELS = {"main": "Main dishes", "dessert": "Desserts", "bread": "Bread"}
- 
+
 
 class SearchForm(FlaskForm):
     """
     FlaskForm for /search page, searches a particular recipe
     """
-    genre = SelectField('Genre', choices=[('all', 'All'), ('main', 'Main'), ('dessert', 'Dessert'), ('bread', 'Bread')],
-                        validators=[DataRequired()])
+    genre = SelectField(
+        "Genre",
+        choices=[("all", "All"), ("main", "Main"),
+                 ("dessert", "Dessert"), ("bread", "Bread")],
+        validators=[DataRequired()],
+    )
     recipe_name = StringField('Recipe Name', validators=[DataRequired()])
     submit = SubmitField('Search')
 
@@ -110,8 +114,8 @@ def get_recipes():
 def inject_year():
     """Make {{ current_year }} available in every template (used in the footer)."""
     return {"current_year": datetime.now().year}
- 
- 
+
+
 @app.route("/all-recipes")
 def all_recipes():
     """
@@ -121,26 +125,26 @@ def all_recipes():
         and then by cuisine (Italian, Japanese, ...)
     """
     catalogue = {}
- 
+
     for key, filename in RECIPE_FILES.items():
         file_path = os.path.join(app.root_path, "recipes", filename)
         if not os.path.exists(file_path):
             continue
- 
+
         # Read the file on every visit so newly added recipes show straight away
         with open(file_path, "r", encoding="utf-8") as file:
             recipes = json.load(file)["recipes"]
- 
+
         groups = defaultdict(list)
         for recipe in recipes:
             cuisine = (recipe.get("cuisine") or "Other").strip().title()
             groups[cuisine].append(recipe)
- 
+
         catalogue[CATEGORY_LABELS[key]] = {
             cuisine: sorted(items, key=lambda r: r["name"].lower())
             for cuisine, items in sorted(groups.items())
         }
- 
+
     return render_template("all_recipes.html", catalogue=catalogue)
 
 def load_recipes(genre: str) -> list:
@@ -186,7 +190,7 @@ def delete():
     # check if the recipe is in main_recipes.json or dessert_recipes.json
         if genre not in RECIPE_FILES:
             return redirect(url_for('home'))
-        
+
         file_path = os.path.join(app.root_path, "recipes", RECIPE_FILES[genre])
 
         # open the file according to the path with read mode
@@ -417,6 +421,7 @@ def get_plan() -> list:
 
 @app.route("/plan/add", methods=["POST"])
 def plan_add():
+    """Add a recipe to the user's week."""
     name = request.form["name"]
     plan = get_plan()
     if name not in plan:
@@ -428,6 +433,7 @@ def plan_add():
 
 @app.route("/plan/remove", methods=["POST"])
 def plan_remove():
+    """Remove a recipe from user's week."""
     name = request.form["name"]
     session["plan"] = [n for n in get_plan() if n != name]
     return redirect(request.referrer or url_for("my_week"))
@@ -435,6 +441,7 @@ def plan_remove():
 
 @app.route("/plan/clear", methods=["POST"])
 def plan_clear():
+    """Clear everything from user's week."""
     session.pop("plan", None)
     session.pop("shopping_removed", None)
     session.pop("shopping_extra", None)
@@ -442,71 +449,81 @@ def plan_clear():
 
 @app.route("/my-week")
 def my_week():
+    """The page that shows all the recipes that user chose"""
     recipes = [r for n in get_plan() if (r := find_recipe(n))]
     return render_template("my_week.html", recipes=recipes)
 
 
 def item_key(item: dict) -> str:
-	"""Identify a shopping-list item by its name and unit."""
-	return f"{str(item.get('name', '')).strip().lower()}|{str(item.get('measurement', '')).strip().lower()}"
+    """Identify a shopping-list item by its name and unit."""
+    name = str(item.get("name", "")).strip().lower()
+    unit = str(item.get("measurement", "")).strip().lower()
+    return f"{name}|{unit}"
 
 
 def build_shopping_list() -> dict:
-	"""Week's recipes -> ingredients, minus removed items, plus extras, by aisle."""
-	recipes = [r for n in get_plan() if (r := find_recipe(n))]
-	ingredient_list = update_shopping_list(collect_ingredients(recipes))
+    """Week's recipes -> ingredients, minus removed items, plus extras, by aisle."""
+    recipes = [r for n in get_plan() if (r := find_recipe(n))]
+    ingredient_list = update_shopping_list(collect_ingredients(recipes))
 
-	removed = set(session.get("shopping_removed", []))
-	ingredient_list = [i for i in ingredient_list if item_key(i) not in removed]
-	ingredient_list += session.get("shopping_extra", [])
+    removed = set(session.get("shopping_removed", []))
+    ingredient_list = [i for i in ingredient_list if item_key(i) not in removed]
+    ingredient_list += session.get("shopping_extra", [])
 
-	return categorize_ingredients(ingredient_list)
+    return categorize_ingredients(ingredient_list)
 
 
 @app.route("/my-week/shopping-list")
 def my_week_shopping_list():
-	return render_template("shopping_list.html",
-						   categorized_ingredients=build_shopping_list(),
-						   editable=True)
+    """Page to show all the ingredients needed to make recipes in user's week."""
+    return render_template("shopping_list.html",
+                           categorized_ingredients=build_shopping_list(),
+                           editable=True)
 
 
 @app.route("/my-week/shopping-list/add", methods=["POST"])
 def shopping_add():
-	name = request.form.get("name", "").strip()
-	if name:
-		extra = session.get("shopping_extra", [])
-		extra.append({
-			"name": name,
-			"quantity": request.form.get("quantity", "").strip(),
-			"measurement": request.form.get("measurement", "").strip(),
-			"extra": True,
-		})
-		session["shopping_extra"] = extra
-	return redirect(url_for("my_week_shopping_list"))
+    """
+    Adding any ingredients user wants to buy in an addition to
+    the already created shopping list
+    """
+    name = request.form.get("name", "").strip()
+    if name:
+        extra = session.get("shopping_extra", [])
+        extra.append({
+            "name": name,
+            "quantity": request.form.get("quantity", "").strip(),
+            "measurement": request.form.get("measurement", "").strip(),
+            "extra": True,
+        })
+        session["shopping_extra"] = extra
+    return redirect(url_for("my_week_shopping_list"))
 
 
 @app.route("/my-week/shopping-list/remove", methods=["POST"])
 def shopping_remove():
-	key = request.form["key"]
-	# Remove an item you added yourself...
-	extra = session.get("shopping_extra", [])
-	kept = [i for i in extra if item_key(i) != key]
-	if len(kept) != len(extra):
-		session["shopping_extra"] = kept
-	else:
-		# ...or hide an item that came from a recipe
-		removed = session.get("shopping_removed", [])
-		if key not in removed:
-			removed.append(key)
-			session["shopping_removed"] = removed
-	return redirect(url_for("my_week_shopping_list"))
+    """Removing any ingredients that don't need to be purchased."""
+    key = request.form["key"]
+    # Remove an item you added yourself...
+    extra = session.get("shopping_extra", [])
+    kept = [i for i in extra if item_key(i) != key]
+    if len(kept) != len(extra):
+        session["shopping_extra"] = kept
+    else:
+        # ...or hide an item that came from a recipe
+        removed = session.get("shopping_removed", [])
+        if key not in removed:
+            removed.append(key)
+            session["shopping_removed"] = removed
+    return redirect(url_for("my_week_shopping_list"))
 
 
 @app.route("/my-week/shopping-list/reset", methods=["POST"])
 def shopping_reset():
-	session.pop("shopping_removed", None)
-	session.pop("shopping_extra", None)
-	return redirect(url_for("my_week_shopping_list"))
+    """Clear the shopping list"""
+    session.pop("shopping_removed", None)
+    session.pop("shopping_extra", None)
+    return redirect(url_for("my_week_shopping_list"))
 
 
 @app.context_processor
@@ -516,4 +533,3 @@ def inject_plan():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
