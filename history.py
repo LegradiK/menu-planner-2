@@ -1,11 +1,13 @@
 """Confirm a week's recipes and look back at past weeks on a calendar."""
 import calendar
+import json
+import os
 from datetime import date, timedelta
 
-from flask import Blueprint, abort, flash, redirect, render_template, request, session, url_for
+from flask import (Blueprint, abort, current_app, flash, redirect, render_template,
+                   request, session, url_for)
 from flask_login import current_user, login_required
 
-from build_menu import load_recipes
 from models import ConfirmedWeek, WeekRecipe, db, monday_of
 
 history_bp = Blueprint("history", __name__)
@@ -21,9 +23,19 @@ def week_choices(today: date | None = None) -> list:
     ]
 
 
+RECIPE_FILES = ("main_recipes.json", "dessert_recipes.json", "bread_recipes.json")
+
+
 def recipes_by_name() -> dict:
-    """All recipes, looked up by lower-case name."""
-    return {r["name"].lower(): r for r in load_recipes("all")}
+    """All recipes from the JSON files, looked up by lower-case name."""
+    lookup = {}
+    for filename in RECIPE_FILES:
+        path = os.path.join(current_app.root_path, "recipes", filename)
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as file:
+                for recipe in json.load(file)["recipes"]:
+                    lookup[recipe["name"].lower()] = recipe
+    return lookup
 
 
 @history_bp.route("/plan/confirm", methods=["POST"])

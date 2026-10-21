@@ -11,17 +11,16 @@
 </head>
 <body>
 
-	{% set nav = [
-		('my_week', 'My week'),
-		('all_recipes', 'All recipes'),
-		('get_recipes', 'Get ideas'),
-		('search_recipe', 'Search'),
-		('add_recipes', 'Add a recipe'),
-		('get_inspired', 'Get inspired'),
-	] %}
-	{% if current_user.is_authenticated %}
-		{% set nav = nav + [('history.calendar_view', 'Calendar')] %}
-	{% endif %}
+	{% set nav = [('my_week', 'My week')]
+		+ ([('history.calendar_view', 'My calendar')] if current_user.is_authenticated else [])
+		+ [
+			('all_recipes', 'All recipes'),
+			('get_recipes', 'Get ideas'),
+			('search_recipe', 'Search'),
+			('add_recipes', 'Add a recipe'),
+			('get_inspired', 'Get inspired'),
+		] %}
+
 
 	<header class="site-header">
 		<div class="header-inner">

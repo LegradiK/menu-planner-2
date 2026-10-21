@@ -10,10 +10,14 @@ from collections import defaultdict
 from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template, request, redirect, url_for, flash, session
 from flask_wtf import FlaskForm
+from flask_wtf.csrf import CSRFProtect
 from wtforms import StringField, SelectField, SubmitField
 from wtforms.validators import DataRequired
 
+from auth import auth_bp
 from build_menu import build_main_menu, bread_suggestion
+from history import history_bp
+from models import db, login_manager
 from save_recipe import save_recipe
 from shopping_list import collect_ingredients, update_shopping_list, categorize_ingredients
 
@@ -22,7 +26,23 @@ load_dotenv(os.path.join(BASE_DIR, "data.env"))
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = os.getenv("FLASK_KEY")
+app.config["SECRET_KEY"] = os.getenv("FLASK_KEY")
+if not app.config["SECRET_KEY"]:
+    raise RuntimeError(
+        "FLASK_KEY is not set. Create data.env next to main.py "
+        "containing FLASK_KEY=<a long random string>."
+    )
+
+# Accounts, saved weeks and form protection
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///menu_planner.db"
+db.init_app(app)
+login_manager.init_app(app)   # makes current_user available everywhere
+CSRFProtect(app)
+app.register_blueprint(auth_bp)
+app.register_blueprint(history_bp)
+
+with app.app_context():
+    db.create_all()
 
 # sample data
 
@@ -30,8 +50,6 @@ sample_data = {
     "message": "Hello Flask API world!",
     "status": "success"
 }
-
-global_menu = []
 
 RECIPE_FILES = {
     "main": "main_recipes.json",
@@ -97,17 +115,46 @@ def get_menu():
 
 ### Web App version ###
 
+def recipes_lookup() -> dict:
+    """Every recipe, looked up by lower-case name."""
+    return {r["name"].lower(): r for r in load_recipes("all")}
+
+
+def current_ideas() -> tuple:
+    """The menu shown on Get ideas, kept in the session until Shuffle is pressed.
+
+    Returns (main recipes, bread recipe or None). A new menu is picked if there
+    isn't one yet or if a saved recipe has since been deleted.
+    """
+    lookup = recipes_lookup()
+    names = session.get("ideas")
+    if names:
+        menu = [lookup.get(name.lower()) for name in names]
+        bread_name = session.get("ideas_bread")
+        bread = lookup.get(bread_name.lower()) if bread_name else None
+        if all(menu) and (bread or not bread_name):
+            return menu, bread
+
+    menu = build_main_menu()
+    bread = bread_suggestion()
+    session["ideas"] = [recipe["name"] for recipe in menu]
+    session["ideas_bread"] = bread["name"] if bread else None
+    return menu, bread
+
+
 @app.route('/recipes', methods=['GET'])
 def get_recipes():
     """
     Route when visiting /recipes
-    Returns:
-        HTML response of built menu
+    Shows the same menu until the user presses Shuffle (/recipes?shuffle=1).
     """
-    global global_menu    # pylint: disable=global-statement
-    global_menu = build_main_menu()
-    bread_suggestion_data = bread_suggestion()
-    return render_template('recipes.html', menu=global_menu, bread=bread_suggestion_data)
+    if request.args.get("shuffle"):
+        session.pop("ideas", None)
+        session.pop("ideas_bread", None)
+        return redirect(url_for("get_recipes"))  # a page refresh won't shuffle again
+
+    menu, bread = current_ideas()
+    return render_template('recipes.html', menu=menu, bread=bread)
 
 
 @app.context_processor
@@ -240,7 +287,8 @@ def make_list():
     Generates a sorted shopping list based on recipes in global_menu.
     """
     # Collect ingredients, update shopping list and categorize ingredients
-    ingredients = collect_ingredients(global_menu)
+    menu, _ = current_ideas()
+    ingredients = collect_ingredients(menu)
     ingredient_list = update_shopping_list(ingredients)
     categorized_ingredients = categorize_ingredients(ingredient_list)
 

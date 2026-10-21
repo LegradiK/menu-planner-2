@@ -7,8 +7,8 @@ import re
 from data import CATEGORIES, STOP_WORDS
 
 # Must match the labels used in CATEGORIES (data.py)
-LIQUIDS = "Pantry: Liquids & Sauces"
-DRY = "Pantry: Dry Goods"
+LIQUIDS = "Pantry Goods - Liquid"
+DRY = "Pantry Goods - Dry"
 
 
 def clean_ingredient_name(raw_name):

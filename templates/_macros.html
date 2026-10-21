@@ -25,7 +25,7 @@
 				<button type="submit" form="{{ form_id }}"
 						class="plan-btn btn btn-sm {{ 'btn-success' if in_plan else 'btn-outline-primary' }}"
 						title="{{ 'Remove from my week' if in_plan else 'Add to my week' }}">
-					{{ '✓ In my week' if in_plan else '+ My week' }}
+					{{ '✗ Remove' if in_plan else '+ My week' }}
 				</button>
 			{% endif %}
 		</summary>
