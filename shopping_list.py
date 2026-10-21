@@ -127,4 +127,3 @@ def categorize_ingredients(ingredient_list):
             categorized_ingredients["Uncategorized"].append(ingredient)
 
     return categorized_ingredients
-

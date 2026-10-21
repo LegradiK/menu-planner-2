@@ -40,4 +40,3 @@ STOP_WORDS is a set of common words and phrases that should be ignored
 during ingredient processing. These words are usually descriptive and do
 not affect the core ingredient name (e.g., "finely chopped", "fresh", etc.).
 """
-
