@@ -17,10 +17,34 @@
 			{% endfor %}
 		</div>
 
+		{# Save this selection to the calendar #}
+		<section class="confirm-week">
+			{% if current_user.is_authenticated %}
+				<form method="POST" action="{{ url_for('history.confirm_week') }}" class="confirm-week__form">
+					{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
+					<label class="form-label" for="week_start">Save these recipes for</label>
+					<select class="form-select" id="week_start" name="week_start">
+						{% for monday, label in week_choices %}
+							<option value="{{ monday.isoformat() }}" {% if label == 'This week' %}selected{% endif %}>
+								{{ label }} (Mon {{ monday.strftime('%d %b') }})
+							</option>
+						{% endfor %}
+					</select>
+					<button class="btn btn-primary">Confirm this week</button>
+				</form>
+			{% else %}
+				<p class="confirm-week__login">
+					<a href="{{ url_for('auth.login', next=url_for('my_week')) }}">Log in</a>
+					or <a href="{{ url_for('auth.register', next=url_for('my_week')) }}">create an account</a>
+					to save this week to your calendar.
+				</p>
+			{% endif %}
+		</section>
+
 		<div class="page-actions">
-			<a class="btn btn-primary" href="{{ url_for('my_week_shopping_list') }}" target="_blank" rel="noopener noreferrer">Create shopping list</a>
+			<a class="btn btn-primary" href="{{ url_for('my_week_shopping_list') }}">Create shopping list</a>
 			<form method="POST" action="{{ url_for('plan_clear') }}">
-				{{ csrf_token() if csrf_token is defined }}
+				{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
 				<button class="btn btn-outline-danger">Clear week</button>
 			</form>
 		</div>
@@ -28,6 +52,9 @@
 		<p class="page-empty">
 			Nothing picked yet. <a href="{{ url_for('all_recipes') }}">Browse recipes</a>
 			and press "+ My week".
+			{% if current_user.is_authenticated %}
+				<br>Or <a href="{{ url_for('history.calendar_view') }}">reuse a past week</a> from your calendar.
+			{% endif %}
 		</p>
 	{% endif %}
 </div>

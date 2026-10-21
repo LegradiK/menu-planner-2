@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}My calendar{% endblock %}
+
+{% block content %}
+<div class="page page--wide">
+	<h2 class="page-title">My calendar</h2>
+	<p class="page-subtitle">The recipes you've confirmed, week by week.</p>
+
+	<nav class="cal-nav" aria-label="Change month">
+		<a class="btn btn-sm" href="{{ url_for('history.calendar_view', year=prev_month.year, month=prev_month.month) }}">‹ {{ prev_month.strftime('%b') }}</a>
+		<h3 class="cal-month">{{ month_start.strftime('%B %Y') }}</h3>
+		<a class="btn btn-sm" href="{{ url_for('history.calendar_view', year=next_month.year, month=next_month.month) }}">{{ next_month.strftime('%b') }} ›</a>
+	</nav>
+
+	<div class="cal">
+		<div class="cal-head" aria-hidden="true">
+			{% for day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] %}
+				<span>{{ day }}</span>
+			{% endfor %}
+		</div>
+
+		{% for days in weeks %}
+			{% set monday = days[0] %}
+			{% set week = saved.get(monday) %}
+			<section class="cal-week {% if monday == this_monday %}cal-week--current{% endif %} {% if week %}cal-week--saved{% endif %}">
+				<div class="cal-days">
+					{% for day in days %}
+						<span class="cal-day {% if day.month != month_start.month %}cal-day--other{% endif %} {% if day == today %}cal-day--today{% endif %}">
+							{{ day.day }}
+						</span>
+					{% endfor %}
+				</div>
+
+				<div class="cal-recipes">
+					{% if week %}
+						<ul class="cal-recipe-list">
+							{% for recipe in week.recipes %}
+								<li class="cal-recipe">
+									{% if recipe.link %}
+										<a href="{{ recipe.link }}" target="_blank" rel="noopener noreferrer">{{ recipe.name }}</a>
+									{% else %}
+										{{ recipe.name }}
+									{% endif %}
+									{% if recipe.cuisine %}<span class="recipe-genre">{{ recipe.cuisine }}</span>{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+
+						<div class="cal-week-actions">
+							<form method="POST" action="{{ url_for('history.reuse_week', week_id=week.id) }}">
+								{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
+								<button class="btn btn-sm">Cook this week again</button>
+							</form>
+							<form method="POST" action="{{ url_for('history.delete_week', week_id=week.id) }}"
+								  onsubmit="return confirm('Remove this week from your calendar?');">
+								{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
+								<button class="btn btn-sm btn-outline-danger">Remove</button>
+							</form>
+						</div>
+					{% else %}
+						<p class="cal-empty">Nothing saved for this week.</p>
+					{% endif %}
+				</div>
+			</section>
+		{% endfor %}
+	</div>
+
+	{% if recent %}
+		<h3 class="cal-recent-title">Recent weeks</h3>
+		<ul class="cal-recent">
+			{% for w in recent %}
+				<li>
+					<a href="{{ url_for('history.calendar_view', year=w.week_start.year, month=w.week_start.month) }}">
+						{{ w.week_start.strftime('%d %b') }} – {{ w.week_end.strftime('%d %b %Y') }}
+					</a>
+					<span class="count">{{ w.recipes|length }}</span>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<div class="page-actions">
+		<a class="btn btn-primary" href="{{ url_for('my_week') }}">Plan this week</a>
+	</div>
+</div>
+{% endblock %}

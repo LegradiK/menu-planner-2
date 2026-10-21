@@ -7,7 +7,7 @@
 	<p class="page-subtitle">Fill in the details below. Empty ingredient rows are ignored.</p>
 
 	<form method="POST" action="{{ url_for('add_recipes') }}" id="recipe-form">
-		{{ csrf_token() if csrf_token is defined }}
+		{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
 
 		<div class="form-group">
 			<label class="form-label" for="genre">Genre</label>

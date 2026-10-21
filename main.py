@@ -520,7 +520,7 @@ def shopping_remove():
 
 @app.route("/my-week/shopping-list/reset", methods=["POST"])
 def shopping_reset():
-    """Clear the shopping list"""
+    """Clear all the modifies and set it back to the original shopping list"""
     session.pop("shopping_removed", None)
     session.pop("shopping_extra", None)
     return redirect(url_for("my_week_shopping_list"))

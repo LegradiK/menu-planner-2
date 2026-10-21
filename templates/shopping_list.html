@@ -12,7 +12,7 @@
 
 	{% if editable %}
 		<form method="POST" action="{{ url_for('shopping_add') }}" class="shopping-add d-print-none">
-			{{ csrf_token() if csrf_token is defined }}
+			{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
 			<input name="quantity" class="form-control shopping-add__qty" placeholder="Qty">
 			<input name="measurement" class="form-control shopping-add__unit" placeholder="Unit">
 			<input name="name" class="form-control shopping-add__name" placeholder="e.g. kitchen roll" required>
@@ -40,7 +40,7 @@
 							</label>
 							{% if editable %}
 								<form method="POST" action="{{ url_for('shopping_remove') }}" class="d-print-none">
-									{{ csrf_token() if csrf_token is defined }}
+									{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
 									<input type="hidden" name="key" value="{{ (item['name']|string|trim|lower) ~ '|' ~ (item['measurement']|string|trim|lower) }}">
 									<button class="btn btn-sm btn-outline-danger" title="Remove">✕</button>
 								</form>
@@ -60,7 +60,7 @@
 	<div class="page-actions d-print-none">
 		{% if editable %}
 			<form method="POST" action="{{ url_for('shopping_reset') }}">
-				{{ csrf_token() if csrf_token is defined }}
+				{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
 				<button class="btn btn-outline-danger">Reset list</button>
 			</form>
 		{% endif %}

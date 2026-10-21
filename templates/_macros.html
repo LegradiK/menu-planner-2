@@ -9,7 +9,7 @@
 	{# The form lives outside <details>; the button in the summary points to it with form="..." #}
 	{% if plan is defined %}
 		<form id="{{ form_id }}" method="POST" action="{{ url_for('plan_remove' if in_plan else 'plan_add') }}" hidden>
-			{{ csrf_token() if csrf_token is defined }}
+			{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
 			<input type="hidden" name="name" value="{{ recipe.name }}">
 		</form>
 	{% endif %}

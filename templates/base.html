@@ -19,6 +19,9 @@
 		('add_recipes', 'Add a recipe'),
 		('get_inspired', 'Get inspired'),
 	] %}
+	{% if current_user.is_authenticated %}
+		{% set nav = nav + [('history.calendar_view', 'Calendar')] %}
+	{% endif %}
 
 	<header class="site-header">
 		<div class="header-inner">
@@ -35,6 +38,21 @@
 							</a>
 						</li>
 					{% endfor %}
+
+					{% if current_user.is_authenticated %}
+						<li>
+							<form method="POST" action="{{ url_for('auth.logout') }}">
+								{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
+								<button class="nav-btn nav-btn--quiet" title="Logged in as {{ current_user.email }}">
+									Log out
+								</button>
+							</form>
+						</li>
+					{% else %}
+						<li>
+							<a class="nav-btn nav-btn--quiet {% if request.endpoint == 'auth.login' %}active{% endif %}" href="{{ url_for('auth.login') }}">Log in</a>
+						</li>
+					{% endif %}
 				</ul>
 			</nav>
 		</div>
