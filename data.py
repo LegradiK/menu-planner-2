@@ -5,7 +5,7 @@ be ignored when processing ingredient names.
 """
 
 # config.py
-from categories import vegetables, fruits, meats_fish, spices, aisle_products, fridge_freezer
+from categories import vegetables, fruits, meats_fish, spices, pantry_liquids, pantry_dry, fridge_freezer
 
 # Define category dictionary
 CATEGORIES = {
@@ -13,7 +13,8 @@ CATEGORIES = {
     "Fruits": [item.lower() for item in fruits],
     "Meats & Fish": [item.lower() for item in meats_fish],
     "Spices": [item.lower() for item in spices],
-    "Pantry & Dry Goods": [item.lower() for item in aisle_products],
+    "Pantry Goods - Dry": [item.lower() for item in pantry_dry],
+    "Pantry Goods - Liquid": [item.lower() for item in pantry_liquids],
     "Fridge & Freezer": [item.lower() for item in fridge_freezer]
 }
 
