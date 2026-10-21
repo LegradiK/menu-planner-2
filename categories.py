@@ -101,3 +101,4 @@ fridge_freezer = [
     "cheddar", "mild cheddar", "mature cheddar", "asiago", "fontina",
     "jarlsberg", "quark", "cottage cheese"
 ]
+
