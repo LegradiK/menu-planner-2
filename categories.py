@@ -69,23 +69,40 @@ spices = [
     "lemongrass", "white pepper"
 ]
 
-aisle_products = [
-    "rice", "pasta", "flour", "sugar", "salt", "bread",
-    "cereal", "oat", "biscuit", "cracker", "lentil",
-    "bean", "chickpea", "pulse", "canned tomato",
-    "canned bean", "canned vegetable", "canned fruit", "stock cube",
-    "tomato sauce", "soy sauce", "bbq sauce", "honey", "maple syrup",
-    "cooking oil", "olive oil", "vegetable oil", "avocado oil", "sunflower oil",
-    "vinegar", "mustard", "peanut butter", "jam", "tinned fish",
-    "pickle", "mayonnaise", "hot sauce", "baking powder", "baking soda",
-    "yeast", "coconut milk", "coconut water", "tuna", "marmite", "soy sauce",
-    "all-purpose flour", "tomato paste", "vanilla extract",
-    "chip", "crisp", "chocolate", "sweet", "nut", "granola bar",
-    "popcorn", "fruit snack", "soft drink", "juice", "energy drink", "coffee",
-    "tea", "hot chocolate", "squash", "sparkling water", "canned drink", "water",
-    "smoothie", "ice lolly", "cocoa powder", "apple cider vinegar", "vinegar",
-    "water", "sugar", "passata", "extra virgin olive oil", "neutral oil", "soy sauce",
-    "sesame oil", "sake", "dashi", "mirin", "togarashi", "curry roux"
+pantry_liquids = [
+    # sauces & condiments
+    "soy sauce", "tomato sauce", "bbq sauce", "hot sauce", "ketchup",
+    "worcestershire sauce", "fish sauce", "oyster sauce", "mayonnaise",
+    "mustard", "pesto", "passata", "tomato paste", "tomato puree",
+    # oils & vinegars
+    "cooking oil", "olive oil", "extra virgin olive oil", "vegetable oil",
+    "sunflower oil", "avocado oil", "neutral oil", "sesame oil", "rapeseed oil",
+    "vinegar", "apple cider vinegar", "rice vinegar", "red wine vinegar",
+    # sweet & spreads
+    "honey", "maple syrup", "golden syrup", "molasses", "vanilla extract",
+    "jam", "peanut butter", "marmite",
+    # cooking liquids
+    "coconut milk", "stock", "broth", "chicken stock", "beef stock",
+    "vegetable stock", "dashi", "sake", "mirin", "rice wine", "wine", "cognac",
+    # drinks
+    "water", "juice", "soft drink", "energy drink", "squash", "sparkling water",
+    "canned drink", "coconut water", "smoothie"
+]
+
+pantry_dry = [
+    # grains, flour & baking
+    "rice", "pasta", "noodle", "flour", "all-purpose flour", "bread",
+    "breadcrumb", "bread crumb", "cereal", "oat", "sugar", "salt",
+    "baking powder", "baking soda", "bicarbonate of soda", "yeast", "cocoa powder",
+    # tins & pulses
+    "lentil", "bean", "chickpea", "pulse", "canned tomato", "chopped tomato",
+    "canned bean", "canned vegetable", "canned fruit", "tinned fish", "tuna",
+    # cubes, roux & seasonings
+    "stock cube", "stock pot", "curry roux", "togarashi",
+    # snacks & hot drinks
+    "biscuit", "cracker", "chip", "crisp", "chocolate", "sweet", "nut",
+    "granola bar", "popcorn", "fruit snack", "coffee", "tea", "hot chocolate",
+    "pickle"
 ]
 
 fridge_freezer = [
@@ -95,7 +112,7 @@ fridge_freezer = [
     "mozzarella", "feta", "ricotta", "greek yogurt", "unsalted butter", "salted butter",
     "frozen vegetable", "frozen fruit", "frozen chip", "frozen pizza",
     "frozen ready meal", "frozen fish", "frozen chicken nugget", "ice cream",
-    "frozen dessert", "frozen bread",
+    "frozen dessert", "frozen bread", "ice lolly",
     "mascarpone", "greek yogurt", "gouda", "brie", "camembert", "blue cheese",
     "stilton", "manchego", "gruyère", "emmental", "chevre", "ricotta salata",
     "pecorino", "burrata", "colby", "munster", "havarti", "swiss cheese",

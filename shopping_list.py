@@ -3,10 +3,13 @@ then sort the ingredients in an easier order/format for food shopping"""
 
 # shopping_list.py
 import re
+
 from data import CATEGORIES, STOP_WORDS
 
-PANTRY_CATEGORY = "Pantry & Dry Goods"   # must match your label for aisle_products
-PANTRY_WORDS = {"stock", "broth", "oil"}   
+# Must match the labels used in CATEGORIES (data.py)
+LIQUIDS = "Pantry: Liquids & Sauces"
+DRY = "Pantry: Dry Goods"
+
 
 def clean_ingredient_name(raw_name):
     """
@@ -24,12 +27,13 @@ def clean_ingredient_name(raw_name):
     cleaned_name = re.sub(r'\s*\(.*?\)\s*', ' ', cleaned_name).strip()
 
     # Clean after the first comma (if any)
-    cleaned_name = re.split(r'\s*,\s*', cleaned_name, 1)[0]
+    cleaned_name = re.split(r'\s*,\s*', cleaned_name, maxsplit=1)[0]
 
     # Remove extra spaces
     cleaned_name = re.sub(r'\s+', ' ', cleaned_name).strip()
 
     return cleaned_name
+
 
 def collect_ingredients(global_menu):
     """
@@ -37,45 +41,48 @@ def collect_ingredients(global_menu):
     """
     ingredients = []
     for recipe in global_menu:
-        for ingredient in recipe.get("ingredients"):
-            raw_name = ingredient["name"].lower()
-            measurement = ingredient["measurement"]
-            quantity = ingredient["quantity"]
-            cleaned_name = clean_ingredient_name(raw_name)
+        for ingredient in recipe.get("ingredients", []):
             ingredients.append({
-                'name': cleaned_name,
-                'measurement': measurement,
-                'quantity': quantity
+                'name': clean_ingredient_name(ingredient["name"].lower()),
+                'measurement': ingredient.get("measurement", ""),
+                'quantity': ingredient.get("quantity", "")
             })
     return ingredients
 
 
+def to_number(quantity):
+    """Return the quantity as a float, or None if it isn't a plain number."""
+    try:
+        return float(quantity)
+    except (TypeError, ValueError):
+        return None
+
+
+def format_number(number):
+    """Show 2.0 as '2' and 1.25 as '1.25'."""
+    return f"{number:g}"
+
+
 def update_shopping_list(ingredients):
     """
-    Updates the shopping list with ingredient quantities and measurements.
+    Merges duplicate ingredients: the same name and unit are added together
+    (e.g. 1 onion + 0.5 onion = 1.5 onion, 3 eggs + 1 egg = 4 eggs).
     """
-    shopping_dict = {}
-    ingredient_list = []
-
+    merged = {}
     for ingredient in ingredients:
-        if ingredient['name'] in ingredient_list:
-            if shopping_dict['cleaned_name']['measurement'] == ingredient['measurement']:
-                shopping_dict['cleaned_name']['measurement'] += ingredient['quantity']
-            else:
-                shopping_dict = {
-                    'name': ingredient['name'],
-                    'quantity': ingredient['quantity'],
-                    'measurement': ingredient['measurement']
-                }
-        else:
-            shopping_dict = {
-                'name': ingredient['name'],
-                'quantity': ingredient['quantity'],
-                'measurement': ingredient['measurement']
-            }
-        ingredient_list.append(shopping_dict)
+        key = (normalise(ingredient['name']), str(ingredient['measurement']).strip().lower())
+        quantity = to_number(ingredient['quantity'])
 
-    return ingredient_list
+        if key not in merged:
+            merged[key] = dict(ingredient)
+        elif quantity is not None and to_number(merged[key]['quantity']) is not None:
+            total = to_number(merged[key]['quantity']) + quantity
+            merged[key]['quantity'] = format_number(total)
+        elif not str(merged[key]['quantity']).strip():
+            # "to taste" first, real amount later: keep the amount
+            merged[key]['quantity'] = ingredient['quantity']
+
+    return list(merged.values())
 
 
 def singularize(word: str) -> str:
@@ -100,8 +107,11 @@ def normalise(text: str) -> str:
 def find_category(name: str) -> str:
     """Return the category whose longest matching phrase appears in the name."""
     padded = f" {normalise(name)} "
-    if PANTRY_WORDS & set(padded.split()):
-        return PANTRY_CATEGORY
+    words = set(padded.split())
+
+    # Stock: cubes/pots are dry, everything else ("chicken stock") is liquid
+    if words & {"stock", "broth"}:
+        return DRY if words & {"cube", "pot"} else LIQUIDS
 
     best, best_len = "Uncategorized", 0
     for category, items in CATEGORIES.items():
@@ -109,11 +119,15 @@ def find_category(name: str) -> str:
             phrase = normalise(item)
             if phrase and f" {phrase} " in padded and len(phrase) > best_len:
                 best, best_len = category, len(phrase)
+
+    # Any leftover oil ("oil, for frying") belongs with the liquids
+    if best == "Uncategorized" and "oil" in words:
+        return LIQUIDS
     return best
 
 
 def categorize_ingredients(ingredient_list: list) -> dict:
-    """Group shopping-list items by supermarket aisle."""
+    """Group shopping-list items by supermarket section."""
     categorized = {category: [] for category in CATEGORIES}
     categorized["Uncategorized"] = []
     for ingredient in ingredient_list:
