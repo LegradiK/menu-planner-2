@@ -85,7 +85,7 @@ aisle_products = [
     "tea", "hot chocolate", "squash", "sparkling water", "canned drink", "water",
     "smoothie", "ice lolly", "cocoa powder", "apple cider vinegar", "vinegar",
     "water", "sugar", "passata", "extra virgin olive oil", "neutral oil", "soy sauce",
-    "sesami oil", "sake", "dashi", "mirin", "togarashi", "curry roux cubes"
+    "sesame oil", "sake", "dashi", "mirin", "togarashi", "curry roux"
 ]
 
 fridge_freezer = [

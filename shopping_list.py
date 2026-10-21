@@ -5,6 +5,9 @@ then sort the ingredients in an easier order/format for food shopping"""
 import re
 from data import CATEGORIES, STOP_WORDS
 
+PANTRY_CATEGORY = "Pantry & Dry Goods"   # must match your label for aisle_products
+PANTRY_WORDS = {"stock", "broth", "oil"}   
+
 def clean_ingredient_name(raw_name):
     """
     Removes unnecessary descriptive words, percentage values,
@@ -75,55 +78,44 @@ def update_shopping_list(ingredients):
     return ingredient_list
 
 
-def singularize(word):
-    """Converts plural words to singular (basic approach)."""
-    if word.endswith("es"):
+def singularize(word: str) -> str:
+    """Turn a plural word into its singular form (simple rules)."""
+    if len(word) <= 3 or word.endswith("ss"):
+        return word
+    if word.endswith("ies"):
+        return word[:-3] + "y"
+    if word.endswith(("oes", "ches", "shes", "xes")):
         return word[:-2]
-    if word.endswith("s") and not word.endswith("ss"):
+    if word.endswith("s"):
         return word[:-1]
     return word
 
 
-def is_partial_match(ingredient_name, category_items):
-    """
-    Checks if any category item appears as a substring in the ingredient name.
-    Also compares singular/plural forms.
-    """
-    words = ingredient_name.split()
-    words = [singularize(word) for word in words]  # Convert words to singular form
-
-    # Check for 'stock' in combination with meat names
-    meat_keywords = ["beef", "pork", "chicken"]
-    if any(meat in words for meat in meat_keywords) and "stock" in words:
-        return "Aisle Product"  # Special case for stock-related meat items
-
-    # Regular category matching logic
-    for item in category_items:
-        singular_item = singularize(item)  # Convert category item to singular form
-        if any(singular_item in word for word in words):
-            return category_items  # Return the matched category
-
-    return None
+def normalise(text: str) -> str:
+    """Lower-case, strip punctuation and singularise every word."""
+    words = re.findall(r"[a-zà-ÿ'&-]+", str(text).lower())
+    return " ".join(singularize(w) for w in words)
 
 
-def categorize_ingredients(ingredient_list):
-    """Categorizes ingredients based on CATEGORIES."""
-    categorized_ingredients = {category: [] for category in CATEGORIES}
-    categorized_ingredients["Uncategorized"] = []  # For unknown ingredients
+def find_category(name: str) -> str:
+    """Return the category whose longest matching phrase appears in the name."""
+    padded = f" {normalise(name)} "
+    if PANTRY_WORDS & set(padded.split()):
+        return PANTRY_CATEGORY
 
+    best, best_len = "Uncategorized", 0
+    for category, items in CATEGORIES.items():
+        for item in items:
+            phrase = normalise(item)
+            if phrase and f" {phrase} " in padded and len(phrase) > best_len:
+                best, best_len = category, len(phrase)
+    return best
+
+
+def categorize_ingredients(ingredient_list: list) -> dict:
+    """Group shopping-list items by supermarket aisle."""
+    categorized = {category: [] for category in CATEGORIES}
+    categorized["Uncategorized"] = []
     for ingredient in ingredient_list:
-        ingredient_name = ingredient["name"].lower()
-        categorized = False
-
-        # Check which category the ingredient belongs to (partial matching)
-        for category, items in CATEGORIES.items():
-            if is_partial_match(ingredient_name, items):
-                categorized_ingredients[category].append(ingredient)
-                categorized = True
-                break  # Stop checking once a match is found
-
-        # If no category matches, add to "Uncategorized"
-        if not categorized:
-            categorized_ingredients["Uncategorized"].append(ingredient)
-
-    return categorized_ingredients
+        categorized[find_category(ingredient["name"])].append(ingredient)
+    return categorized
