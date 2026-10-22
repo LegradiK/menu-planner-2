@@ -1,4 +1,4 @@
-"""Confirm a week's recipes and look back at past weeks on a calendar."""
+"""Save recipes to a day and look back at past days on a calendar."""
 import calendar
 import json
 import os
@@ -8,19 +8,9 @@ from flask import (Blueprint, abort, current_app, flash, redirect, render_templa
                    request, session, url_for)
 from flask_login import current_user, login_required
 
-from models import ConfirmedWeek, WeekRecipe, db, monday_of
+from models import ConfirmedWeek, WeekRecipe, db
 
 history_bp = Blueprint("history", __name__)
-
-
-def week_choices(today: date | None = None) -> list:
-    """Weeks offered in the confirm form: last week, this week, next week."""
-    this_monday = monday_of(today or date.today())
-    labels = ["Last week", "This week", "Next week"]
-    return [
-        (this_monday + timedelta(weeks=offset), label)
-        for offset, label in zip((-1, 0, 1), labels)
-    ]
 
 
 RECIPE_FILES = ("main_recipes.json", "dessert_recipes.json", "bread_recipes.json")
@@ -41,23 +31,23 @@ def recipes_by_name() -> dict:
 @history_bp.route("/plan/confirm", methods=["POST"])
 @login_required
 def confirm_week():
-    """Save the recipes currently in My week to the chosen week."""
+    """Save the recipes currently in My week to the chosen day."""
     plan = session.get("plan", [])
     if not plan:
         flash("Pick some recipes first.", "warning")
         return redirect(url_for("my_week"))
 
     try:
-        week_start = monday_of(date.fromisoformat(request.form["week_start"]))
+        day = date.fromisoformat(request.form["day"])
     except (KeyError, ValueError):
-        abort(400)
+        flash("Please choose a date.", "warning")
+        return redirect(url_for("my_week"))
 
-    week = ConfirmedWeek.query.filter_by(
-        user_id=current_user.id, week_start=week_start).first()
+    week = ConfirmedWeek.query.filter_by(user_id=current_user.id, day=day).first()
     if week is None:
-        week = ConfirmedWeek(user_id=current_user.id, week_start=week_start)
+        week = ConfirmedWeek(user_id=current_user.id, day=day)
         db.session.add(week)
-    week.recipes.clear()  # confirming again replaces that week's recipes
+    week.recipes.clear()  # saving again replaces that day's recipes
 
     lookup = recipes_by_name()
     for position, name in enumerate(plan):
@@ -70,15 +60,14 @@ def confirm_week():
         ))
     db.session.commit()
 
-    flash(f"Saved {len(plan)} recipes to the week of {week_start:%d %B}.", "success")
-    return redirect(url_for("history.calendar_view",
-                            year=week_start.year, month=week_start.month))
+    flash(f"Saved {len(plan)} recipes for {day:%a %d %B}.", "success")
+    return redirect(url_for("history.calendar_view", year=day.year, month=day.month))
 
 
 @history_bp.route("/calendar")
 @login_required
 def calendar_view():
-    """Month view: every week of the month, with the recipes confirmed for it."""
+    """Month view: every day of the month, with the recipes saved for it."""
     today = date.today()
     year = request.args.get("year", today.year, type=int)
     month = request.args.get("month", today.month, type=int)
@@ -86,11 +75,10 @@ def calendar_view():
         abort(404)
 
     weeks = calendar.Calendar(firstweekday=0).monthdatescalendar(year, month)
-    mondays = [days[0] for days in weeks]
     saved = {
-        w.week_start: w for w in ConfirmedWeek.query.filter(
+        entry.day: entry for entry in ConfirmedWeek.query.filter(
             ConfirmedWeek.user_id == current_user.id,
-            ConfirmedWeek.week_start.in_(mondays),
+            ConfirmedWeek.day.between(weeks[0][0], weeks[-1][-1]),
         )
     }
 
@@ -104,7 +92,6 @@ def calendar_view():
         saved=saved,
         month_start=first_of_month,
         today=today,
-        this_monday=monday_of(today),
         prev_month=prev_month,
         next_month=next_month,
         recent=current_user.weeks[:8],
@@ -112,7 +99,7 @@ def calendar_view():
 
 
 def own_week_or_404(week_id: int) -> ConfirmedWeek:
-    """Fetch a confirmed week, but only if it belongs to the logged-in user."""
+    """Fetch a saved day, but only if it belongs to the logged-in user."""
     week = db.session.get(ConfirmedWeek, week_id)
     if week is None or week.user_id != current_user.id:
         abort(404)
@@ -122,7 +109,7 @@ def own_week_or_404(week_id: int) -> ConfirmedWeek:
 @history_bp.route("/calendar/<int:week_id>/reuse", methods=["POST"])
 @login_required
 def reuse_week(week_id):
-    """Copy a past week's recipes back into My week."""
+    """Copy a saved day's recipes back into My week."""
     week = own_week_or_404(week_id)
     lookup = recipes_by_name()
     plan = [r.name for r in week.recipes if r.name.lower() in lookup]
@@ -132,7 +119,7 @@ def reuse_week(week_id):
     session.pop("shopping_removed", None)
     session.pop("shopping_extra", None)
 
-    message = f"Loaded the week of {week.week_start:%d %B} into My week."
+    message = f"Loaded {week.day:%a %d %B} into My week."
     if missing:
         message += f" {missing} recipe(s) no longer exist and were skipped."
     flash(message, "success")
@@ -142,17 +129,16 @@ def reuse_week(week_id):
 @history_bp.route("/calendar/<int:week_id>/delete", methods=["POST"])
 @login_required
 def delete_week(week_id):
-    """Remove a confirmed week from the calendar."""
+    """Remove a saved day from the calendar."""
     week = own_week_or_404(week_id)
-    week_start = week.week_start
+    day = week.day
     db.session.delete(week)
     db.session.commit()
-    flash(f"Removed the week of {week_start:%d %B}.", "info")
-    return redirect(url_for("history.calendar_view",
-                            year=week_start.year, month=week_start.month))
+    flash(f"Removed {day:%a %d %B}.", "info")
+    return redirect(url_for("history.calendar_view", year=day.year, month=day.month))
 
 
 @history_bp.app_context_processor
-def inject_week_choices():
-    """Lets my_week.html offer last / this / next week in the confirm form."""
-    return {"week_choices": week_choices()}
+def inject_today():
+    """Lets my_week.html default the date picker to today."""
+    return {"today": date.today()}

@@ -34,7 +34,7 @@ class User(UserMixin, db.Model):
 
     weeks = db.relationship(
         "ConfirmedWeek", back_populates="user",
-        cascade="all, delete-orphan", order_by="ConfirmedWeek.week_start.desc()",
+        cascade="all, delete-orphan", order_by="ConfirmedWeek.day.desc()",
     )
 
     def set_password(self, password: str) -> None:
@@ -47,11 +47,13 @@ class User(UserMixin, db.Model):
 
 
 class ConfirmedWeek(db.Model):
-    """One week (Monday to Sunday) that a user has confirmed."""
+    """A set of recipes a user has saved for one particular day."""
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False, index=True)
-    week_start = db.Column(db.Date, nullable=False)  # always a Monday
+    # Any date. The database column is still called "week_start" from when
+    # only Mondays were saved, so existing databases work without a migration.
+    day = db.Column("week_start", db.Date, nullable=False)
     confirmed_at = db.Column(db.DateTime(timezone=True), default=utc_now, onupdate=utc_now)
 
     user = db.relationship("User", back_populates="weeks")
@@ -61,11 +63,6 @@ class ConfirmedWeek(db.Model):
     )
 
     __table_args__ = (db.UniqueConstraint("user_id", "week_start", name="one_entry_per_week"),)
-
-    @property
-    def week_end(self) -> date:
-        """The Sunday that ends this week."""
-        return self.week_start + timedelta(days=6)
 
 
 class WeekRecipe(db.Model):

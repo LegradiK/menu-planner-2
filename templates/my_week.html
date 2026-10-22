@@ -22,15 +22,9 @@
 			{% if current_user.is_authenticated %}
 				<form method="POST" action="{{ url_for('history.confirm_week') }}" class="confirm-week__form">
 					{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
-					<label class="form-label" for="week_start">Save these recipes for</label>
-					<select class="form-select" id="week_start" name="week_start">
-						{% for monday, label in week_choices %}
-							<option value="{{ monday.isoformat() }}" {% if label == 'This week' %}selected{% endif %}>
-								{{ label }} (Mon {{ monday.strftime('%d %b') }})
-							</option>
-						{% endfor %}
-					</select>
-					<button class="btn btn-primary">Confirm this week</button>
+					<label class="form-label" for="day">Save these recipes for</label>
+					<input type="date" class="form-control" id="day" name="day" value="{{ today.isoformat() }}" required>
+					<button class="btn btn-primary">Save to calendar</button>
 				</form>
 			{% else %}
 				<p class="confirm-week__login">
