@@ -711,6 +711,725 @@
                 "Slide onto a wire rack to cool slightly. Repeat to make 5-6 crepes.",
                 "Fill with whipped cream, fruit or your favourite fillings, roll up and serve."
             ]
+        },
+        {
+            "name": "Pie Sheet (Shortcrust Pastry)",
+            "ingredients": [
+                {
+                    "quantity": "150",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "75",
+                    "measurement": "g",
+                    "name": "cold butter, cubed"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "butter, for coating the tray"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "ice-cold water"
+                }
+            ],
+            "cuisine": "French",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Mix the flour and salt in a bowl. Add the cold butter and rub in with your fingertips until it looks like fine breadcrumbs.",
+                "Sprinkle in the cold water a little at a time, mixing with a knife until it just clumps. Press into a disc without kneading.",
+                "Wrap and chill for 30 minutes.",
+                "Roll out on a floured surface to about 3mm thick and line the buttered, floured tray."
+            ]
+        },
+        {
+            "name": "Apple Tart",
+            "ingredients": [
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "pie sheet (shortcrust pastry)"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "",
+                    "name": "apples"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "granulated sugar, for cooking the apples"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "granulated sugar, for the almond cream"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "lemon juice"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "butter, for cooking the apples"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "butter, for the almond cream"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "apricot jam"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "ground cinnamon"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "almond powder"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg, beaten"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "butter and flour, for the tray"
+                }
+            ],
+            "cuisine": "French",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Spread butter over the baking tray and dust with flour.",
+                "Peel 2 apples and slice them 2-3mm thick.",
+                "Cook the apple slices with 20g butter and 30g sugar until the apples turn transparent.",
+                "Pour in the lemon juice and keep cooking until the liquid has gone.",
+                "Let the apples cool down, then mix in the cinnamon.",
+                "Place the pie sheet in the tray and leave it in the fridge.",
+                "Heat the oven to 200°C.",
+                "Put 50g butter in a bowl and mix until soft.",
+                "Add 30g sugar in 3 additions, mixing well each time.",
+                "Add the beaten egg in 3 additions, mixing well each time, then add the almond powder and mix well.",
+                "Pour the almond cream into the pastry case and arrange the cooked apples on top.",
+                "Peel the last apple, slice it 2-3mm thick and arrange the slices on top.",
+                "Spread the apricot jam over the top and bake for 30 minutes at 200°C."
+            ]
+        },
+        {
+            "name": "Chocolate Banana Cake",
+            "ingredients": [
+                {
+                    "quantity": "3",
+                    "measurement": "",
+                    "name": "ripe bananas"
+                },
+                {
+                    "quantity": "75",
+                    "measurement": "g",
+                    "name": "butter, melted"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "brown sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "vanilla extract"
+                },
+                {
+                    "quantity": "150",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "cocoa powder"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "bicarbonate of soda"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "tsp",
+                    "name": "allspice"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "chocolate, coarsely chopped"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "dark chocolate, coarsely chopped, for the topping"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "ml",
+                    "name": "whipping cream, for the topping"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "oil, or butter and flour, for the tin"
+                }
+            ],
+            "cuisine": "British",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Oil the tin, or spread it with butter and dust with flour. Heat the oven to 180°C.",
+                "Mash the bananas, then mix in the melted butter, brown sugar, egg and vanilla extract.",
+                "In a separate bowl, mix the flour, cocoa powder, bicarbonate of soda and allspice.",
+                "Pour the wet ingredients into the dry ones and mix, then stir in the chopped chocolate.",
+                "Pour the mixture into the tin and bake at 180°C for 50-60 minutes. Leave to cool.",
+                "For the topping, put the dark chocolate in a bowl. Heat the cream until it just comes to the boil.",
+                "Pour the hot cream over the chocolate and mix until smooth.",
+                "Pour the topping over the cooled cake."
+            ]
+        },
+        {
+            "name": "Hungarian Christmas Cookies (Linzer)",
+            "ingredients": [
+                {
+                    "quantity": "500",
+                    "measurement": "g",
+                    "name": "plain flour, plus extra for rolling"
+                },
+                {
+                    "quantity": "250",
+                    "measurement": "g",
+                    "name": "butter"
+                },
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "icing sugar"
+                },
+                {
+                    "quantity": "16",
+                    "measurement": "g",
+                    "name": "vanilla sugar"
+                },
+                {
+                    "quantity": "12",
+                    "measurement": "g",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "egg yolks"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "jam, for sandwiching"
+                }
+            ],
+            "cuisine": "Hungarian",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Heat the oven to 150°C.",
+                "Mix the butter, flour, salt, baking powder, icing sugar and vanilla sugar.",
+                "Beat the egg and egg yolks, add them to the bowl and mix well.",
+                "Dust the table with flour and roll the dough out to 5mm thick.",
+                "Cut out shapes with cookie cutters and place them on a baking tray.",
+                "Bake for about 10-12 minutes. They bake quickly, so check the oven often.",
+                "Once the cookies have cooled, sandwich them in pairs with jam: bottom, jam, top."
+            ]
+        },
+        {
+            "name": "Mákos Guba (Hungarian Poppy Seed Bread Pudding)",
+            "ingredients": [
+                {
+                    "quantity": "10",
+                    "measurement": "",
+                    "name": "vajas kifli (Hungarian butter crescent rolls)"
+                },
+                {
+                    "quantity": "150",
+                    "measurement": "g",
+                    "name": "ground poppy seeds"
+                },
+                {
+                    "quantity": "150",
+                    "measurement": "g",
+                    "name": "icing sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "l",
+                    "name": "milk, warm"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "pack",
+                    "name": "vanilla sugar"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "vanilla custard, vanilla pudding or vanilla ice cream, to serve (optional)"
+                }
+            ],
+            "cuisine": "Hungarian",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Heat the oven to 180°C. You'll need a 20x30cm tray.",
+                "Slice the kifli and cover the bottom of the tray completely with a layer of slices.",
+                "Mix the warm milk with the vanilla sugar. Slowly spoon it over the bread so it soaks some up without going soggy.",
+                "Mix the icing sugar and poppy seeds and sprinkle over the bread.",
+                "Add another layer of bread slices and repeat until everything is used up. Lay each new layer gently so the poppy seed layer stays in place.",
+                "Eat straight away for a quick meal, or bake for 20 minutes at 180°C.",
+                "Alternatively, leave it in the fridge overnight and bake at 180°C the next day.",
+                "Eat plain or top with vanilla custard, vanilla pudding or vanilla ice cream."
+            ]
+        },
+        {
+            "name": "English Scones",
+            "ingredients": [
+                {
+                    "quantity": "285",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "tsp",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "tsp",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "caster sugar"
+                },
+                {
+                    "quantity": "85",
+                    "measurement": "g",
+                    "name": "unsalted butter, softened"
+                },
+                {
+                    "quantity": "160",
+                    "measurement": "ml",
+                    "name": "whole milk"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "large egg"
+                }
+            ],
+            "cuisine": "British",
+            "weight": 2,
+            "link": "https://www.fifteenspatulas.com/english-style-scones/",
+            "instructions": [
+                "Heat the oven to 220°C (200°C fan).",
+                "Pulse the flour, baking powder, salt and sugar in a food processor to combine.",
+                "Add the softened butter and pulse 7-10 times until it is fully worked in and the mixture looks sandy, with no lumps of butter. Tip into a large bowl. (By hand, rub the butter in or use a hand mixer.)",
+                "Whisk the milk and egg together. Set aside 2 tbsp for glazing and pour the rest into the flour mixture.",
+                "Stir with a spatula until a rough dough forms.",
+                "Turn out onto a lightly floured surface and knead about 10 times, just until fairly smooth. The dough should be a little sticky; don't add much extra flour or overknead.",
+                "Roll out to about 2.5cm thick and cut out rounds with a 6cm cutter, pushing straight down without twisting. Re-roll the scraps and cut more (about 9 in total).",
+                "Place on a lined baking tray and brush the tops with the reserved egg and milk.",
+                "Bake for 13-15 minutes until well risen and golden. Serve warm with jam and clotted cream or butter."
+            ]
+        },
+        {
+            "name": "Kevert Tészta (Hungarian Mixed Sponge Cake)",
+            "ingredients": [
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "butter or margarine"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "eggs"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "mug",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "mug",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "mug",
+                    "name": "milk, warm"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pack",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pack",
+                    "name": "vanilla sugar (optional)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "icing sugar, for dusting"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "fat and flour, for the tin"
+                }
+            ],
+            "cuisine": "Hungarian",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Heat the oven to 180°C. Grease the tin with fat and dust with flour.",
+                "Mix the butter with the sugar, vanilla sugar (if using) and eggs.",
+                "Slowly add some of the warm milk while mixing.",
+                "Mix in half the flour, then the other half.",
+                "Add the rest of the milk and the baking powder. If the batter is too stiff, add a little more milk.",
+                "Pour the batter into the tin and bake at 180°C for 20-30 minutes, until a skewer comes out clean.",
+                "Leave to cool, then dust with icing sugar."
+            ]
+        },
+        {
+            "name": "Apple and Banana Cake",
+            "ingredients": [
+                {
+                    "quantity": "1/2",
+                    "measurement": "",
+                    "name": "apple, unpeeled"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "sugar, for the apple"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "banana"
+                },
+                {
+                    "quantity": "10",
+                    "measurement": "g",
+                    "name": "sugar, for the banana"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "eggs"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "sugar, for the batter"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "butter, melted"
+                },
+                {
+                    "quantity": "120",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "5",
+                    "measurement": "g",
+                    "name": "baking powder"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Sift the flour and baking powder together.",
+                "Thinly slice the apple, leaving the skin on. Put it in a bowl with 50g sugar, microwave for 3 minutes, then leave to cool. Keep the syrup.",
+                "Mash the banana with 10g sugar, microwave for 1 minute, then leave to cool.",
+                "Heat the oven to 170°C and line or grease the baking tin.",
+                "Whisk the eggs and 100g sugar until pale and white, then add the melted butter and banana.",
+                "Add the dry ingredients and fold in with a cutting motion.",
+                "Pour the batter into the tin and arrange the apple slices on top.",
+                "Bake for 40 minutes at 170°C.",
+                "As soon as it comes out, pour the apple syrup around the cake.",
+                "Leave overnight for the best flavour."
+            ]
+        },
+        {
+            "name": "Apple Cake",
+            "ingredients": [
+                {
+                    "quantity": "1-1 1/2",
+                    "measurement": "",
+                    "name": "apple (1 large or 1 1/2 medium)"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "tsp",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "ml",
+                    "name": "cooking oil"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "30-50",
+                    "measurement": "g",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "raisins or other dried fruit (optional)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "butter and flour, for the tin"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Heat the oven to 180°C. Coat the tin with butter and dust with flour.",
+                "Sift the flour and baking powder together.",
+                "Mix the oil, egg and sugar. If the apple isn't sweet, use the larger amount of sugar.",
+                "Chop the apple into small pieces and stir them into the egg mixture, along with the raisins or other dried fruit if using.",
+                "Add the dry ingredients to the wet ingredients and mix.",
+                "Pour into the tin and bake for 50 minutes at 180°C.",
+                "The cake tastes better once cold. For a richer cake, add a little more flour and oil."
+            ]
+        },
+        {
+            "name": "Soft Banana Cake",
+            "ingredients": [
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "eggs"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "granulated sugar"
+                },
+                {
+                    "quantity": "130",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "1 1/2",
+                    "measurement": "tsp",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "milk"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "butter, melted"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "banana"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "butter and flour, or baking paper, for the tin"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Heat the oven to 180°C and grease and flour the tin, or line it with baking paper.",
+                "Put the eggs and sugar in a bowl and mix well.",
+                "Add the flour and baking powder and mix.",
+                "Add the milk and melted butter and mix well.",
+                "Mash the banana well and mix it into the batter.",
+                "Pour into the tin and bake for 30-40 minutes at 180°C, until a skewer comes out clean."
+            ]
+        },
+        {
+            "name": "Strawberry Tart",
+            "ingredients": [
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "tart sheet (shortcrust pastry)"
+                },
+                {
+                    "quantity": "45",
+                    "measurement": "g",
+                    "name": "butter, softened, for the almond cream"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "60",
+                    "measurement": "g",
+                    "name": "almond powder"
+                },
+                {
+                    "quantity": "60",
+                    "measurement": "g",
+                    "name": "icing sugar"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "ml",
+                    "name": "strawberry liqueur, for the almond cream (optional)"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "ml",
+                    "name": "strawberry liqueur, for the syrup"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "ml",
+                    "name": "water"
+                },
+                {
+                    "quantity": "20",
+                    "measurement": "g",
+                    "name": "granulated sugar"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "chocolate, melted, for decoration"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "strawberries, sliced, for decoration"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "butter and flour, for the tin"
+                }
+            ],
+            "cuisine": "French",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "For the crème d'amande, beat the butter until pale and whitish.",
+                "Add the egg and mix carefully so the mixture doesn't split.",
+                "Add the almond powder and icing sugar and fold in with a cutting motion. Add the strawberry liqueur if using.",
+                "Heat the oven to 170°C. Butter the tart tin and dust it well with flour.",
+                "Line the tin with the tart sheet and prick the base with a fork so it keeps its shape.",
+                "Pour the almond cream into the pastry case and bake for 11-15 minutes at 170°C.",
+                "For the syrup, heat the strawberry liqueur, water and sugar until the sugar has melted and the alcohol has cooked off.",
+                "Brush the syrup over the tart once it is baked.",
+                "Pour melted chocolate over the tart, then decorate with sliced strawberries."
+            ]
+        },
+        {
+            "name": "Honey Ginger Lemon Drink",
+            "ingredients": [
+                {
+                    "quantity": "4",
+                    "measurement": "",
+                    "name": "lemons"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "ginger"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "jar",
+                    "name": "honey"
+                }
+            ],
+            "cuisine": "Drink",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Wash the storage jar very well and dry it completely before use, otherwise the drink goes off quickly.",
+                "Wash the lemons very well and slice them thinly. Slice the ginger thinly too.",
+                "Layer the lemon and ginger slices in the jar, alternating them.",
+                "When the jar is full, pour in the honey, using a spoon to help it fill all the gaps.",
+                "Leave in the fridge for a few hours before using.",
+                "To serve, stir a spoonful or two into a mug of hot water. Good for colds."
+            ]
         }
     ]
 }

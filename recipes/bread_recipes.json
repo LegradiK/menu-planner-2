@@ -768,6 +768,164 @@
                 "Make braids out of the combined dough.",
                 "Bake at 180C for 32 minutes or longer if needed."
             ]
-        }
+        },
+        {
+            "name": "Krumplis Pogácsa (Hungarian Potato Scones)",
+            "ingredients": [
+                {
+                    "quantity": "1",
+                    "measurement": "kg",
+                    "name": "potatoes"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "salt, or to taste"
+                },
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "fat (lard or butter)"
+                },
+                {
+                    "quantity": "500",
+                    "measurement": "g",
+                    "name": "plain flour, plus extra for the table"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg, beaten"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Boil the potatoes until soft, then mash them.",
+                "Add the salt and taste. Make it a little on the salty side, as the flour added later will tone it down.",
+                "Add the fat and flour and mix well. If the dough is too soft, add more flour; if it is too hard, add more fat.",
+                "Dust the table with flour and roll the dough out to 0.5cm thick.",
+                "Cut out circles with a round cutter and place them on a baking tray.",
+                "Brush the tops with the beaten egg.",
+                "Bake at 200°C (no fan) for at least 20 minutes, until golden."
+            ]
+        },
+        {
+            "name": "Pogácsa (Hungarian Simple Scones)",
+            "ingredients": [
+                {
+                    "quantity": "500",
+                    "measurement": "g",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "150",
+                    "measurement": "g",
+                    "name": "butter, melted"
+                },
+                {
+                    "quantity": "200",
+                    "measurement": "g",
+                    "name": "sour cream"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "7",
+                    "measurement": "g",
+                    "name": "dried yeast"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "ml",
+                    "name": "milk, lukewarm"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "1 1/2-2",
+                    "measurement": "tsp",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "lard (optional, keeps them from drying out)"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg, beaten, for the topping"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Mix the melted butter, flour, egg, sour cream, salt, yeast, sugar and lukewarm milk into a dough. Add lard too if using.",
+                "Put the dough in a bowl and press down the middle. Cover with a damp towel and leave somewhere warm for 30 minutes, until doubled in size.",
+                "Roll the dough out on the table to 2cm thick, fold it over, then roll it out to 2cm again.",
+                "Score a criss-cross pattern on top of the dough with a knife.",
+                "Cut out circles and place them on a tray lined with baking paper.",
+                "Leave to rest for 15 minutes, then brush the tops with the beaten egg.",
+                "Bake at 180°C for 45 minutes."
+            ]
+        },
+        {
+            "name": "No-Knead Bread",
+            "ingredients": [
+                {
+                    "quantity": "400",
+                    "measurement": "g",
+                    "name": "strong bread flour, plus extra for dusting"
+                },
+                {
+                    "quantity": "320",
+                    "measurement": "ml",
+                    "name": "water"
+                },
+                {
+                    "quantity": "12",
+                    "measurement": "g",
+                    "name": "honey"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "g",
+                    "name": "dried yeast"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "g",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "butter, for topping (optional)"
+                }
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Mix the water, honey and yeast, then add the flour and salt and mix until incorporated.",
+                "Fold the dough over itself 6 times so it comes together well.",
+                "Put the dough in a container of about 1 litre, cover and leave in the fridge for 12 hours.",
+                "Take it out and check it has doubled in size.",
+                "Turn it out onto a floured table. Fold it in three, turn it 90 degrees and fold in three again.",
+                "Divide the dough into 2 pieces, dust the tops with flour and rest for 15 minutes.",
+                "Heat the oven to 230-240°C.",
+                "Score a pattern on top of each loaf. Add a little butter in the cut if you want a buttery bread.",
+                "Bake for 18 minutes at 230-240°C."
+            ]
+        }   
     ]
 }

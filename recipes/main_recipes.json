@@ -5124,6 +5124,813 @@
                 "Pour the bechamel over the meat, scatter with the remaining parmesan and bake for about 45 minutes until golden brown.",
                 "Leave to rest for 15 minutes before cutting."
             ]
+        },
+        {
+            "name": "Tartare Sauce",
+            "ingredients": [
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "eggs"
+                },
+                {
+                    "quantity": "1/2-1",
+                    "measurement": "",
+                    "name": "onion"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "gherkins"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "parsley, chopped"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "mayonnaise"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt and pepper"
+                }
+            ],
+            "cuisine": "British",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Boil the eggs until hard, then cool and peel them.",
+                "Finely chop the onion and gherkins.",
+                "Crush the boiled eggs and mix them with the onion and gherkins.",
+                "Add the mayonnaise and mix well.",
+                "Season with salt and pepper to taste and mix well.",
+                "Add the parsley at the end and mix."
+            ]
+        },
+        {
+            "name": "Hungarian Onion Salad",
+            "ingredients": [
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "onions"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "vinegar"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "water"
+                }
+            ],
+            "cuisine": "Hungarian",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Slice the onions thinly, sprinkle with salt and mix. Leave for 5 minutes.",
+                "Add the water, sugar and vinegar to the onions and mix.",
+                "Adjust the seasoning until the taste is right, then serve."
+            ]
+        },
+        {
+            "name": "Baked Garlic Salmon",
+            "ingredients": [
+                {
+                    "quantity": "4",
+                    "measurement": "",
+                    "name": "salmon fillets"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "",
+                    "name": "garlic cloves, minced"
+                },
+                {
+                    "quantity": "5-6",
+                    "measurement": "tsp",
+                    "name": "olive oil"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "tsp",
+                    "name": "lemon or lime juice"
+                },
+                {
+                    "quantity": "1 1/2",
+                    "measurement": "tsp",
+                    "name": "mustard"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "black pepper"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "red pepper powder"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "cooking or olive oil, for the foil"
+                }
+            ],
+            "cuisine": "British",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Heat the oven to 170-200°C.",
+                "Line a baking pan with aluminium foil and spread oil over the foil.",
+                "Mix the garlic, olive oil, lemon or lime juice, mustard, salt, black pepper and red pepper powder.",
+                "Arrange the salmon on the pan and spread the mixture evenly over the fillets.",
+                "Bake for 20-30 minutes, or until the fillets flake easily with a fork."
+            ]
+        },
+        {
+            "name": "Baked Salmon with Cheese",
+            "ingredients": [
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salmon fillets"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "king prawns or shrimps"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "cream cheese"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "garlic, minced"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "black pepper"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "grated cheese (Parmigiano Reggiano is best, cheddar also works)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "breadcrumbs"
+                }
+            ],
+            "cuisine": "British",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Heat the oven to 200°C.",
+                "Place the salmon fillets on the baking tray.",
+                "Place the prawns on top of the salmon fillets.",
+                "Mix the cream cheese, salt, black pepper and garlic, then spread the mixture over the prawns.",
+                "Mix the cheese and breadcrumbs, then sprinkle over the top.",
+                "Bake for 15 minutes at 200°C. If the top starts to burn, cover with aluminium foil."
+            ]
+        },
+        {
+            "name": "British Fish Pie",
+            "ingredients": [
+                {
+                    "quantity": "3",
+                    "measurement": "",
+                    "name": "potatoes"
+                },
+                {
+                    "quantity": "250",
+                    "measurement": "g",
+                    "name": "boneless fish"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "boiled shrimp"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "boiled eggs"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "pack",
+                    "name": "spinach"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "onion"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "",
+                    "name": "carrot"
+                },
+                {
+                    "quantity": "150",
+                    "measurement": "g",
+                    "name": "fresh cream"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "lemon juice"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "Parmesan cheese, grated"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "mustard (optional)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt and pepper"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "olive oil"
+                }
+            ],
+            "cuisine": "British",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Finely chop the onion and carrot.",
+                "Boil the spinach and drain well.",
+                "Heat the oven to 230°C.",
+                "Make mashed potatoes, seasoning with salt and pepper.",
+                "Fry the onion and carrot well in olive oil. When they are soft, add the cream.",
+                "Take the pan off the heat and stir in the lemon juice, Parmesan, and mustard if you like. Season with salt and pepper.",
+                "Cut the boiled eggs into pieces.",
+                "Layer the spinach, shrimp and eggs in the baking dish, then put the fish on top.",
+                "Pour the cream sauce over the fish, then cover with the mashed potatoes.",
+                "Bake for 25-30 minutes at 230°C. As everything is already cooked, it's done once the surface has a good colour."
+            ]
+        },
+        {
+            "name": "Cod Cooked in Foil",
+            "ingredients": [
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "cod fillets"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "onion"
+                },
+                {
+                    "quantity": "100",
+                    "measurement": "g",
+                    "name": "mushrooms"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "lemon slices"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "butter"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt and pepper"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Season both sides of the cod with salt and pepper.",
+                "Cut the onion into 4 round slices and slice the mushrooms.",
+                "On a sheet of aluminium foil, layer 2 onion slices, 1 piece of cod, half the mushrooms, 15g butter and 1 lemon slice.",
+                "Make a second parcel the same way.",
+                "Wrap each parcel up fully, put them in a frying pan and cover with a lid.",
+                "Cook on a low heat for 20 minutes."
+            ]
+        },
+        {
+            "name": "Turkey Meatball Pasta in Tomato Sauce",
+            "ingredients": [
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "turkey mince"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "breadcrumbs"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "blue cheese, for filling"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "onion, minced"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "garlic, minced"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "ginger, minced"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "can",
+                    "name": "chopped tomatoes"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "chilli"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt and pepper"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "oil, for frying"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "pasta"
+                }
+            ],
+            "cuisine": "Italian",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "For the sauce, fry the garlic, ginger, onion and chilli in oil until well cooked.",
+                "Add the canned tomatoes, season with salt and pepper and let it cook while you make the meatballs.",
+                "For the meatballs, mix the turkey mince, breadcrumbs, egg, salt and pepper in a bowl.",
+                "Shape the mixture into balls, pressing a small piece of blue cheese into the middle of each one.",
+                "Cook the meatballs in a frying pan until browned and cooked through.",
+                "Cook the pasta according to the packet instructions.",
+                "Add the meatballs to the tomato sauce and mix well. Serve with the pasta."
+            ]
+        },
+        {
+            "name": "Kastaleta Lamb (Spiced Lamb Chops)",
+            "ingredients": [
+                {
+                    "quantity": "8",
+                    "measurement": "",
+                    "name": "trimmed loin lamb chops"
+                },
+                {
+                    "quantity": "1/3",
+                    "measurement": "cup",
+                    "name": "butter, melted (about 75g)"
+                },
+                {
+                    "quantity": "1/3",
+                    "measurement": "tsp",
+                    "name": "Lebanese spice mix (16 parts ground cinnamon, 4 parts ground cloves, 4 parts ground chilli, 4 parts ground green cardamom)"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "ground cloves (small)"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "ground cardamom (generous)"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "tsp",
+                    "name": "ground ginger"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "ground nutmeg (generous)"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "ground coriander (small)"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "small garlic clove, crushed"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tsp",
+                    "name": "fresh mint, chopped"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tsp",
+                    "name": "fresh flat-leaf parsley, chopped"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt and pepper"
+                }
+            ],
+            "cuisine": "Lebanese",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "If making your own Lebanese spice mix, combine 16 parts ground cinnamon with 4 parts each of ground cloves, ground chilli and ground green cardamom.",
+                "Mix the melted butter with the Lebanese spice mix, cloves, cardamom, ginger, nutmeg, coriander, garlic, mint, parsley, salt and pepper.",
+                "Coat the lamb chops in the mixture and leave to marinate.",
+                "Cook the chops on a barbecue, under the grill or in a frying pan until done to your liking."
+            ]
+        },
+        {
+            "name": "Hünkar Beğendi (Lamb Stew on Aubergine Purée)",
+            "ingredients": [
+                {
+                    "quantity": "500",
+                    "measurement": "g",
+                    "name": "lamb shoulder, cut into small pieces"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "onion, finely chopped"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "garlic cloves, minced"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "green pepper, chopped (optional)"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "tomato puree"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "paprika or pul biber (Turkish chilli flakes)"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "tsp",
+                    "name": "dried thyme"
+                },
+                {
+                    "quantity": "250",
+                    "measurement": "ml",
+                    "name": "hot water"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "olive oil"
+                },
+                {
+                    "quantity": "4",
+                    "measurement": "",
+                    "name": "large aubergines"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "lemon juice"
+                },
+                {
+                    "quantity": "30",
+                    "measurement": "g",
+                    "name": "butter"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "400",
+                    "measurement": "ml",
+                    "name": "milk, warmed"
+                },
+                {
+                    "quantity": "50",
+                    "measurement": "g",
+                    "name": "Parmigiano Reggiano, grated"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "pinch",
+                    "name": "ground nutmeg"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt and pepper"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "fresh parsley, chopped, to serve"
+                }
+            ],
+            "cuisine": "Turkish",
+            "weight": 4,
+            "link": "",
+            "instructions": [
+                "Wash the aubergines and pierce them all over with a fork so they don't burst.",
+                "Grill them for about 30 minutes, turning now and then, until the skin is charred and the flesh is completely soft.",
+                "While they grill, start the lamb. Heat the olive oil in a heavy pan and cook the onion until soft.",
+                "Turn the heat up high, add the lamb and fry it. Don't stir too often, or it releases water and stews instead of browning.",
+                "Add the garlic, green pepper (if using), tomato puree, paprika and thyme, and stir for 1-2 minutes.",
+                "Add the hot water, season with salt and pepper, cover and simmer on a low heat for at least 20 minutes, until the lamb is tender. Lamb shoulder may need 40-60 minutes; add a splash more water if it gets dry.",
+                "When the aubergines are cool enough to handle, peel them and put the flesh in a bowl of water with the lemon juice for a few minutes to stop it going dark. Drain, squeeze out the water and mash into a purée.",
+                "For the béchamel, melt the butter in a separate pot, add the flour and cook, stirring, for 2-3 minutes so it doesn't taste of raw flour.",
+                "Gradually add the warm milk, stirring all the time, until smooth and thick.",
+                "Add the aubergine purée and mix well, then stir in the Parmigiano Reggiano.",
+                "Season the aubergine sauce with salt, pepper and nutmeg.",
+                "Spread the aubergine sauce on plates, spoon the lamb stew into the middle, and sprinkle with parsley."
+            ]
+        },
+        {
+            "name": "Lebanese Vermicelli Rice",
+            "ingredients": [
+                {
+                    "quantity": "1",
+                    "measurement": "mug",
+                    "name": "long grain rice"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "mug",
+                    "name": "vermicelli noodles"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "cooking oil"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "600",
+                    "measurement": "ml",
+                    "name": "water"
+                }
+            ],
+            "cuisine": "Lebanese",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Heat the oil in a pan and add the vermicelli. Fry, stirring all the time, until the noodles turn brown.",
+                "Add the rice and mix, then add the salt and mix.",
+                "Pour in the water and cook uncovered until the water has reduced to the level of the rice.",
+                "Turn the heat down to low, cover with a lid and cook for 15 minutes. Don't open the lid during this time.",
+                "Fluff up with a fork and serve."
+            ]
+        },
+        {
+            "name": "Roasted Aubergine Spread",
+            "ingredients": [
+                {
+                    "quantity": "2",
+                    "measurement": "",
+                    "name": "medium aubergines, peeled"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "red pepper, deseeded"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "red onion, peeled"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "garlic clove, minced"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "olive oil"
+                },
+                {
+                    "quantity": "1 1/2",
+                    "measurement": "tsp",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "tsp",
+                    "name": "cayenne pepper"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "tsp",
+                    "name": "freshly ground black pepper"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "lemon juice"
+                },
+                {
+                    "quantity": "2",
+                    "measurement": "tbsp",
+                    "name": "tahini"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "fresh parsley, chopped, plus extra to garnish"
+                }
+            ],
+            "cuisine": "Lebanese",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Heat the oven to 200°C.",
+                "Cut the aubergines, red pepper and onion into 2.5cm (1 inch) cubes.",
+                "Toss them in a large bowl with the garlic, olive oil, cayenne pepper, salt and black pepper.",
+                "Spread on a baking sheet and roast for 45 minutes, tossing once, until lightly browned and soft.",
+                "Leave to cool slightly, then blend in a food processor with the lemon juice and tahini.",
+                "Season with more salt and pepper to taste, then mix in the parsley. Garnish with extra parsley."
+            ]
+        },
+        {
+            "name": "Galuska (Hungarian Soup Dumplings)",
+            "ingredients": [
+                {
+                    "quantity": "1",
+                    "measurement": "",
+                    "name": "egg"
+                },
+                {
+                    "quantity": "1/2",
+                    "measurement": "tsp",
+                    "name": "bicarbonate of soda"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "Vegeta seasoning"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "plain flour"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "water"
+                }
+            ],
+            "cuisine": "Hungarian",
+            "weight": 1,
+            "link": "",
+            "instructions": [
+                "Beat the egg well, then add a little salt and Vegeta and mix.",
+                "Add the bicarbonate of soda, then add flour and mix well.",
+                "Gradually add water until the dough is a little thicker than cake batter.",
+                "Bring a pan of salted water to the boil. It should be about 5-10cm deep.",
+                "Drop small amounts of dough into the boiling water, cutting them off with a fork.",
+                "Boil for a few minutes until cooked, then lift them out and add them to the soup.",
+                "Good in gulyás, vegetable soup, potato soup and bean soup."
+            ]
+        },
+        {
+            "name": "Nikuman Dough (16 pieces)",
+            "ingredients": [
+                {
+                    "quantity": "300",
+                    "measurement": "g",
+                    "name": "strong flour"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tbsp",
+                    "name": "oil"
+                },
+                {
+                    "quantity": "160-190",
+                    "measurement": "g",
+                    "name": "water"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "sugar"
+                },
+                {
+                    "quantity": "2/3",
+                    "measurement": "tsp",
+                    "name": "salt"
+                },
+                {
+                    "quantity": "5",
+                    "measurement": "g",
+                    "name": "baking powder"
+                },
+                {
+                    "quantity": "1",
+                    "measurement": "tsp",
+                    "name": "dried yeast"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "filling of your choice"
+                }
+            ],
+            "cuisine": "Japanese",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Mix the flour, sugar, salt, baking powder and yeast, then add the oil and 160g water. Add more water, up to 190g, until it forms a soft, smooth dough.",
+                "Knead and leave to prove until it has doubled in size.",
+                "Divide into 16 pieces and wrap the filling in each one.",
+                "Cover with a damp towel and leave for 20 minutes.",
+                "Steam over a high heat for 15 minutes."
+            ]
         }
     ]
 }
