@@ -926,6 +926,231 @@
                 "Score a pattern on top of each loaf. Add a little butter in the cut if you want a buttery bread.",
                 "Bake for 18 minutes at 230-240°C."
             ]
-        }   
+        },
+        {
+            "name": "Mascarpone Bread",
+            "ingredients": [
+                {"quantity": "500", "measurement": "g", "name": "bread flour"},
+                {"quantity": "120", "measurement": "g", "name": "mascarpone"},
+                {"quantity": "24", "measurement": "g", "name": "sugar"},
+                {"quantity": "24", "measurement": "g", "name": "honey"},
+                {"quantity": "8", "measurement": "g", "name": "salt"},
+                {"quantity": "10", "measurement": "g", "name": "powdered milk"},
+                {"quantity": "6", "measurement": "g", "name": "dried yeast"},
+                {"quantity": "200", "measurement": "ml", "name": "milk"},
+                {"quantity": "110-130", "measurement": "ml", "name": "water"}
+            ],
+            "cuisine": "Sweet",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Mix all the ingredients together, adding the water gradually, and knead until smooth and elastic.",
+                "Cover and prove until doubled in size.",
+                "Press out the gas, then cover and rest the dough for 15-20 minutes.",
+                "Divide into 3 equal pieces, shape each one and place them side by side in an oiled tin.",
+                "Prove until about 1.5 times bigger. Preheat the oven to 180°C towards the end.",
+                "Just before baking, cut one line down the middle.",
+                "Bake at 180°C for 32 minutes."
+            ]
+        },
+        {
+            "name": "English Muffins",
+            "ingredients": [
+                {"quantity": "397", "measurement": "g", "name": "lukewarm milk"},
+                {"quantity": "43", "measurement": "g", "name": "softened butter"},
+                {"quantity": "1.25-1.5", "measurement": "tsp", "name": "salt"},
+                {"quantity": "25", "measurement": "g", "name": "granulated sugar"},
+                {"quantity": "1", "measurement": "", "name": "large egg, lightly beaten"},
+                {"quantity": "540", "measurement": "g", "name": "bread flour"},
+                {"quantity": "7", "measurement": "g", "name": "instant yeast"},
+                {"quantity": "", "measurement": "", "name": "semolina or farina, for sprinkling"}
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Combine the milk, butter, salt, sugar, egg, flour and yeast and mix until a shaggy dough forms.",
+                "Knead for 8-10 minutes by hand (5-7 minutes in a stand mixer) until smooth and elastic. The dough should be soft and slightly tacky.",
+                "Cover and leave in a warm place for 1-2 hours, until puffy and nearly doubled.",
+                "Line a baking tray with baking paper and sprinkle generously with semolina.",
+                "Gently deflate the dough and divide into 16 pieces (about 65g each). Roll into balls, flatten to 7-8cm across, place on the tray and sprinkle the tops with more semolina.",
+                "Cover loosely and leave for about 20 minutes until slightly puffy.",
+                "Heat an ungreased heavy frying pan or griddle over a low-medium heat. Cook the muffins in batches for 7-10 minutes per side until deep golden.",
+                "The centres should reach 88-90°C. If they're browned but still doughy, finish in a 180°C oven for 5-10 minutes.",
+                "Cool on a wire rack. Split with a fork, then toast to serve."
+            ]
+        },
+        {
+            "name": "Chocolate Coupe Bread",
+            "ingredients": [
+                {"quantity": "460", "measurement": "g", "name": "bread flour"},
+                {"quantity": "40", "measurement": "g", "name": "plain flour"},
+                {"quantity": "30", "measurement": "g", "name": "cocoa powder"},
+                {"quantity": "8", "measurement": "g", "name": "salt"},
+                {"quantity": "6", "measurement": "g", "name": "dried yeast"},
+                {"quantity": "30", "measurement": "g", "name": "sugar"},
+                {"quantity": "290", "measurement": "ml", "name": "water"},
+                {"quantity": "160", "measurement": "g", "name": "chocolate chips (filling)"},
+                {"quantity": "80", "measurement": "g", "name": "orange peel (filling)"},
+                {"quantity": "2", "measurement": "tbsp", "name": "marmalade (filling)"}
+            ],
+            "cuisine": "Sweet",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Mix the bread flour, plain flour, cocoa powder, sugar, salt and yeast, then add the water and knead for about 10 minutes until smooth and elastic.",
+                "Mix the chocolate chips, orange peel and marmalade together. Flatten the dough and spread the filling over it, then fold and knead gently until it's evenly distributed.",
+                "Cover and prove for 60-90 minutes until doubled in size.",
+                "Press out the gas, shape into a ball and rest for 15-20 minutes.",
+                "Shape into an oval loaf, tucking any chocolate chips on the surface into the dough so they don't burn. Place seam-side down on a tray lined with baking paper.",
+                "Prove until about 1.5 times bigger (around 40-50 minutes). Preheat the oven to 220°C with an empty tray on the bottom shelf.",
+                "Dust the top with flour and cut a coupe (one long, confident slash about 1cm deep) along the length of the loaf so it can open up and rise nicely.",
+                "Put the loaf in the oven and pour a cup of hot water into the bottom tray to create steam.",
+                "Bake at 220°C for 30 minutes. The loaf should sound hollow when tapped underneath.",
+                "Cool on a wire rack before slicing."
+            ]
+        },
+        {
+            "name": "Twisted Salt Butter Bread (Nejineji)",
+            "ingredients": [
+                {"quantity": "400", "measurement": "g", "name": "semi-strong flour (French bread flour)"},
+                {"quantity": "4", "measurement": "g", "name": "dried yeast"},
+                {"quantity": "220", "measurement": "ml", "name": "water"},
+                {"quantity": "100", "measurement": "ml", "name": "milk"},
+                {"quantity": "40", "measurement": "g", "name": "unsalted butter"},
+                {"quantity": "20", "measurement": "g", "name": "sugar"},
+                {"quantity": "45", "measurement": "g", "name": "unsalted butter, diced (filling)"},
+                {"quantity": "1", "measurement": "tsp", "name": "sea salt (filling)"}
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Mix the flour, yeast, water, milk, 40g butter and sugar together and knead until smooth and elastic.",
+                "Cover and prove until doubled in size.",
+                "Press out the gas, shape into a ball and rest for 10-15 minutes.",
+                "Roll the dough out into an 18cm square.",
+                "Start rolling the dough up from one edge, scattering the diced 45g butter and the sea salt over several spots as you go, so they end up spread through the swirl.",
+                "Once rolled up, pinch the seam closed and twist the log several times (neji neji) to make a spiral.",
+                "Place on a tray lined with baking paper and prove until about 1.5 times bigger. Preheat the oven to 180°C towards the end.",
+                "Bake at 180°C for about 25 minutes, until golden and hollow-sounding underneath. Some butter will leak out and crisp the base, which is part of the charm.",
+                "Cool on a wire rack before slicing."
+            ]
+        },
+        {
+            "name": "Garlic Butter Focaccia",
+            "ingredients": [
+                {"quantity": "400", "measurement": "g", "name": "bread flour"},
+                {"quantity": "100", "measurement": "g", "name": "plain flour"},
+                {"quantity": "20", "measurement": "g", "name": "sugar"},
+                {"quantity": "10", "measurement": "g", "name": "salt"},
+                {"quantity": "6", "measurement": "g", "name": "dried yeast"},
+                {"quantity": "440", "measurement": "ml", "name": "lukewarm water"},
+                {"quantity": "50", "measurement": "g", "name": "olive oil"},
+                {"quantity": "80", "measurement": "g", "name": "butter (garlic butter paste)"},
+                {"quantity": "2", "measurement": "tbsp", "name": "garlic paste (garlic butter paste)"},
+                {"quantity": "", "measurement": "", "name": "parsley, chopped (garlic butter paste)"},
+                {"quantity": "", "measurement": "", "name": "sea salt, for sprinkling"}
+            ],
+            "cuisine": "Salty",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Mix the bread flour, plain flour, sugar, salt, yeast, lukewarm water and olive oil together with a spatula until there's no dry flour left. The dough will be very wet.",
+                "Cover and rest for 20 minutes at room temperature.",
+                "Fold the dough with a spatula for 2-3 minutes, lifting and folding it over from all four sides.",
+                "Line a tray with baking paper, pour the dough in and gently spread it towards the corners.",
+                "Cover and prove until puffy and roughly doubled. Preheat the oven to 200°C towards the end.",
+                "For the garlic butter paste, melt the butter in the microwave, then mix in the garlic paste and parsley.",
+                "Spread the garlic butter paste over the dough and sprinkle with sea salt.",
+                "Bake at 200°C for 20 minutes until golden.",
+                "Leave to cool slightly in the tray, then cut into squares."
+            ]
+        },
+        {
+            "name": "Soft French Bread Rolls",
+            "ingredients": [
+                {"quantity": "350", "measurement": "g", "name": "bread flour"},
+                {"quantity": "150", "measurement": "g", "name": "plain flour"},
+                {"quantity": "7.5", "measurement": "g", "name": "salt"},
+                {"quantity": "7.5", "measurement": "g", "name": "dried yeast"},
+                {"quantity": "50", "measurement": "g", "name": "condensed milk"},
+                {"quantity": "138", "measurement": "ml", "name": "water"},
+                {"quantity": "200", "measurement": "g", "name": "milk"},
+                {"quantity": "25", "measurement": "g", "name": "unsalted butter, softened"}
+            ],
+            "cuisine": "Sweet",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Mix the bread flour, plain flour, salt, yeast, condensed milk, water and milk together and knead until the dough comes together.",
+                "Add the softened butter and keep kneading until the dough is smooth and elastic.",
+                "Cover and prove until doubled in size.",
+                "Press out the gas and divide into 15 equal pieces. Shape into balls, cover and rest for 15 minutes.",
+                "Shape each piece into a small oval roll, pinching the seam closed, and place seam-side down on a tray lined with baking paper.",
+                "Prove until about 1.5 times bigger. Preheat the oven to 210°C with an empty tray on the bottom shelf.",
+                "Cut one line along the top of each roll.",
+                "Put the rolls in the oven and pour a cup of hot water into the bottom tray to create steam.",
+                "Bake at 210°C for 10 minutes or more, until golden.",
+                "Cool on a wire rack."
+            ]
+        },
+        {
+            "name": "Mantou (Steamed Buns)",
+            "ingredients": [
+                {"quantity": "240", "measurement": "g", "name": "bread flour"},
+                {"quantity": "160", "measurement": "g", "name": "plain flour"},
+                {"quantity": "30", "measurement": "g", "name": "sugar"},
+                {"quantity": "4", "measurement": "g", "name": "salt"},
+                {"quantity": "10", "measurement": "g", "name": "oil"},
+                {"quantity": "200", "measurement": "g", "name": "water"},
+                {"quantity": "4", "measurement": "g", "name": "dried yeast"}
+            ],
+            "cuisine": "Sweet",
+            "weight": 2,
+            "link": "",
+            "instructions": [
+                "Mix the bread flour, plain flour, sugar, salt, oil, water and yeast together and knead well until smooth.",
+                "Cover and prove until doubled in size.",
+                "Press out the gas and fold the dough into thirds, then roll it out into a rectangle.",
+                "Roll it up tightly from the long side, pinching the seam closed.",
+                "Cut into 6 or 8 pieces and place each one on its own square of baking paper.",
+                "Cover and rest for 15-20 minutes until slightly puffy.",
+                "Steam over boiling water for 8-12 minutes.",
+                "Turn off the heat and leave the lid on for 3-5 minutes before opening, so the buns don't wrinkle or collapse."
+            ]
+        },
+        {
+            "name": "Cheese Twist Bread",
+            "ingredients": [
+                {"quantity": "500", "measurement": "g", "name": "bread flour"},
+                {"quantity": "10", "measurement": "g", "name": "salt"},
+                {"quantity": "16", "measurement": "g", "name": "sugar"},
+                {"quantity": "6", "measurement": "g", "name": "dried yeast"},
+                {"quantity": "400", "measurement": "g", "name": "water"},
+                {"quantity": "16", "measurement": "g", "name": "olive oil"},
+                {"quantity": "30", "measurement": "g", "name": "butter, softened (filling)"},
+                {"quantity": "4", "measurement": "tsp", "name": "garlic paste (filling)"},
+                {"quantity": "", "measurement": "", "name": "sea salt, a little (filling)"},
+                {"quantity": "2+", "measurement": "tbsp", "name": "grated cheese (filling)"},
+                {"quantity": "1+", "measurement": "tbsp", "name": "parsley, chopped (filling)"}
+            ],
+            "cuisine": "Salty",
+            "weight": 3,
+            "link": "",
+            "instructions": [
+                "Mix the flour, salt, sugar, yeast, water and olive oil together and knead until smooth and elastic. The dough will be quite soft.",
+                "Cover and prove until doubled in size.",
+                "For the filling, mix the softened butter with the garlic paste and a little sea salt.",
+                "Turn the dough out onto a floured surface and gently stretch it into a square.",
+                "Spread the garlic butter over one half of the square, then sprinkle the cheese and parsley on top.",
+                "Fold the other half over to cover the filling neatly and press the edges lightly to seal.",
+                "Cut into strips about 2-3cm wide. Twist each strip a few times and place on a tray lined with baking paper.",
+                "Preheat the oven to 240°C with an empty tray on the bottom shelf.",
+                "Put the tray in the oven and pour a cup of hot water into the bottom tray to create steam.",
+                "Bake at 240°C for 15-18 minutes until golden.",
+                "Cool slightly on a wire rack and serve warm."
+            ]
+        } 
     ]
 }
