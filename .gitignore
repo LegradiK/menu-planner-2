@@ -34,4 +34,8 @@ node_modules/
 
 # Ignore build directories
 build/
-dist/
+dist/instance/
+*.db
+instance/
+*.db
+instance/
