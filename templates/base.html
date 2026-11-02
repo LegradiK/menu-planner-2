@@ -11,15 +11,19 @@
 </head>
 <body>
 
-	{% set nav = [('my_week', 'My week')]
-		+ ([('history.calendar_view', 'My calendar')] if current_user.is_authenticated else [])
-		+ [
-			('all_recipes', 'All recipes'),
-			('get_recipes', 'Get ideas'),
-			('search_recipe', 'Search'),
-			('add_recipes', 'Add a recipe'),
-			('get_inspired', 'Get inspired'),
-		] %}
+	{% set recipe_links = [
+		('all_recipes', 'All recipes'),
+		('get_recipes', 'Get ideas'),
+		('search_recipe', 'Search'),
+		('add_recipes', 'Add a recipe'),
+	] %}
+	{% set my_links = [
+		('my_week', 'My week'),
+		('history.calendar_view', 'My calendar'),
+	] %}
+	{% set recipe_endpoints = recipe_links | map('first') | list
+		+ ([] if current_user.is_authenticated else ['my_week']) %}
+	{% set my_endpoints = my_links | map('first') | list %}
 
 
 	<header class="site-header">
@@ -27,25 +31,58 @@
 			<a class="brand" href="{{ url_for('home') }}">Menu Planner</a>
 			<nav>
 				<ul class="nav-links">
-					{% for endpoint, label in nav %}
-						<li>
-							<a class="nav-btn {% if request.endpoint == endpoint %}active{% endif %}" href="{{ url_for(endpoint) }}">
-								{{ label }}
-								{% if endpoint == 'my_week' and plan %}
-									<span class="badge">{{ plan|length }}</span>
+					<li>
+						<details class="nav-menu">
+							<summary class="nav-btn {% if request.endpoint in recipe_endpoints %}active{% endif %}">Recipes</summary>
+							<ul class="nav-menu__list">
+								{% for endpoint, label in recipe_links %}
+									<li>
+										<a class="nav-menu__item {% if request.endpoint == endpoint %}active{% endif %}" href="{{ url_for(endpoint) }}">{{ label }}</a>
+									</li>
+								{% endfor %}
+								{% if not current_user.is_authenticated %}
+									{# Logged out: no account menu, so My week lives here #}
+									<li class="nav-menu__divider">
+										<a class="nav-menu__item {% if request.endpoint == 'my_week' %}active{% endif %}" href="{{ url_for('my_week') }}">
+											My week
+											{% if plan %}<span class="badge">{{ plan|length }}</span>{% endif %}
+										</a>
+									</li>
 								{% endif %}
-							</a>
-						</li>
-					{% endfor %}
+							</ul>
+						</details>
+					</li>
+
+					<li>
+						<a class="nav-btn {% if request.endpoint == 'get_inspired' %}active{% endif %}" href="{{ url_for('get_inspired') }}">Get inspired</a>
+					</li>
 
 					{% if current_user.is_authenticated %}
-						<li>
-							<form method="POST" action="{{ url_for('auth.logout') }}">
-								{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
-								<button class="nav-btn nav-btn--quiet" title="Logged in as {{ current_user.email }}">
-									Log out
-								</button>
-							</form>
+						<li class="nav-account">
+							<details class="nav-menu nav-menu--right">
+								<summary class="nav-btn {% if request.endpoint in my_endpoints %}active{% endif %}" title="Logged in as {{ current_user.email }}">
+									<span class="nav-account__name">{{ current_user.name or 'My account' }}</span>
+									{% if plan %}<span class="badge">{{ plan|length }}</span>{% endif %}
+								</summary>
+								<ul class="nav-menu__list">
+									{% for endpoint, label in my_links %}
+										<li>
+											<a class="nav-menu__item {% if request.endpoint == endpoint %}active{% endif %}" href="{{ url_for(endpoint) }}">
+												{{ label }}
+												{% if endpoint == 'my_week' and plan %}
+													<span class="badge">{{ plan|length }}</span>
+												{% endif %}
+											</a>
+										</li>
+									{% endfor %}
+									<li class="nav-menu__divider">
+										<form method="POST" action="{{ url_for('auth.logout') }}">
+											{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
+											<button class="nav-menu__item nav-menu__item--quiet">Log out</button>
+										</form>
+									</li>
+								</ul>
+							</details>
 						</li>
 					{% else %}
 						<li>
@@ -76,6 +113,9 @@
 		<a href="https://github.com/LegradiK" target="_blank" rel="noopener noreferrer">LegradiK</a>.
 		All rights reserved.
 	</footer>
+
+	<script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+	{% block scripts %}{% endblock %}
 
 </body>
 </html>

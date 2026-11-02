@@ -21,6 +21,16 @@
 
 		<div class="cal-grid">
 			{% for days in weeks %}
+				{% set week_has_today = today in days %}
+				{% set planned = days | select('in', saved) | list | length %}
+				<section class="cal-week{% if week_has_today %} cal-week--current is-open{% endif %}">
+					<h4 class="cal-week__title">
+						<button type="button" class="cal-week__toggle" aria-expanded="{{ 'true' if week_has_today else 'false' }}">
+							<span class="cal-week__dates">{{ days[0].day }} {{ days[0].strftime('%b') }} – {{ days[-1].day }} {{ days[-1].strftime('%b') }}</span>
+							{% if week_has_today %}<span class="cal-week__tag">This week</span>{% endif %}
+							{% if planned %}<span class="cal-week__count">{{ planned }} day{{ 's' if planned != 1 }}</span>{% endif %}
+						</button>
+					</h4>
 				{% for day in days %}
 					{% set entry = saved.get(day) %}
 					<div class="cal-cell
@@ -61,6 +71,7 @@
 						{% endif %}
 					</div>
 				{% endfor %}
+				</section>
 			{% endfor %}
 		</div>
 	</div>
@@ -83,4 +94,8 @@
 		<a class="btn btn-primary" href="{{ url_for('my_week') }}">Plan this week</a>
 	</div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+	<script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
 {% endblock %}
