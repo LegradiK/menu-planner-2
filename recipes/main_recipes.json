@@ -6003,6 +6003,96 @@
                 "Season with salt to taste, then stir in the cumin powder.",
                 "Serve with sour cream and fresh bread."
             ]
+        },
+        {
+            "name": "Greek Instant Pot Leg of Lamb",
+            "ingredients": [
+                {
+                    "quantity": 4,
+                    "measurement": "pound",
+                    "name": "4 - 4½ pound boneless leg of lamb, string mesh removed"
+                },
+                {
+                    "quantity": 0,
+                    "measurement": "several cloves",
+                    "name": "garlic, peeled, cut into slivers"
+                },
+                {
+                    "quantity": 0,
+                    "measurement": "as needed",
+                    "name": "Olive oil"
+                },
+                {
+                    "quantity": 0,
+                    "measurement": "to taste",
+                    "name": "Kosher salt and fresh cracked pepper"
+                },
+                {
+                    "quantity": 1,
+                    "measurement": "teaspoon",
+                    "name": "garlic powder"
+                },
+                {
+                    "quantity": 1,
+                    "measurement": "teaspoon",
+                    "name": "paprika"
+                },
+                {
+                    "quantity": 1,
+                    "measurement": "piece",
+                    "name": "onion, peeled and quartered"
+                },
+                {
+                    "quantity": 1,
+                    "measurement": "cup",
+                    "name": "dry white wine"
+                },
+                {
+                    "quantity": 1.25,
+                    "measurement": "cup",
+                    "name": "chicken stock, preferably homemade"
+                },
+                {
+                    "quantity": 0.5,
+                    "measurement": "cup",
+                    "name": "lemon juice from 2 to 3 lemons"
+                },
+                {
+                    "quantity": 7,
+                    "measurement": "sprigs",
+                    "name": "thyme (7-10 sprigs)"
+                },
+                {
+                    "quantity": 3,
+                    "measurement": "sprigs",
+                    "name": "rosemary"
+                },
+                {
+                    "quantity": 1,
+                    "measurement": "sprig",
+                    "name": "oregano"
+                },
+                {
+                    "quantity": 2,
+                    "measurement": "teaspoons",
+                    "name": "dried oregano"
+                },
+                {
+                    "quantity": 2,
+                    "measurement": "pieces",
+                    "name": "bay leaves"
+                }
+            ],
+            "cuisine": "Greek",
+            "weight": 3,
+            "link": "https://thehungrybluebird.com/greek-instant-pot-leg-of-lamb/",
+            "instructions": [
+                "With a sharp paring knife, pierce lamb and make a hole, slip in a sliver of garlic. Repeat and insert as many slivers of garlic as you can, evenly distributed all over the roast.",
+                "Drizzle the lamb with a little olive oil, season all over with the garlic powder, paprika, salt and pepper. Heat 1 tablespoon of olive oil in the insert on the sauté setting until hot. Add lamb and brown well on both sides, 4 to 5 minutes per side.",
+                "Remove lamb to plate. Add onion and cook until starting to soften. Add a couple whole cloves of peeled, smashed garlic and cook until fragrant. Add wine and deglaze pan, stirring up any brown bits and reducing by about half.",
+                "Turn off sauté setting and add remaining ingredients; chicken stock, lemon juice and herbs. Give a quick stir to combine and place lamb roast back in pot, seam side down. The liquid should come up the sides but not completely submerge the roast, about 2¼ to 2¾ cups, add more stock or water, if needed.",
+                "Seal electric pressure cooker and cook on high for 90 minutes. Let pressure release naturally for 20 minutes, then release any remaining pressure manually. Remove lamb to cutting board, rest 10 minutes. Strain pot juices and skim any excess fat, taste for salt and pepper. Shred/cut lamb into slices/pieces and arrange on platter. Surround with roasted potatoes and spoon defatted cooking liquid all over lamb and potatoes. Enjoy!"
+            ]
         }
     ]
 }
