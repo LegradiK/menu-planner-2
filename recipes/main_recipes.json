@@ -6010,7 +6010,7 @@
                 {
                     "quantity": 4,
                     "measurement": "pound",
-                    "name": "4 - 4½ pound boneless leg of lamb, string mesh removed"
+                    "name": "4 - 4\u00bd pound boneless leg of lamb, string mesh removed"
                 },
                 {
                     "quantity": 0,
@@ -6088,10 +6088,50 @@
             "link": "https://thehungrybluebird.com/greek-instant-pot-leg-of-lamb/",
             "instructions": [
                 "With a sharp paring knife, pierce lamb and make a hole, slip in a sliver of garlic. Repeat and insert as many slivers of garlic as you can, evenly distributed all over the roast.",
-                "Drizzle the lamb with a little olive oil, season all over with the garlic powder, paprika, salt and pepper. Heat 1 tablespoon of olive oil in the insert on the sauté setting until hot. Add lamb and brown well on both sides, 4 to 5 minutes per side.",
+                "Drizzle the lamb with a little olive oil, season all over with the garlic powder, paprika, salt and pepper. Heat 1 tablespoon of olive oil in the insert on the saut\u00e9 setting until hot. Add lamb and brown well on both sides, 4 to 5 minutes per side.",
                 "Remove lamb to plate. Add onion and cook until starting to soften. Add a couple whole cloves of peeled, smashed garlic and cook until fragrant. Add wine and deglaze pan, stirring up any brown bits and reducing by about half.",
-                "Turn off sauté setting and add remaining ingredients; chicken stock, lemon juice and herbs. Give a quick stir to combine and place lamb roast back in pot, seam side down. The liquid should come up the sides but not completely submerge the roast, about 2¼ to 2¾ cups, add more stock or water, if needed.",
+                "Turn off saut\u00e9 setting and add remaining ingredients; chicken stock, lemon juice and herbs. Give a quick stir to combine and place lamb roast back in pot, seam side down. The liquid should come up the sides but not completely submerge the roast, about 2\u00bc to 2\u00be cups, add more stock or water, if needed.",
                 "Seal electric pressure cooker and cook on high for 90 minutes. Let pressure release naturally for 20 minutes, then release any remaining pressure manually. Remove lamb to cutting board, rest 10 minutes. Strain pot juices and skim any excess fat, taste for salt and pepper. Shred/cut lamb into slices/pieces and arrange on platter. Surround with roasted potatoes and spoon defatted cooking liquid all over lamb and potatoes. Enjoy!"
+            ]
+        },
+        {
+            "genre": "main",
+            "name": "The Best Brussels Sprouts of Your Life",
+            "ingredients": [
+                {
+                    "quantity": "1",
+                    "measurement": "lb",
+                    "name": "Brussels Sprouts (Cleaned and trimmed)"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "clove",
+                    "name": "garlic (peeled & sliced *See the notes section before starting)"
+                },
+                {
+                    "quantity": "0.25",
+                    "measurement": "cup",
+                    "name": "Parmesan Cheese (Freshly grated)"
+                },
+                {
+                    "quantity": "",
+                    "measurement": "",
+                    "name": "salt and freshly ground black pepper (To taste)"
+                },
+                {
+                    "quantity": "3",
+                    "measurement": "tbsp",
+                    "name": "good quality olive oil (or for Keto, butter flavor coconut oil)"
+                }
+            ],
+            "cuisine": "American",
+            "weight": 2,
+            "link": "https://www.errenskitchen.com/the-best-brussels-sprouts-of-your-life/",
+            "instructions": [
+                "Preheat the oven to 400\u00b0F/200\u00b0C.",
+                "If needed, clean and trim the Brussels sprouts and cut them in halves and place them in an oven safe dish. Make sure to dry them very well before cooking.",
+                "Add the garlic, Parmesan cheese, salt, and pepper, followed by the olive oil. Toss to coat.",
+                "Roast in the oven uncovered for 20-25 minutes until crisp, brown and caramelized on the outside and tender on the inside. Serve with more grated cheese."
             ]
         }
     ]

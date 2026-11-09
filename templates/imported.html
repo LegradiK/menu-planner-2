@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import recipe_item with context %}
+{% block title %}Recipes imported{% endblock %}
+
+{% block content %}
+<div class="page">
+	<div class="alert alert-success alert-center">
+		Saved {{ recipes | length }} recipe{{ 's' if recipes | length != 1 }}.
+	</div>
+
+	<div class="recipe-list">
+		{% for recipe in recipes %}
+			{{ recipe_item(recipe) }}
+		{% endfor %}
+	</div>
+
+	<div class="page-actions">
+		<a class="btn btn-primary" href="{{ url_for('add_recipes') }}">Import more</a>
+		<a class="btn" href="{{ url_for('all_recipes') }}">All recipes</a>
+	</div>
+</div>
+{% endblock %}

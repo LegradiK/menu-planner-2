@@ -4,7 +4,32 @@
 {% block content %}
 <div class="page">
 	<h2 class="page-title">Add a recipe</h2>
-	<p class="page-subtitle">Fill in the details below. Empty ingredient rows are ignored.</p>
+	<p class="page-subtitle">Import from a recipe website, or fill in the details below. Empty ingredient rows are ignored.</p>
+
+	<section class="import-box" aria-labelledby="import-title">
+		<h3 class="import-title" id="import-title">Import from a website</h3>
+		<p class="import-hint">Paste one link to check and edit the recipe before saving, or several links (one per line) to save them all at once.</p>
+		<form method="POST" action="{{ url_for('import_recipes') }}" class="import-form">
+			{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
+			<div class="form-group">
+				<label class="form-label" for="import-urls">Recipe link(s)</label>
+				<textarea class="form-control import-urls" id="import-urls" name="urls" rows="3" placeholder="https://www.bbcgoodfood.com/recipes/…&#10;https://www.justonecookbook.com/…" required></textarea>
+			</div>
+			<div class="import-row">
+				<div class="form-group import-genre">
+					<label class="form-label" for="import-genre">Genre</label>
+					<select class="form-select" id="import-genre" name="genre">
+						<option value="main">Main</option>
+						<option value="dessert">Dessert</option>
+						<option value="bread">Bread</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary import-submit">Import</button>
+			</div>
+		</form>
+	</section>
+
+	<h3 class="manual-title">{% if prefill %}Check the imported recipe{% else %}Add by hand{% endif %}</h3>
 
 	<form method="POST" action="{{ url_for('add_recipes') }}" id="recipe-form">
 		{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
@@ -12,30 +37,32 @@
 		<div class="form-group">
 			<label class="form-label" for="genre">Genre</label>
 			<select class="form-select" id="genre" name="genre" required>
-				<option value="main">Main</option>
-				<option value="dessert">Dessert</option>
-				<option value="bread">Bread</option>
+				{% for value, label in [('main', 'Main'), ('dessert', 'Dessert'), ('bread', 'Bread')] %}
+					<option value="{{ value }}" {% if prefill.genre == value %}selected{% endif %}>{{ label }}</option>
+				{% endfor %}
 			</select>
 		</div>
 
 		<div class="form-group">
 			<label class="form-label" for="name">Recipe name</label>
-			<input type="text" class="form-control" id="name" name="name" placeholder="Enter the recipe name" required>
+			<input type="text" class="form-control" id="name" name="name" placeholder="Enter the recipe name" value="{{ prefill.name or '' }}" required>
 		</div>
 
 		<div class="form-group">
 			<label class="form-label" for="weight" id="weight-label" aria-live="polite">Weight (how many days the food lasts)</label>
-			<input type="number" class="form-control" id="weight" name="weight" min="1" placeholder="Enter weight" required>
+			<input type="number" class="form-control" id="weight" name="weight" min="1" placeholder="Enter weight" value="{{ prefill.weight or '' }}" required>
 		</div>
 
 		<fieldset class="form-group ingredients-fieldset">
 			<legend class="form-label">Ingredients</legend>
 			<div id="ingredients-section">
-				{% for n in range(5) %}
+				{% set imported = prefill.ingredients or [] %}
+				{% for n in range([5, imported | length] | max) %}
+					{% set ing = imported[n] if n < imported | length else {} %}
 					<div class="ingredient-group">
-						<input type="number" step="any" class="form-control ingredient-quantity" placeholder="Qty" name="ingredients[{{ n }}][quantity]" aria-label="Quantity" {% if loop.first %}required{% endif %}>
-						<input type="text" class="form-control ingredient-measurement" placeholder="Unit (g, tbsp)" name="ingredients[{{ n }}][measurement]" aria-label="Measurement">
-						<input type="text" class="form-control ingredient-name" placeholder="Ingredient" name="ingredients[{{ n }}][name]" aria-label="Ingredient name" {% if loop.first %}required{% endif %}>
+						<input type="number" step="any" class="form-control ingredient-quantity" placeholder="Qty" name="ingredients[{{ n }}][quantity]" aria-label="Quantity" value="{{ ing.quantity or '' }}" {% if loop.first and not prefill %}required{% endif %}>
+						<input type="text" class="form-control ingredient-measurement" placeholder="Unit (g, tbsp)" name="ingredients[{{ n }}][measurement]" aria-label="Measurement" value="{{ ing.measurement or '' }}">
+						<input type="text" class="form-control ingredient-name" placeholder="Ingredient" name="ingredients[{{ n }}][name]" aria-label="Ingredient name" value="{{ ing.name or '' }}" {% if loop.first %}required{% endif %}>
 					</div>
 				{% endfor %}
 			</div>
@@ -44,17 +71,17 @@
 
 		<div class="form-group">
 			<label class="form-label" for="cuisine">Cuisine</label>
-			<input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Main: Japanese, Italian… / Bread: Sweet, Salty" required>
+			<input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Main: Japanese, Italian… / Bread: Sweet, Salty" value="{{ prefill.cuisine or '' }}" required>
 		</div>
 
 		<div class="form-group">
 			<label class="form-label" for="link">Recipe link (optional)</label>
-			<input type="url" class="form-control" id="link" name="link" placeholder="https://…">
+			<input type="url" class="form-control" id="link" name="link" placeholder="https://…" value="{{ prefill.link or '' }}">
 		</div>
 
 		<div class="form-group">
 			<label class="form-label" for="instructions">Instructions (one step per line)</label>
-			<textarea class="form-control" id="instructions" name="instructions" rows="7" placeholder="Boil the water&#10;Mix the ingredients" required></textarea>
+			<textarea class="form-control" id="instructions" name="instructions" rows="7" placeholder="Boil the water&#10;Mix the ingredients" required>{{ (prefill.instructions or []) | join('\n') }}</textarea>
 		</div>
 
 		<div class="form-actions">

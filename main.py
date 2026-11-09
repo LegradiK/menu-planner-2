@@ -19,6 +19,7 @@ from build_menu import build_main_menu, bread_suggestion
 from history import history_bp
 from models import db, login_manager
 from save_recipe import save_recipe
+from import_recipe import MAX_URLS, RecipeImportError, recipe_from_url, split_urls
 from shopping_list import collect_ingredients, update_shopping_list, categorize_ingredients
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -427,7 +428,73 @@ def add_recipes():
         save_recipe(recipe)
         session['new_recipe'] = recipe  # Store in session for retrieval
         return redirect(url_for('successful'))
-    return render_template('adding.html')
+    return render_template('adding.html', prefill={})
+
+@app.route('/adding/import', methods=['POST'])
+def import_recipes():
+    """
+    Route for the "Import from a website" form on /adding
+    One link: fill in the Add a recipe form so it can be checked before saving.
+    Several links: save each recipe straight away and list them.
+    """
+    genre = request.form.get("genre", "main")
+    if genre not in RECIPE_FILES:
+        genre = "main"
+    urls = split_urls(request.form.get("urls", ""))
+
+    if not urls:
+        flash("Paste at least one recipe link starting with http:// or https://.", "error")
+        return redirect(url_for("add_recipes"))
+    if len(urls) > MAX_URLS:
+        flash(f"Only the first {MAX_URLS} links were imported.", "warning")
+        urls = urls[:MAX_URLS]
+
+    existing = recipes_lookup()
+
+    # One link: show the filled-in form for checking
+    if len(urls) == 1:
+        try:
+            recipe = recipe_from_url(urls[0], genre)
+        except RecipeImportError as error:
+            flash(str(error), "error")
+            return redirect(url_for("add_recipes"))
+        if recipe["name"].lower() in existing:
+            flash(f"You already have a recipe called '{recipe['name']}'.", "warning")
+        flash("Recipe found. Check the details below, then press Save recipe.", "info")
+        return render_template("adding.html", prefill=recipe)
+
+    # Several links: save them all
+    saved = []
+    for url in urls:
+        try:
+            recipe = recipe_from_url(url, genre)
+        except RecipeImportError as error:
+            flash(str(error), "error")
+            continue
+        if recipe["name"].lower() in existing:
+            flash(f"Skipped '{recipe['name']}': you already have it.", "warning")
+            continue
+        save_recipe(recipe)
+        existing[recipe["name"].lower()] = recipe
+        saved.append(recipe["name"])
+
+    if not saved:
+        return redirect(url_for("add_recipes"))
+    session["imported"] = saved
+    return redirect(url_for("imported"))
+
+
+@app.route('/adding/imported', methods=['GET'])
+def imported():
+    """
+    Route when visiting /adding/imported
+    Returns:
+        the recipes saved by the last multi-link import
+    """
+    recipes = [r for n in session.get("imported", []) if (r := find_recipe(n))]
+    if not recipes:
+        return redirect(url_for("add_recipes"))
+    return render_template("imported.html", recipes=recipes)
 
 @app.route('/successful', methods=['GET'])
 def successful():

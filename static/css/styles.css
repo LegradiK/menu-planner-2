@@ -755,6 +755,46 @@ input[type="checkbox"] {
   overflow-y: auto;
 }
 
+/* "Import from a website" box on the add recipe page */
+.import-box {
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.import-title,
+.manual-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.import-hint {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+textarea.import-urls {
+  min-height: 80px;
+}
+
+.import-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.import-genre {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.import-submit {
+  flex-shrink: 0;
+}
+
 
 /* ---------- 11. Alerts (flash messages) ---------- */
 .alert {
