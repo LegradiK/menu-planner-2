@@ -4,9 +4,22 @@
 {% block content %}
 <div class="page">
 	<h2 class="page-title">Add a recipe</h2>
-	<p class="page-subtitle">Import from a recipe website, or fill in the details below. Empty ingredient rows are ignored.</p>
+	<p class="page-subtitle">Choose how you want to add the recipe.</p>
 
-	<section class="import-box" aria-labelledby="import-title">
+	{# Which panel to open: the checking form after an import, the JSON box if it needs fixing #}
+	{% set method = 'manual' if prefill else ('json' if json_text else 'manual') %}
+	{% set server_choice = prefill or json_text %}
+
+	<div class="form-group method-picker">
+		<label class="form-label" for="add-method">Add a recipe</label>
+		<select class="form-select" id="add-method" {% if server_choice %}data-server-choice{% endif %}>
+			{% for value, label in [('manual', 'By hand'), ('website', 'From a website'), ('json', 'Paste recipe JSON')] %}
+				<option value="{{ value }}" {% if method == value %}selected{% endif %}>{{ label }}</option>
+			{% endfor %}
+		</select>
+	</div>
+
+	<section class="import-box method-panel" data-method="website" aria-labelledby="import-title" {% if method != 'website' %}hidden{% endif %}>
 		<h3 class="import-title" id="import-title">Import from a website</h3>
 		<p class="import-hint">Paste one link to check and edit the recipe before saving, or several links (one per line) to save them all at once.</p>
 		<form method="POST" action="{{ url_for('import_recipes') }}" class="import-form">
@@ -29,7 +42,7 @@
 		</form>
 	</section>
 
-	<section class="import-box" aria-labelledby="json-import-title">
+	<section class="import-box method-panel" data-method="json" aria-labelledby="json-import-title" {% if method != 'json' %}hidden{% endif %}>
 		<h3 class="import-title" id="json-import-title">Paste recipe JSON</h3>
 		<p class="import-hint">Paste one recipe to check it below before saving, or several to save them all into the genre you choose.</p>
 		<form method="POST" action="{{ url_for('import_json') }}" class="import-form">
@@ -67,7 +80,9 @@
 		</form>
 	</section>
 
-	<h3 class="manual-title">{% if prefill %}Check the imported recipe{% else %}Add by hand{% endif %}</h3>
+	<section class="method-panel" data-method="manual" aria-labelledby="manual-title" {% if method != 'manual' %}hidden{% endif %}>
+	<h3 class="manual-title" id="manual-title">{% if prefill %}Check the imported recipe{% else %}Add by hand{% endif %}</h3>
+	<p class="import-hint">Empty ingredient rows are ignored.</p>
 
 	<form method="POST" action="{{ url_for('add_recipes') }}" id="recipe-form">
 		{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
@@ -126,9 +141,39 @@
 			<button type="submit" class="btn btn-primary btn-lg">Save recipe</button>
 		</div>
 	</form>
+	</section>
 </div>
 
 <script>
+	// Show only the panel picked in the "Add a recipe" dropdown
+	(function () {
+		const picker = document.getElementById('add-method');
+		const panels = document.querySelectorAll('.method-panel');
+
+		function showPanel(method) {
+			panels.forEach(function (panel) {
+				panel.hidden = panel.dataset.method !== method;
+			});
+		}
+
+		// Reopen the last method used, unless the page was sent back with
+		// a recipe to check or JSON to fix
+		if (!picker.hasAttribute('data-server-choice')) {
+			try {
+				const saved = localStorage.getItem('addRecipeMethod');
+				if (saved && picker.querySelector('option[value="' + saved + '"]')) {
+					picker.value = saved;
+				}
+			} catch (e) { /* storage unavailable: keep the default */ }
+		}
+		showPanel(picker.value);
+
+		picker.addEventListener('change', function () {
+			showPanel(picker.value);
+			try { localStorage.setItem('addRecipeMethod', picker.value); } catch (e) { /* ignore */ }
+		});
+	})();
+
 	(function () {
 		const section = document.getElementById('ingredients-section');
 		const form = document.getElementById('recipe-form');

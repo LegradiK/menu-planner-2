@@ -755,6 +755,16 @@ input[type="checkbox"] {
   overflow-y: auto;
 }
 
+/* "Add a recipe" method dropdown: only the chosen panel is shown */
+.method-picker {
+  max-width: 320px;
+  margin-bottom: 1.5rem;
+}
+
+.method-panel[hidden] {
+  display: none;
+}
+
 /* "Import from a website" box on the add recipe page */
 .import-box {
   margin-bottom: 2rem;
@@ -793,6 +803,37 @@ textarea.import-urls {
 
 .import-submit {
   flex-shrink: 0;
+}
+
+/* "Paste recipe JSON" box */
+textarea.json-paste {
+  min-height: 160px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+.json-format {
+  margin-top: 1rem;
+}
+
+.json-format-summary {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.json-format .import-hint {
+  margin-top: 0.75rem;
+}
+
+.json-format-example {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
 }
 
 
