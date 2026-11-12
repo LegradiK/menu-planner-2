@@ -29,6 +29,48 @@
 		</form>
 	</section>
 
+	<section class="import-box" aria-labelledby="json-import-title">
+		<h3 class="import-title" id="json-import-title">Import from a JSON file</h3>
+		<p class="import-hint">Upload one or more .json files. A file with one recipe opens below for checking; a file with several saves them all into the genre you choose.</p>
+		<form method="POST" action="{{ url_for('import_json') }}" enctype="multipart/form-data" class="import-form">
+			{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
+			<div class="form-group">
+				<label class="form-label" for="json-files">JSON file(s)</label>
+				<input type="file" class="form-control json-file-input" id="json-files" name="json_files" accept=".json,application/json" multiple required>
+			</div>
+			<div class="import-row">
+				<div class="form-group import-genre">
+					<label class="form-label" for="json-genre">Add to</label>
+					<select class="form-select" id="json-genre" name="genre">
+						<option value="main">Main</option>
+						<option value="dessert">Dessert</option>
+						<option value="bread">Bread</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary import-submit">Import</button>
+			</div>
+			<details class="json-format">
+				<summary class="json-format-summary">What should the file look like?</summary>
+				<p class="import-hint">The same layout as the app's recipe files. <code>name</code> and <code>ingredients</code> are needed; everything else is optional. Ingredients can also be plain lines like <code>"200 g flour"</code>, and recipe JSON copied from a website works too.</p>
+				<pre class="json-format-example">{
+  "recipes": [
+    {
+      "name": "Taiyaki",
+      "cuisine": "Japanese",
+      "weight": 6,
+      "link": "https://…",
+      "ingredients": [
+        {"quantity": "150", "measurement": "g", "name": "plain flour"},
+        "1 tsp baking powder"
+      ],
+      "instructions": ["Mix the batter", "Cook in the mould"]
+    }
+  ]
+}</pre>
+			</details>
+		</form>
+	</section>
+
 	<h3 class="manual-title">{% if prefill %}Check the imported recipe{% else %}Add by hand{% endif %}</h3>
 
 	<form method="POST" action="{{ url_for('add_recipes') }}" id="recipe-form">

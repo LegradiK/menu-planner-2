@@ -20,6 +20,7 @@ from history import history_bp
 from models import db, login_manager
 from save_recipe import save_recipe
 from import_recipe import MAX_URLS, RecipeImportError, recipe_from_url, split_urls
+from json_import import JsonImportError, recipes_from_json
 from shopping_list import collect_ingredients, update_shopping_list, categorize_ingredients
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -36,6 +37,7 @@ if not app.config["SECRET_KEY"]:
 
 # Accounts, saved weeks and form protection
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///menu_planner.db"
+app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024   # largest upload accepted (JSON import)
 db.init_app(app)
 login_manager.init_app(app)   # makes current_user available everywhere
 CSRFProtect(app)
@@ -471,6 +473,61 @@ def import_recipes():
         except RecipeImportError as error:
             flash(str(error), "error")
             continue
+        if recipe["name"].lower() in existing:
+            flash(f"Skipped '{recipe['name']}': you already have it.", "warning")
+            continue
+        save_recipe(recipe)
+        existing[recipe["name"].lower()] = recipe
+        saved.append(recipe["name"])
+
+    if not saved:
+        return redirect(url_for("add_recipes"))
+    session["imported"] = saved
+    return redirect(url_for("imported"))
+
+
+@app.route('/adding/import-json', methods=['POST'])
+def import_json():
+    """
+    Route for the "Import from a JSON file" form on /adding
+    One recipe in the file(s): fill in the Add a recipe form for checking.
+    Several recipes: save them all into the chosen genre and list them.
+    """
+    genre = request.form.get("genre", "main")
+    if genre not in RECIPE_FILES:
+        genre = "main"
+    files = [f for f in request.files.getlist("json_files") if f and f.filename]
+    if not files:
+        flash("Choose at least one .json file to import.", "error")
+        return redirect(url_for("add_recipes"))
+
+    recipes = []
+    for file in files:
+        try:
+            found, problems = recipes_from_json(file, genre)
+        except JsonImportError as error:
+            flash(str(error), "error")
+            continue
+        recipes.extend(found)
+        for problem in problems:
+            flash(problem, "warning")
+
+    if not recipes:
+        return redirect(url_for("add_recipes"))
+
+    existing = recipes_lookup()
+
+    # One recipe: show the filled-in form for checking
+    if len(recipes) == 1:
+        recipe = recipes[0]
+        if recipe["name"].lower() in existing:
+            flash(f"You already have a recipe called '{recipe['name']}'.", "warning")
+        flash("Recipe loaded. Check the details below, then press Save recipe.", "info")
+        return render_template("adding.html", prefill=recipe)
+
+    # Several recipes: save them all (skipping ones already in the app)
+    saved = []
+    for recipe in recipes:
         if recipe["name"].lower() in existing:
             flash(f"Skipped '{recipe['name']}': you already have it.", "warning")
             continue
