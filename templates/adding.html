@@ -30,42 +30,38 @@
 	</section>
 
 	<section class="import-box" aria-labelledby="json-import-title">
-		<h3 class="import-title" id="json-import-title">Import from a JSON file</h3>
-		<p class="import-hint">Upload one or more .json files. A file with one recipe opens below for checking; a file with several saves them all into the genre you choose.</p>
-		<form method="POST" action="{{ url_for('import_json') }}" enctype="multipart/form-data" class="import-form">
+		<h3 class="import-title" id="json-import-title">Paste recipe JSON</h3>
+		<p class="import-hint">Paste one recipe to check it below before saving, or several to save them all into the genre you choose.</p>
+		<form method="POST" action="{{ url_for('import_json') }}" class="import-form">
 			{% if csrf_token is defined %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endif %}
 			<div class="form-group">
-				<label class="form-label" for="json-files">JSON file(s)</label>
-				<input type="file" class="form-control json-file-input" id="json-files" name="json_files" accept=".json,application/json" multiple required>
+				<label class="form-label" for="recipe-json">Recipe JSON</label>
+				<textarea class="form-control json-paste" id="recipe-json" name="recipe_json" rows="8" spellcheck="false" placeholder='{"name": "Taiyaki", "ingredients": [...], "instructions": [...]}' required>{{ json_text or '' }}</textarea>
 			</div>
 			<div class="import-row">
 				<div class="form-group import-genre">
 					<label class="form-label" for="json-genre">Add to</label>
 					<select class="form-select" id="json-genre" name="genre">
-						<option value="main">Main</option>
-						<option value="dessert">Dessert</option>
-						<option value="bread">Bread</option>
+						{% for value, label in [('main', 'Main'), ('dessert', 'Dessert'), ('bread', 'Bread')] %}
+							<option value="{{ value }}" {% if json_genre == value %}selected{% endif %}>{{ label }}</option>
+						{% endfor %}
 					</select>
 				</div>
 				<button type="submit" class="btn btn-primary import-submit">Import</button>
 			</div>
 			<details class="json-format">
-				<summary class="json-format-summary">What should the file look like?</summary>
-				<p class="import-hint">The same layout as the app's recipe files. <code>name</code> and <code>ingredients</code> are needed; everything else is optional. Ingredients can also be plain lines like <code>"200 g flour"</code>, and recipe JSON copied from a website works too.</p>
+				<summary class="json-format-summary">What should the JSON look like?</summary>
+				<p class="import-hint">The same layout as the app's recipe files: one recipe, a list of recipes, or <code>{"recipes": [...]}</code>. <code>name</code> and <code>ingredients</code> are needed; everything else is optional. Ingredients can also be plain lines like <code>"200 g flour"</code>, and recipe JSON copied from a website works too.</p>
 				<pre class="json-format-example">{
-  "recipes": [
-    {
-      "name": "Taiyaki",
-      "cuisine": "Japanese",
-      "weight": 6,
-      "link": "https://…",
-      "ingredients": [
-        {"quantity": "150", "measurement": "g", "name": "plain flour"},
-        "1 tsp baking powder"
-      ],
-      "instructions": ["Mix the batter", "Cook in the mould"]
-    }
-  ]
+  "name": "Taiyaki",
+  "cuisine": "Japanese",
+  "weight": 6,
+  "link": "https://…",
+  "ingredients": [
+    {"quantity": "150", "measurement": "g", "name": "plain flour"},
+    "1 tsp baking powder"
+  ],
+  "instructions": ["Mix the batter", "Cook in the mould"]
 }</pre>
 			</details>
 		</form>

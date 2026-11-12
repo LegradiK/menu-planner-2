@@ -37,7 +37,7 @@ if not app.config["SECRET_KEY"]:
 
 # Accounts, saved weeks and form protection
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///menu_planner.db"
-app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024   # largest upload accepted (JSON import)
+app.config["MAX_CONTENT_LENGTH"] = 2 * 1024 * 1024   # largest form post accepted (pasted JSON)
 db.init_app(app)
 login_manager.init_app(app)   # makes current_user available everywhere
 CSRFProtect(app)
@@ -489,31 +489,24 @@ def import_recipes():
 @app.route('/adding/import-json', methods=['POST'])
 def import_json():
     """
-    Route for the "Import from a JSON file" form on /adding
-    One recipe in the file(s): fill in the Add a recipe form for checking.
+    Route for the "Paste recipe JSON" form on /adding
+    One recipe pasted: fill in the Add a recipe form for checking.
     Several recipes: save them all into the chosen genre and list them.
     """
     genre = request.form.get("genre", "main")
     if genre not in RECIPE_FILES:
         genre = "main"
-    files = [f for f in request.files.getlist("json_files") if f and f.filename]
-    if not files:
-        flash("Choose at least one .json file to import.", "error")
-        return redirect(url_for("add_recipes"))
-
-    recipes = []
-    for file in files:
-        try:
-            found, problems = recipes_from_json(file, genre)
-        except JsonImportError as error:
-            flash(str(error), "error")
-            continue
-        recipes.extend(found)
-        for problem in problems:
-            flash(problem, "warning")
+    text = request.form.get("recipe_json", "")
+    try:
+        recipes, problems = recipes_from_json(text, genre)
+    except JsonImportError as error:
+        recipes, problems = [], [str(error)]
+    for problem in problems:
+        flash(problem, "warning" if recipes else "error")
 
     if not recipes:
-        return redirect(url_for("add_recipes"))
+        # Keep the pasted text in the box so it can be fixed, not pasted again
+        return render_template("adding.html", prefill={}, json_text=text, json_genre=genre)
 
     existing = recipes_lookup()
 

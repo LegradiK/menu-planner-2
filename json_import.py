@@ -1,8 +1,8 @@
 """json_import.py
 
-Read recipes from an uploaded JSON file and turn them into the app's recipe format.
+Read recipes from pasted JSON text and turn them into the app's recipe format.
 
-Accepted file shapes:
+Accepted shapes:
     {"recipes": [ {...}, {...} ]}     <- same as main_recipes.json etc.
     [ {...}, {...} ]                  <- a plain list of recipes
     {...}                             <- one recipe on its own
@@ -18,36 +18,31 @@ from import_recipe import (
     parse_ingredient, parse_instructions, parse_yield,
 )
 
-MAX_FILE_BYTES = 1024 * 1024   # 1 MB is plenty for a few hundred recipes
+MAX_TEXT_LENGTH = 1024 * 1024   # 1 MB of text is plenty for a few hundred recipes
 MAX_RECIPES = 200
 
 
 class JsonImportError(Exception):
-    """Raised when a file can't be read or contains no usable recipes."""
+    """Raised when the text can't be read or contains no usable recipes."""
 
 
-def read_json_file(file_storage) -> object:
-    """Load the JSON from a Flask/Werkzeug uploaded file."""
-    filename = file_storage.filename or "file"
-    if not filename.lower().endswith(".json"):
-        raise JsonImportError(f"'{filename}' isn't a .json file.")
-
-    raw = file_storage.read(MAX_FILE_BYTES + 1)
-    if len(raw) > MAX_FILE_BYTES:
-        raise JsonImportError(f"'{filename}' is bigger than 1 MB.")
-
+def read_json_text(text: str) -> object:
+    """Parse the pasted JSON, with a helpful message if it's broken."""
+    text = (text or "").strip()
+    if not text:
+        raise JsonImportError("Paste some recipe JSON first.")
+    if len(text) > MAX_TEXT_LENGTH:
+        raise JsonImportError("That's too much text to import in one go (over 1 MB).")
     try:
-        return json.loads(raw.decode("utf-8-sig"))   # -sig copes with a BOM from Windows editors
-    except UnicodeDecodeError as error:
-        raise JsonImportError(f"'{filename}' isn't a UTF-8 text file.") from error
+        return json.loads(text)
     except json.JSONDecodeError as error:
         raise JsonImportError(
-            f"'{filename}' isn't valid JSON (line {error.lineno}, column {error.colno}: {error.msg})."
+            f"That isn't valid JSON (line {error.lineno}, column {error.colno}: {error.msg})."
         ) from error
 
 
 def recipe_items(data) -> list:
-    """Find the list of recipe dicts in whichever shape the file uses."""
+    """Find the list of recipe dicts in whichever shape was pasted."""
     if isinstance(data, dict) and isinstance(data.get("recipes"), list):
         items = data["recipes"]
     elif isinstance(data, list):
@@ -84,12 +79,12 @@ def _clean_weight(value, genre: str) -> int:
 
 
 def clean_recipe(item: dict, genre: str) -> dict:
-    """Turn one recipe from the file into the app's format, or raise JsonImportError."""
+    """Turn one pasted recipe into the app's format, or raise JsonImportError."""
     schema_org = "recipeIngredient" in item or "recipeInstructions" in item
 
     name = first_text(item.get("name"))
     if not name:
-        raise JsonImportError("A recipe in the file has no name, so it was skipped.")
+        raise JsonImportError("A recipe has no name, so it was skipped.")
 
     if schema_org:
         raw_ingredients = item.get("recipeIngredient") or []
@@ -121,18 +116,18 @@ def clean_recipe(item: dict, genre: str) -> dict:
     }
 
 
-def recipes_from_json(file_storage, genre: str) -> tuple:
-    """Read an uploaded file. Returns (recipes, problems) — problems are messages to show."""
-    items = recipe_items(read_json_file(file_storage))
+def recipes_from_json(text: str, genre: str) -> tuple:
+    """Read pasted JSON. Returns (recipes, problems) — problems are messages to show."""
+    items = recipe_items(read_json_text(text))
     if not items:
         raise JsonImportError(
-            f"No recipes found in '{file_storage.filename}'. "
+            "No recipes found in the pasted JSON. "
             'Use {"recipes": [...]}, a list of recipes, or a single recipe.'
         )
 
     recipes, problems = [], []
     if len(items) > MAX_RECIPES:
-        problems.append(f"Only the first {MAX_RECIPES} recipes in the file were read.")
+        problems.append(f"Only the first {MAX_RECIPES} recipes were read.")
         items = items[:MAX_RECIPES]
 
     for item in items:
