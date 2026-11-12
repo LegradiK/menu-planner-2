@@ -13,7 +13,7 @@
 	<div class="form-group method-picker">
 		<label class="form-label" for="add-method">Add a recipe</label>
 		<select class="form-select" id="add-method" {% if server_choice %}data-server-choice{% endif %}>
-			{% for value, label in [('manual', 'By hand'), ('website', 'From a website'), ('json', 'Paste recipe JSON')] %}
+			{% for value, label in [('manual', 'Manual Input'), ('website', 'From a website'), ('json', 'Paste recipe JSON')] %}
 				<option value="{{ value }}" {% if method == value %}selected{% endif %}>{{ label }}</option>
 			{% endfor %}
 		</select>
