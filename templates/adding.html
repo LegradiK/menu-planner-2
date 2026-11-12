@@ -11,7 +11,7 @@
 	{% set server_choice = prefill or json_text %}
 
 	<div class="form-group method-picker">
-		<label class="form-label" for="add-method">Add a recipe</label>
+		<label class="form-title" for="add-method">Add a recipe</label>
 		<select class="form-select" id="add-method" {% if server_choice %}data-server-choice{% endif %}>
 			{% for value, label in [('manual', 'Manual Input'), ('website', 'From a website'), ('json', 'Paste recipe JSON')] %}
 				<option value="{{ value }}" {% if method == value %}selected{% endif %}>{{ label }}</option>
